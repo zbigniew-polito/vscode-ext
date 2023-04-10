@@ -1,6 +1,8 @@
 import * as vscode from 'vscode';
 import * as fs from "fs";
+//import * as fs from "fs-extra";
 import * as path from 'path';
+
 import { SidebarProvider } from './views/SidebarProvider';
 import { KeyObject } from 'crypto';
 
