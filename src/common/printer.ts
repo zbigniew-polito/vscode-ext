@@ -13,11 +13,11 @@ class Printer {
 
     }
 
-    public print(...args: any, channel?: string) {
+    public print(args: [any], channel?: string) {
         let name: string = pjson['displayName'];
 
         let chan: OutputChannel = this.channels.get(name) ?? this.channels.set(name, window.createOutputChannel(name)).get(name);
-        chan.appendLine(args);
+        chan.appendLine(JSON.stringify(args));
 
     }
 }
