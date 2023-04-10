@@ -62,7 +62,11 @@ function getProperty<T, K extends keyof T>(obj: T, key: string): T[K] {
 }
 
 class Printer {
-	public static outputChannels: vscode.OutputChannel[] = vscode.window.createOutputChannel();
+	public static all: vscode.OutputChannel = vscode.window.createOutputChannel();
+
+	constructor(channels: string[]) {
+
+	}
 	public
 }
 
