@@ -13,11 +13,12 @@ class Printer {
 
     }
 
-    public print(args: [any], channel?: string) {
+    public print(args: string | [any], channel?: string) {
         let name: string = pjson['displayName'];
         let chan: OutputChannel | undefined = (this.channels.get(name)
             ?? this.channels.set(name, window.createOutputChannel(name)).get(name));
         chan?.appendLine(JSON.stringify(args));
+
         let types: Set<any> = new Set();
         args.forEach(e => {
             types.add(typeof e);
@@ -36,7 +37,7 @@ class Printer {
 //declare var printer: Printer = Printer();
 // declare var print = printer.print;
 
-function print(...args: any) {
+function print(args: string | [any], channel?: string) {
 
 }
 
