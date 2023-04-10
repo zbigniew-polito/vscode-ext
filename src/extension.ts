@@ -105,7 +105,7 @@ class PyUtils {
 		return PyUtils._instance ?? (PyUtils._instance = new PyUtils());
 	}
 
-	get workspaceRoot() {
+	get projectRoot() {
 		//PyUtils.ins.workspaceRoot = ( : undefined;
 		//if (!PyUtils.ins.workspaceRoot) {
 		//	error("No workspaceRoot !")
