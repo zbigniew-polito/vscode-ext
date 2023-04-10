@@ -122,7 +122,11 @@ class PyUtils {
 				name: path.basename(process.cwd()),
 				index: 0,
 			}
-		]
+		].forEach(w => {
+			w.uri.fsPath
+		});
+
+		//let rootWorkspace = 
 	}
 	get ext_dir() {
 		return PyUtils.ins.workspaceRoot + "/." + PyUtils.ins.name.toLocaleLowerCase();
