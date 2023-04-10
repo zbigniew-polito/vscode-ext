@@ -19,21 +19,21 @@ class Printer {
             ?? this.channels.set(name, window.createOutputChannel(name)).get(name));
         chan?.appendLine(JSON.stringify(args));
 
-        if (typeof args != string) {
+        if (typeof args !== 'string') {
 
-        }
-        let types: Set<any> = new Set();
-        args.forEach(e => {
-            types.add(typeof e);
-        })
-        types.forEach(t => {
-            args.forEach(a => {
-                if (typeof a == t) {
 
-                }
+            let types: Set<any> = new Set();
+            args.forEach(e => {
+                types.add(typeof e);
             })
-        })
+            types.forEach(t => {
+                args.forEach(a => {
+                    if (typeof a == t) {
 
+                    }
+                })
+            })
+        }
     }
 }
 
