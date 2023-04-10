@@ -5,6 +5,9 @@ interface IDictionary {
     [key: string]: string | object[];
 }
 
+const dictionary: Record<string, string> = {};
+const dictionary: Record<string, string> = {};
+
 class Printer {
     public history[]: any[] =[];
 
