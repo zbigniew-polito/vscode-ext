@@ -122,12 +122,18 @@ class PyUtils {
 				name: path.basename(process.cwd()),
 				index: 0,
 			}
-		].forEach((w, index,/*array*/) => {
-			if (fs.existsSync(w.uri.fsPath)) {
-				root = w.uri.fsPath;
-				rootWorkspace = w;
-			}
-		})
+		].sort((a: vscode.WorkspaceFolder, b: vscode.WorkspaceFolder) => Number{
+			return true;
+		}
+		)
+
+
+			.forEach((w, index,/*array*/) => {
+				if (fs.existsSync(w.uri.fsPath)) {
+					root = w.uri.fsPath;
+					rootWorkspace = w;
+				}
+			})
 
 		//let rootWorkspace = 
 	}
