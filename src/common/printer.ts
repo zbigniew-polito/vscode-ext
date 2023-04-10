@@ -33,16 +33,13 @@ class Printer {
                         name = pjson['displayName'] + "." + t;
                         chan = (this.channels.get(name)
                             ?? this.channels.set(name, window.createOutputChannel(name)).get(name));
-
+                        chan?.appendLine(JSON.stringify(args));
                     }
                 })
             })
         }
     }
 }
-
-//declare var printer: Printer = Printer();
-// declare var print = printer.print;
 
 function print(args: string | [any], channel?: string) {
 
