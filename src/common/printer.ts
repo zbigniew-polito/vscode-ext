@@ -6,7 +6,7 @@ import { OutputChannel, window } from "vscode";
 
 class Printer {
     public history: Map<string | undefined, (string | object | undefined)[]> = new Map<string, (string | object | undefined)[]>();
-    public channels: Map<string, OutputChannel> = new Map<String, OutputChannel>();
+    public channels: Map<string, OutputChannel> = new Map<string, OutputChannel>();
     constructor() {
 
     }
