@@ -12,4 +12,8 @@ class Printer {
 //declare var printer: Printer = Printer();
 // declare var print = printer.print;
 
+function print(...args: any) {
+
+}
+
 module.exports = print
