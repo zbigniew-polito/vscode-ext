@@ -14,11 +14,11 @@ class Printer {
     }
 
     public print(...args: any, channel: string | undefined) {
-        let name: string = pjson['displayName'] + "." + channel ?? "default"
-        let chan: OutputChannel = this.channels.get(channel) ?? this.channels.set(channel, window.createOutputChannel(channel ?));
+        let name: string = pjson['displayName'] + "." + channel ?? "all";
+        let chan: OutputChannel = this.channels.get(name) ?? this.channels.set(name, window.createOutputChannel(name ?));
 
-        this.history.get(channel) ??
-            this.history.set(channel, window.createOutputChannel(channel, "js"))
+        this.history.get(name) ??
+            this.history.set(name, window.createOutputChannel(channel, "js"))
 
 
     }
