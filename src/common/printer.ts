@@ -11,7 +11,8 @@ class Printer {
 
     }
     public print(...args: any, channel: string | undefined) {
-        this.history[channel].
+        //channel = channel ? channel : "default";
+        this.history.get(channel).
     }
 }
 
