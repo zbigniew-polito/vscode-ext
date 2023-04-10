@@ -39,7 +39,6 @@ function getProperty<T, K extends keyof T>(obj: T, key: string): T[K] {
 class PyUtils {
 	private static _instance?: PyUtils;
 
-	private _outputChannel?: vscode.OutputChannel;
 	private _context?: vscode.ExtensionContext;
 
 
@@ -181,7 +180,9 @@ class PyUtils {
 		success(PyUtils.ins.name + " deactivated succesfully. // TODO");
 	}
 
-
+	public get config(): StringByString {
+		vscode.workspace.getConfiguration()?.get(pjson.)
+	}
 	public loadConfig(): void {
 		var config: { [index: string]: any } | undefined = vscode.workspace.getConfiguration()?.get('pyutils');
 		for (let key in config) {
