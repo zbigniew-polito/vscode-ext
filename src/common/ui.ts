@@ -1,5 +1,5 @@
 import * as vscode from 'vscode';
-import print as print from "./printer"
+import print from "./printer"
 
 function success(msg: any) {
     print(msg)

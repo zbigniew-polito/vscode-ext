@@ -46,8 +46,10 @@ class Printer {
     }
 }
 
-function print(args: string | [any], channel?: string) {
+let printer = new Printer();
 
+function print(args: string | [any], channel?: string) {
+    printer.print(args, channel);
 }
 
 module.exports = print
