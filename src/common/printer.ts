@@ -1,5 +1,5 @@
 import { OutputChannel, window } from "vscode";
-
+import * from "../package.json";
 
 //const dictionary: Record<string, string> = {};
 //const dictionary = new Map<string, string>();
