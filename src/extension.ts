@@ -93,7 +93,7 @@ class PyUtils {
 		};
 
 		PyUtils._instance = this;
-		PyUtils.ins._outputChannel = vscode.window.createOutputChannel("PyUtils");
+		PyUtils.ins._outputChannel = vscode.window.createOutputChannel("PyUtils", { "log": false });
 
 		PyUtils.ins.loadConfig();
 
