@@ -9,6 +9,7 @@ import { KeyObject } from 'crypto';
 
 
 // Object.assign(global, nvk);
+const pjson = require('../package.json');
 
 
 
@@ -121,7 +122,7 @@ class PyUtils {
 	}
 
 	get name() {
-		return "PyUtils"
+		return pjson['displayName'];
 		// got obfuscated
 		// return PyUtils.ins.constructor.name
 	}
