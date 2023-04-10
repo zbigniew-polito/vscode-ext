@@ -5,13 +5,13 @@ import { OutputChannel } from "vscode";
 //const dictionary = new Map<string, string>();
 
 class Printer {
-    public history: Map<string, string | object> = new Map<string, string | object | undefined>();
+    public history: Map<string, (string | object | undefined)[]> = new Map<string, (string | object | undefined)[]>();
 
     constructor() {
 
     }
     public print(...args: any, channel: any | undefined) {
-        history
+        history[channel].
     }
 }
 
