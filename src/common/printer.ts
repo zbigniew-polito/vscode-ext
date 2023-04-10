@@ -9,6 +9,6 @@ class Printer {
 }
 
 declare var printer: Printer = Printer();
+declare var print = printer.print;
 
-
-module.exports = printer
+module.exports = print
