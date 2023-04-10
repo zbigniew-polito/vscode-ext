@@ -256,7 +256,7 @@ class PyUtils {
 
 	public run() {
 		//if (fs.existsSync(PyUtils.ins._config.run)) {
-		PyUtils.ins.exists(PyUtils.ins._config.run) & PyUtils.ins.terminal.sendText(PyUtils.ins.projectRoot + "/" + PyUtils.ins._config.run)
+		PyUtils.ins.exists(PyUtils.ins._config.run) && PyUtils.ins.terminal.sendText(PyUtils.ins.projectRoot + "/" + PyUtils.ins._config.run)
 
 	}
 
