@@ -268,18 +268,13 @@ class PyUtils {
 	public debug() {
 		PyUtils.ins.exists(PyUtils.ins._config.debug)
 			&& PyUtils.ins.terminal.sendText(PyUtils.ins.projectRoot + "/" + PyUtils.ins._config.debug)
-
 	}
 
 	public workspace_onDidChangeWorkspaceFolders(event: vscode.WorkspaceFoldersChangeEvent) {
-		//print("onDidChangedWorkspaceFolders")
-		//print("On did changed workspace folders. Make terminal follow Editor. or create private terminal for every editor.");
-		//PyUtils.ins._current_workspaceRoot = (vscode.workspace.workspaceFolders && (vscode.workspace.workspaceFolders.length > 0)) ? vscode.workspace.workspaceFolders[0].uri.fsPath : undefined;
-		//print()
 	}
 
 	public workspace_onDidSaveTextDocument(document: vscode.TextDocument) {
-		if (fs.existsSync("${workspaceFolder}/" + PyUtils.ins._config.callback)) {
+		if (PyUtils.ins.exists(PyUtils.ins + "/" + PyUtils.ins._config.callback)) {
 			PyUtils.ins.inTerm("${workspaceFolder}/" + PyUtils.ins._config['callback'] + " " + document.uri.fsPath)
 		} else {
 			error("Cant find : ${workspaceFolder} " + PyUtils.ins._config.build)
