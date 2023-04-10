@@ -17,7 +17,7 @@ class Printer {
         let name: string = pjson['displayName'];
 
         let chan: OutputChannel = this.channels.get(name) ?? this.channels.set(name, window.createOutputChannel(name)).get(name);
-        chan.appendLine
+        chan.appendLine(args)
 
     }
 }

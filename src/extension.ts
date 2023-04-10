@@ -24,9 +24,9 @@ function print(msg: string | any) {
 		PyUtils.ins.printToOutputChannel(msg);
 	}
 	else {
-		if (PyUtils.ins._config["verbose"] == "true") {
-			PyUtils.ins.printToOutputChannel(JSON.stringify(msg, null, 2));
-		}
+		//if (PyUtils.ins._config["verbose"] == "true") {
+		//	PyUtils.ins.printToOutputChannel(JSON.stringify(msg, null, 2));
+		//}
 	}
 
 }
