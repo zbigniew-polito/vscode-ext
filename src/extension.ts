@@ -106,41 +106,34 @@ class PyUtils {
 	}
 
 	get projectRoot() {
-		//PyUtils.ins.workspaceRoot = ( : undefined;
-		//if (!PyUtils.ins.workspaceRoot) {
-		//	error("No workspaceRoot !")
-		//	return;
-		//}
-		//vscode.workspace.workspaceFolders
-		//PyUtils.ins._dir = PyUtils.ins._workspaceRoot + "/." + PyUtils.ins.name.toLowerCase();
-		//vscode.workspace.getWorkspaceFolder()
-		//vscode.workspace.workspaceFolders
-		//vscode.workspace.workspaceFolders && (vscode.workspace.workspaceFolders.length > 0)) ?vscode.workspace.workspaceFolders[0].uri.fsPath
-		(vscode.workspace.workspaceFolders?.filter((value) => {
-
-		}) ?? [
-				{
-					uri: vscode.Uri.file(process.cwd()),
-					name: path.basename(process.cwd()),
-					index: 0,
+		const workspaces: readonly WorkspaceFolder[] = workspace.workspaceFolders ?? [];
+		if (workspaces.length === 0) {
+			return {
+				uri: Uri.file(process.cwd()),
+				name: path.basename(process.cwd()),
+				index: 0,
+			};
+		} else if (workspaces.length === 1) {
+			return workspaces[0];
+		} else {
+			let rootWorkspace = workspaces[0];
+			let root = undefined;
+			for (const w of workspaces) {
+				if (await fs.pathExists(w.uri.fsPath)) {
+					root = w.uri.fsPath;
+					rootWorkspace = w;
+					break;
 				}
-			])
+			}
 
-			//.sort(
-			//	(a: vscode.WorkspaceFolder, b: vscode.WorkspaceFolder): number => {
-			//		return a.uri.fsPath.length >= b.uri.fsPath.length ? 1 : -1;
-			//	}
-			//)
-
-
-			.forEach((w, index,/*array*/) => {
-				if (fs.existsSync(w.uri.fsPath)) {
+			for (const w of workspaces) {
+				if (root && root.length > w.uri.fsPath.length && (await fs.pathExists(w.uri.fsPath))) {
 					root = w.uri.fsPath;
 					rootWorkspace = w;
 				}
-			})
-
-		//let rootWorkspace = 
+			}
+			return rootWorkspace;
+		}
 	}
 	get ext_dir() {
 		return PyUtils.ins.workspaceRoot + "/." + PyUtils.ins.name.toLocaleLowerCase();
