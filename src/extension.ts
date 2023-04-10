@@ -124,9 +124,10 @@ class PyUtils {
 			}
 		].forEach(w => {
 			if (fs.existsSync(w.uri.fsPath)) {
-
+				root = w.uri.fsPath;
+				rootWorkspace = w;
 			}
-		});
+		})
 
 		//let rootWorkspace = 
 	}
