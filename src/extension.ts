@@ -18,6 +18,11 @@ w.exec();
 t.exec();
 */
 
+
+
+// Object.assign(global, nvk);
+
+
 interface StringByString {
 	[key: string]: string;
 }
