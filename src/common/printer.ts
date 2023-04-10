@@ -13,7 +13,7 @@ class Printer {
 
     }
 
-    public print(...args: any, channel: string | undefined) {
+    public print(...args: any, channel?: string) {
         let name: string = pjson['displayName'];
 
         let chan: OutputChannel = this.channels.get(name) ?? this.channels.set(name, window.createOutputChannel(name)).get(name);
