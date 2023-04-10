@@ -107,6 +107,8 @@ class PyUtils {
 
 	get projectRoot() {
 		const workspaces: readonly vscode.WorkspaceFolder[] = vscode.workspace.workspaceFolders ?? [];
+		let ret: vscode.WorkspaceFolder | undefined = undefined
+
 		if (workspaces.length === 0) {
 			return {
 				uri: vscode.Uri.file(process.cwd()),
