@@ -1,5 +1,10 @@
 import { OutputChannel } from "vscode";
 
+
+interface IDictionary {
+    [key: string]: string | object[];
+}
+
 class Printer {
     public history[]: any[] =[];
 
