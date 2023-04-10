@@ -15,7 +15,7 @@ class Printer {
 
     public print(...args: any, channel: string | undefined) {
         channel = channel ?? pjson['displayName'];
-        let chan: OutputChannel = this.channels.get(channel) ?? this.channels.set(channel ?? "default", window.createOutputChannel(channel ?? "default"));
+        let chan: OutputChannel = this.channels.get(channel) ?? this.channels.set(channel, window.createOutputChannel(channel));
 
         this.history.get(channel) ??
             this.history.set(channel, window.createOutputChannel(channel, "js"))
