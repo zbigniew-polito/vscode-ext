@@ -1,6 +1,6 @@
 import { OutputChannel, window } from "vscode";
 
-import * as pjson from "../package.json";
+const pjson = require('../package.json');
 
 //const dictionary: Record<string, string> = {};
 //const dictionary = new Map<string, string>();
