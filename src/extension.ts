@@ -123,7 +123,7 @@ class PyUtils {
 				index: 0,
 			}
 		].sort((a: vscode.WorkspaceFolder, b: vscode.WorkspaceFolder) => Number{
-			return true;
+			return 1;
 		}
 		)
 
