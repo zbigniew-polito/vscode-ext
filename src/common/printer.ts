@@ -1,21 +1,17 @@
 import { OutputChannel } from "vscode";
 
 
-interface IDictionary {
-    [key: string]: string | object[];
-}
-
-const dictionary: Record<string, string> = {};
-const dictionary: Record<string, string> = {};
+//const dictionary: Record<string, string> = {};
+//const dictionary = new Map<string, string>();
 
 class Printer {
-    public history[]: any[] =[];
+    public history: Map<string, string | object> = new Map<string, string | object | undefined>();
 
     constructor() {
 
     }
     public print(...args: any, channel: any | undefined) {
-
+        history
     }
 }
 
