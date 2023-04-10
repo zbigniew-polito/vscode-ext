@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+
+_ABS_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+
+if [ -e "$_ABS_DIR/activate-me" ];
+then
+    "$_ABS_DIR/activate-me"
+else
+    "$_ABS_DIR/deactivate-me"
+fi;

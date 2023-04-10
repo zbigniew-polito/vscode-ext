@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+_CMD="${0}"
+
+_ARG_COUNT="${#}"
+_ARG_ARRAY="${@}"
+
+_REL_PATH="${0%/*}"
+_ABS_PATH=`realpath $_REL_PATH`
+
+_FILENAME="$(basename $0)"
+
+_CWD=`pwd`
+
+clear
+
+
+echo "_CWD=$_CWD"
+echo "_ABS_PATH=$_ABS_PATH"
+echo "_REL_PATH=$_REL_PATH"
+echo "_FILENAME=$_FILENAME"
+
+
+if [ "$_FILENAME" = "activate-me" ];
+then
+    echo "Renaming to deactivate-me";
+    mv "$0" "$_REL_PATH/deactivate-me"
+else
+    echo "Renaming to activate-me"
+    mv "$0" "$_REL_PATH/activate-me"
+fi;

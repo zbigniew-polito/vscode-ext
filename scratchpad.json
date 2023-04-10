@@ -1,0 +1,195 @@
+"noise": [
+    {
+        "id": "noise",
+        "name": "noise",
+        "icon": "$(notebook-render-output)",
+        "contextualTitle": "noisesynth"
+    }
+],
+"unicode": [
+    {
+        "id": "unicode",
+        "name": "unicode",
+        "icon": "$(keybindings-record-keys)",
+        "contextualTitle": "unicode"
+    }
+],
+"drawit": [
+    {
+        "id": "drawit",
+        "name": "drawing app",
+        "icon": "$(paintcan)",
+        "contextualTitle": "svgdraw"
+    }
+],
+
+
+#00ab6b
+
+
+
+cascades -> call object without function name and parameters
+
+
+TypeScript
+            - npm install -g typescript
+            - tsc --version
+
+
+            let message: string = 'Hello World';
+            console.log(message);
+
+            tsconfig.json
+
+
+source-map -> debugger
+
+
+<script>
+  window.__INITIAL_DATA__ = {
+    userID: "536891193569405430",
+};
+</script>
+
+type InitialData = {
+    userID: string;
+};
+  
+
+const initialData = (window as any).__INITIAL_DATA__;
+
+
+declare var __INITIAL_DATA__: InitialData;
+
+const initialData = __INITIAL_DATA__;
+
+const initialData = window.__INITIAL_DATA__;
+
+shine
+
+memory map ipv4
+
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "outDir": "out",
+        "sourceMap": true
+    }
+}
+
+ts-node --files ./src/index.ts
+
+nodemon.json
+
+{
+    "watch": [
+        "src"
+    ],
+    "ext": ".ts,.js",
+    "ignore": [],
+    "exec": "ts-node --files ./src/index.ts"
+}
+ _ [] x
+
+
+|
+
+
+do latex
+
+
+do proper vim mode for vscode
+
+
+follow yes by default
+       or no by default
+        in sections
+        
+
+        in to jest jak podsuwasz dane pod wejscie i naciskasz guzik pod wejsciem,
+            wtedy dane są przeniesione przez program do wewnetrznej pamieci
+            można też przeniesc dane do pamieci programu bez informowania go o tym,
+            musisz znac adres wtedy jego wewnetrzny, 
+            on może być advertised albo przy in jest adres tylko ze jak sam dostarczysz to nie ma gwarancji ze kiedykolwiek cos sie stanie
+            np. program jest zombie, pod adres jak dostarczasz to możesz też callback dostarczyć
+
+        
+        
+        api po lewej -> wejscie od innych aplikacji
+        cli na dole w rogu okna, taka tylda do odpalania 
+
+        ? display
+        -> możesz overlay na aplikacje nałożyć zamiast po prawej i lewej odsuwać
+            -> możesz na całym oknie overlay zrobić, jest po lewej switch do podmieniania okna już uruchomionych aplikacji
+
+
+        proc
+        notes
+                w notesie jest proc terminal i notes z tym ze proc jest do serwera chyba notesu
+                a proc w procu pokazuje proca
+
+        terminal - > to inside
+        terminal - > to outside - multiple rows
+
+            terminal po lewej ma directory tree takie jak ma być
+
+        keyboard mode -> as left - right
+                      -> as left right center
+
+        right side of keyboard for yes , left side of keyboard for no
+
+        
+
+
+
+        create workspace for last 2,
+3,
+4,
+5 windows, 
+            squeeze them on screen , inward, move rest outward
+
+
+            file content into columns, file name is table name, one line in file is one row
+
+            dimensions z góry bierzesz, zapytanie idzie przez in,
+                czyli jak ciągnie ktoś coś od ciebie to możesz zmienić tymczasowo tempo wysyłania albo chunk size
+                chunk size zmieniasz tego ktory jest aktualnie wysyłany, a tempo pomiędzy chunkami, 
+                jak masz chunked mode to ustalasz minimalny czas na command pomiędzy chunkami i maksymalny czas pomiędzy chunkami no wlasnie a ile chunk trwa
+                to jest realtime programming chyba
+
+            DIMENSIONALITY
+
+    
+https: //cloud.google.com/translate/pricing
+https: //cloud.google.com/translate/pricing
+https: //cloud.google.com/translate/pricing
+https: //allegro.pl/oferta/lustro-selfie-do-podgladu-zdjec-smartfona-telefon-11966077083?bi_s=ads&bi_m=productlisting:desktop:queryandcategory&bi_c=NWUxYWU5NzAtOGFmNi00Mzc5LWI1NzYtYWY5MmJhMmI0ZTNkAA&bi_t=ape&referrer=proxy&emission_unit_id=68288bd4-9f55-4144-ac34-457106ba6182
+
+
+
+SMUTR-1040K-TT - 40khz
+UTR-18225K-TT - 225khz
+
+
+/etc/sysctl.d/50-fedora-jam.conf:#dev.hpet.max-user-freq=3072
+/etc/thermald/thermal-cpu-cdev-order.xml
+
+/etc/selinux/targeted/contexts/files/file_contexts:/usr/bin/cpufreq-selector
+/etc/selinux/targeted/contexts/files/file_contexts:/var/run/cpufreqd
+
+
+/etc/openal/alsoft.conf:#  If left unspecified it will default to 1/50th of the frequency (20ms, or 882
+/etc/openal/alsoft.conf:#  Enables a high-quality ambisonic decoder. This mode is capable of frequency-
+/etc/openal/alsoft.conf:#  frequency effects caused by the curvature of nearby sound-waves, which
+
+intel_pstate=no_hwp
+intel_pstate=disabled
+intel_pstate=passive
+
+
+intel_pstate=per_cpu_perf_limits
+
+
+najlejki piegi          freckles
+         lusterka
