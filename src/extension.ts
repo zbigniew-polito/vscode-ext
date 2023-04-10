@@ -415,4 +415,4 @@ class PyUtils {
 	}
 }
 
-module.exports = PyUtils.ins
+declare var printer: Printer; = PyUtils.ins
