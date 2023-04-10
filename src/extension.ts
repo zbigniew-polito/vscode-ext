@@ -278,8 +278,6 @@ class PyUtils {
 			&& PyUtils.ins.inTerm(PyUtils.ins.projectRoot + "/" + PyUtils.ins._config['callback'] + " " + document.uri.fsPath)
 	}
 
-
-
 	public window_onDidChangeActiveTextEditor(event: any) {
 		if (event.document.uri.scheme == "file") {
 			PyUtils.ins.terminal.show();
