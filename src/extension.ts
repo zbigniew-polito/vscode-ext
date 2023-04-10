@@ -114,7 +114,8 @@ class PyUtils {
 				index: 0,
 			};
 		} else if (workspaces.length === 1) {
-			return workspaces[0];
+			ret = workspaces[0];
+			//return workspaces[0];
 		} else {
 			let rootWorkspace = workspaces[0];
 			let root = undefined;
