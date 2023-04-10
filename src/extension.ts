@@ -39,9 +39,6 @@ function getProperty<T, K extends keyof T>(obj: T, key: string): T[K] {
 class PyUtils {
 	private static _instance?: PyUtils;
 
-	private ext_dir?: string;
-
-	//private _workspaceRoot?: string;
 	private _outputChannel?: vscode.OutputChannel;
 	private _context?: vscode.ExtensionContext;
 

@@ -52,4 +52,5 @@ function print(args: string | [any], channel?: string) {
     printer.print(args, channel);
 }
 
-module.exports = print
+module.exports = print;
+export default print;
