@@ -20,7 +20,14 @@ class Printer {
         chan?.appendLine(JSON.stringify(args));
         let types: Set<any> = new Set();
         args.forEach(e => {
-            types.add(typeof e)
+            types.add(typeof e);
+        })
+        types.forEach(t => {
+            args.forEach(a => {
+                if (typeof a == t) {
+
+                }
+            })
         })
 
     }
