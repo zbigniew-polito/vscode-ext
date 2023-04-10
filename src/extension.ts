@@ -106,10 +106,10 @@ class PyUtils {
 	}
 
 	get projectRoot() {
-		const workspaces: readonly WorkspaceFolder[] = workspace.workspaceFolders ?? [];
+		const workspaces: readonly vscode.WorkspaceFolder[] = vscode.workspace.workspaceFolders ?? [];
 		if (workspaces.length === 0) {
 			return {
-				uri: Uri.file(process.cwd()),
+				uri: vscode.Uri.file(process.cwd()),
 				name: path.basename(process.cwd()),
 				index: 0,
 			};
@@ -119,7 +119,7 @@ class PyUtils {
 			let rootWorkspace = workspaces[0];
 			let root = undefined;
 			for (const w of workspaces) {
-				if (await fs.pathExists(w.uri.fsPath)) {
+				if (fs.existsSync(w.uri.fsPath)) {
 					root = w.uri.fsPath;
 					rootWorkspace = w;
 					break;
@@ -135,8 +135,9 @@ class PyUtils {
 			return rootWorkspace;
 		}
 	}
+
 	get ext_dir() {
-		return PyUtils.ins.workspaceRoot + "/." + PyUtils.ins.name.toLocaleLowerCase();
+		return PyUtils.ins.projectRoot + "/." + PyUtils.ins.name.toLocaleLowerCase();
 	}
 
 	get name() {
