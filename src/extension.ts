@@ -122,7 +122,7 @@ class PyUtils {
 				name: path.basename(process.cwd()),
 				index: 0,
 			}
-		].forEach(w => {
+		].forEach((w, index,/*array*/) => {
 			if (fs.existsSync(w.uri.fsPath)) {
 				root = w.uri.fsPath;
 				rootWorkspace = w;
