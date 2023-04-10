@@ -13,7 +13,7 @@ class Printer {
     }
 
     public print(...args: any, channel: string | undefined) {
-        let channel: OutputChannel = this.channels.get(channel ?? "default");
+        let chan: OutputChannel = this.channels.get(channel ?? "default");
 
         this.history.get(channel) ??
             this.history.set(channel, window.createOutputChannel(channel, "js"))
