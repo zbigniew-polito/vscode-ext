@@ -130,7 +130,7 @@ class PyUtils {
 			}
 
 			for (const w of workspaces) {
-				if (root && root.length > w.uri.fsPath.length && (await fs.pathExists(w.uri.fsPath))) {
+				if (root && root.length > w.uri.fsPath.length && (fs.existsSync(w.uri.fsPath))) {
 					root = w.uri.fsPath;
 					rootWorkspace = w;
 				}
@@ -199,7 +199,7 @@ class PyUtils {
 
 		PyUtils.ins.isEnabled = true;
 
-		success(PyUtils.ins.name + " activated succesfully in " + PyUtils.ins.workspaceRoot);
+		success(PyUtils.ins.name + " activated succesfully in " + PyUtils.ins.projectRoot);
 
 		PyUtils.ins.create()
 
