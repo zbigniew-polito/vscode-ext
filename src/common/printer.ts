@@ -1,4 +1,4 @@
-import { OutputChannel } from "vscode";
+import { window } from "vscode";
 
 
 //const dictionary: Record<string, string> = {};
@@ -11,8 +11,8 @@ class Printer {
 
     }
     public print(...args: any, channel: string | undefined) {
-        //channel = channel ? channel : "default";
-        this.history.get(channel) ??
+        channel = channel ? channel : "default";
+        this.history.get(channel) ?? this.history.set(channel, window.createOutputChannel(channel))
     }
 }
 
