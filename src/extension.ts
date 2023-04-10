@@ -44,17 +44,6 @@ function print(msg: string | any) {
 
 }
 
-function success(msg: any) {
-	print(msg)
-	vscode.window.showInformationMessage(msg);
-	return true;
-}
-
-function error(msg: any) {
-	print(msg);
-	vscode.window.showErrorMessage(msg);
-	return false;
-}
 
 function getProperty<T, K extends keyof T>(obj: T, key: string): T[K] {
 	if (key in obj) { return obj[key as K]; }
