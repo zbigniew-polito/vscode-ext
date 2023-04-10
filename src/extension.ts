@@ -122,6 +122,7 @@ class PyUtils {
 	}
 
 	get name() {
+		//resolveCliArgsFromVSCodeExecutablePath
 		return pjson['displayName'];
 		// got obfuscated
 		// return PyUtils.ins.constructor.name
