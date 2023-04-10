@@ -6,6 +6,9 @@ class Printer {
 
         });
     }
+    export public print(data...: any) {
+
+    }
 }
 
 declare var printer: Printer = Printer();
