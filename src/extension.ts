@@ -114,7 +114,13 @@ class PyUtils {
 		//vscode.workspace.getWorkspaceFolder()
 		//vscode.workspace.workspaceFolders
 		//vscode.workspace.workspaceFolders && (vscode.workspace.workspaceFolders.length > 0)) ?vscode.workspace.workspaceFolders[0].uri.fsPath
-		vscode.workspace.workspaceFolders ?? [{ uri:, }]
+		vscode.workspace.workspaceFolders ?? [
+			{
+				uri: Uri.file(process.cwd()),
+				name: path.basename(process.cwd()),
+				index: 0,
+			}
+		]
 	}
 	get ext_dir() {
 		return PyUtils.ins.workspaceRoot + "/." + PyUtils.ins.name.toLocaleLowerCase();
