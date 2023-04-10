@@ -110,7 +110,7 @@ class PyUtils {
 		let ret: vscode.WorkspaceFolder | undefined = undefined
 
 		if (workspaces.length === 0) {
-			return {
+			ret = {
 				uri: vscode.Uri.file(process.cwd()),
 				name: path.basename(process.cwd()),
 				index: 0,
@@ -135,8 +135,11 @@ class PyUtils {
 					rootWorkspace = w;
 				}
 			}
-			return rootWorkspace;
+			ret = rootWorkspace;
 		}
+
+		print("Project Root " + ret);
+		return ret;
 	}
 
 	get ext_dir() {
