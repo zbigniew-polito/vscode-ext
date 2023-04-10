@@ -276,12 +276,6 @@ class PyUtils {
 	public workspace_onDidSaveTextDocument(document: vscode.TextDocument) {
 		PyUtils.ins.existsInProject(PyUtils.ins._config.callback)
 			&& PyUtils.ins.inTerm(PyUtils.ins.projectRoot + "/" + PyUtils.ins._config['callback'] + " " + document.uri.fsPath)
-		if (PyUtils.ins.existsInProject(PyUtils.ins._config.callback + "/" + PyUtils.ins._config.callback)) {
-			PyUtils.ins.inTerm("${workspaceFolder}/" + PyUtils.ins._config['callback'] + " " + document.uri.fsPath)
-		} else {
-			error("Cant find : ${workspaceFolder} " + PyUtils.ins._config.build)
-		}
-
 	}
 
 
