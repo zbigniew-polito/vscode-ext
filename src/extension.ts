@@ -250,14 +250,13 @@ class PyUtils {
 		PyUtils.ins.loadConfig()
 	}
 
-	public exists(path: string): any {
+	public exists(path: string): boolean {
 		return fs.existsSync(path) || error("Cant find : " + path);
 	}
 
 	public run() {
-		//if (fs.existsSync(PyUtils.ins._config.run)) {
-		PyUtils.ins.exists(PyUtils.ins._config.run) && PyUtils.ins.terminal.sendText(PyUtils.ins.projectRoot + "/" + PyUtils.ins._config.run)
-
+		PyUtils.ins.exists(PyUtils.ins._config.run)
+			&& PyUtils.ins.terminal.sendText(PyUtils.ins.projectRoot + "/" + PyUtils.ins._config.run)
 	}
 
 	public build() {
