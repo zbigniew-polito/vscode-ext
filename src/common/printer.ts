@@ -1,3 +1,4 @@
+import { TLSSocket } from "tls";
 import { OutputChannel, window } from "vscode";
 
 const pjson = require('../package.json');
@@ -29,6 +30,9 @@ class Printer {
             types.forEach(t => {
                 args.forEach(a => {
                     if (typeof a == t) {
+                        name = pjson['displayName'] + "." + t;
+                        chan = (this.channels.get(name)
+                            ?? this.channels.set(name, window.createOutputChannel(name)).get(name));
 
                     }
                 })
