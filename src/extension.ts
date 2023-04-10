@@ -118,7 +118,7 @@ class PyUtils {
 		//vscode.workspace.workspaceFolders && (vscode.workspace.workspaceFolders.length > 0)) ?vscode.workspace.workspaceFolders[0].uri.fsPath
 		vscode.workspace.workspaceFolders ?? [
 			{
-				uri: Uri.file(process.cwd()),
+				uri: vscode.Uri.file(process.cwd()),
 				name: path.basename(process.cwd()),
 				index: 0,
 			}
