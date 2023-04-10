@@ -251,7 +251,7 @@ class PyUtils {
 
 	public run() {
 		if (fs.existsSync(PyUtils.ins._config.run)) {
-			PyUtils.ins.terminal.sendText("${workspaceFolder}/" + PyUtils.ins._config.run)
+			PyUtils.ins.terminal.sendText(PyUtils.ins.projectRoot + "/" + PyUtils.ins._config.run)
 		} else {
 			error("Cant find : ${workspaceFolder} " + PyUtils.ins._config.run)
 		}
@@ -259,9 +259,9 @@ class PyUtils {
 
 	public build() {
 		if (fs.existsSync(PyUtils.ins._config.build)) {
-			PyUtils.ins.terminal.sendText("${workspaceFolder}/" + PyUtils.ins._config.build)
+			PyUtils.ins.terminal.sendText(PyUtils.ins.projectRoot + "/" + PyUtils.ins._config.build)
 		} else {
-			error("Cant find : ${workspaceFolder} " + PyUtils.ins._config.build)
+			error(PyUtils.ins.projectRoot + "/" + PyUtils.ins._config.build)
 		}
 	}
 
@@ -269,7 +269,7 @@ class PyUtils {
 		if (fs.existsSync(PyUtils.ins._config.debug)) {
 			PyUtils.ins.terminal.sendText("${workspaceFolder}/" + PyUtils.ins._config.debug)
 		} else {
-			error("Cant find : ${workspaceFolder} " + PyUtils.ins._config.debug)
+			error(PyUtils.ins.projectRoot + "/" + PyUtils.ins._config.debug)
 		}
 	}
 
