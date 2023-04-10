@@ -1,4 +1,12 @@
-class Printer
+import { OutputChannel } from "vscode";
+
+class Printer {
+    constructor(channels: OutputChannel | undefined) {
+        channels?.array.forEach(element => {
+
+        });
+    }
+}
 
 declare var printer: Printer = Printer();
 
