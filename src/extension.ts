@@ -61,12 +61,16 @@ function getProperty<T, K extends keyof T>(obj: T, key: string): T[K] {
 	throw new Error(`Invalid object member "${key}"`);
 }
 
+class Printer {
+	public static outputChannels: vscode.OutputChannel[] = vscode.window.createOutputChannel();
+	public
+}
+
 
 class PyUtils {
-	public static _line_counter: number = 0;
 	private static _instance?: PyUtils;
 
-	private _dir?: string;
+	private ext_dir?: string;
 
 	//private _workspaceRoot?: string;
 	private _outputChannel?: vscode.OutputChannel;
