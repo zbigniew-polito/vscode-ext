@@ -10,8 +10,8 @@ class Printer {
     constructor() {
 
     }
-    public print(...args: any, channel: any | undefined) {
-        history[channel].
+    public print(...args: any, channel: string | undefined) {
+        this.history[channel].
     }
 }
 
