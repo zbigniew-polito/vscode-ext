@@ -1,6 +1,8 @@
 import { OutputChannel } from "vscode";
 
 class Printer {
+    public history[]: any[] =[];
+
     constructor() {
 
     }
