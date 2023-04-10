@@ -250,68 +250,65 @@ class PyUtils {
 		PyUtils.ins.loadConfig()
 	}
 
-	public exists(path: string): boolean {
+	public exists(path: string): any {
 		return fs.existsSync(path) || error("Cant find : " + path);
 	}
 
 	public run() {
 		//if (fs.existsSync(PyUtils.ins._config.run)) {
-
 		PyUtils.ins.exists(PyUtils.ins._config.run) & PyUtils.ins.terminal.sendText(PyUtils.ins.projectRoot + "/" + PyUtils.ins._config.run)
-	} else {
-	error("Cant find : " + PyUtils.ins.projectRoot + "/" + PyUtils.ins._config.run)
-}
+
 	}
 
 	public build() {
-	if (fs.existsSync(PyUtils.ins._config.build)) {
-		PyUtils.ins.terminal.sendText(PyUtils.ins.projectRoot + "/" + PyUtils.ins._config.build)
-	} else {
-		error(PyUtils.ins.projectRoot + "/" + PyUtils.ins._config.build)
+		if (fs.existsSync(PyUtils.ins._config.build)) {
+			PyUtils.ins.terminal.sendText(PyUtils.ins.projectRoot + "/" + PyUtils.ins._config.build)
+		} else {
+			error(PyUtils.ins.projectRoot + "/" + PyUtils.ins._config.build)
+		}
 	}
-}
 
 	public debug() {
-	if (fs.existsSync(PyUtils.ins._config.debug)) {
-		PyUtils.ins.terminal.sendText(PyUtils.ins.projectRoot + "/" + PyUtils.ins._config.debug)
-	} else {
-		error(PyUtils.ins.projectRoot + "/" + PyUtils.ins._config.debug)
+		if (fs.existsSync(PyUtils.ins._config.debug)) {
+			PyUtils.ins.terminal.sendText(PyUtils.ins.projectRoot + "/" + PyUtils.ins._config.debug)
+		} else {
+			error(PyUtils.ins.projectRoot + "/" + PyUtils.ins._config.debug)
+		}
 	}
-}
 
 	public workspace_onDidChangeWorkspaceFolders(event: vscode.WorkspaceFoldersChangeEvent) {
-	//print("onDidChangedWorkspaceFolders")
-	//print("On did changed workspace folders. Make terminal follow Editor. or create private terminal for every editor.");
-	//PyUtils.ins._current_workspaceRoot = (vscode.workspace.workspaceFolders && (vscode.workspace.workspaceFolders.length > 0)) ? vscode.workspace.workspaceFolders[0].uri.fsPath : undefined;
-	//print()
-}
-
-	public workspace_onDidSaveTextDocument(document: vscode.TextDocument) {
-	if (fs.existsSync("${workspaceFolder}/" + PyUtils.ins._config.callback)) {
-		PyUtils.ins.inTerm("${workspaceFolder}/" + PyUtils.ins._config['callback'] + " " + document.uri.fsPath)
-	} else {
-		error("Cant find : ${workspaceFolder} " + PyUtils.ins._config.build)
+		//print("onDidChangedWorkspaceFolders")
+		//print("On did changed workspace folders. Make terminal follow Editor. or create private terminal for every editor.");
+		//PyUtils.ins._current_workspaceRoot = (vscode.workspace.workspaceFolders && (vscode.workspace.workspaceFolders.length > 0)) ? vscode.workspace.workspaceFolders[0].uri.fsPath : undefined;
+		//print()
 	}
 
-}
+	public workspace_onDidSaveTextDocument(document: vscode.TextDocument) {
+		if (fs.existsSync("${workspaceFolder}/" + PyUtils.ins._config.callback)) {
+			PyUtils.ins.inTerm("${workspaceFolder}/" + PyUtils.ins._config['callback'] + " " + document.uri.fsPath)
+		} else {
+			error("Cant find : ${workspaceFolder} " + PyUtils.ins._config.build)
+		}
+
+	}
 
 
 
 	public window_onDidChangeActiveTextEditor(event: any) {
-	if (event.document.uri.scheme == "file") {
-		PyUtils.ins.terminal.show();
+		if (event.document.uri.scheme == "file") {
+			PyUtils.ins.terminal.show();
+		}
 	}
-}
 
 	public workspace_onDidCloseTextDocument(event: any) {
-	print(event)
+		print(event)
 
-}
+	}
 
 	public window_onDidChangeVisibleTextEditors(event: any) {
-	//print(event)
-	// close terminal when one terminal per editor
-}
+		//print(event)
+		// close terminal when one terminal per editor
+	}
 
 	//public _window_registerSidebarProvider(event: any) {
 	// const sidebarProvider = new SidebarProvider(context.extensionUri);
@@ -390,25 +387,25 @@ class PyUtils {
 
 
 	public window_onDidOpenTerminal(terminal: vscode.Terminal) {
-	//PyUtils.ins.terminal.sendText("echo 'onDidOpenTerminal >"+terminal.name+"<'");
-}
+		//PyUtils.ins.terminal.sendText("echo 'onDidOpenTerminal >"+terminal.name+"<'");
+	}
 
 	public window_onDidChangeTerminalState(event: any) {
-	//PyUtils.ins.terminal.sendText("echo 'onDidChangeTerminalState >"+(event?event.name:'undefined')+"<'");
-}
+		//PyUtils.ins.terminal.sendText("echo 'onDidChangeTerminalState >"+(event?event.name:'undefined')+"<'");
+	}
 
 	public window_onDidChangeActiveTerminal(terminal: vscode.Terminal) {
-	//PyUtils.ins.terminal.sendText("echo 'onDidChangeActiveTerminal >"+terminal.name+"<'");
-}
+		//PyUtils.ins.terminal.sendText("echo 'onDidChangeActiveTerminal >"+terminal.name+"<'");
+	}
 
 	public window_onDidCloseTerminal(terminal: vscode.Terminal) {
-	//PyUtils.ins.terminal.sendText("echo 'onDidCloseTerminal >"+terminal.name+"<'");
-}
+		//PyUtils.ins.terminal.sendText("echo 'onDidCloseTerminal >"+terminal.name+"<'");
+	}
 
 	public inTerm(cmd: string): void {
-	print(cmd);
+		print(cmd);
 		PyUtils.ins.terminal.sendText(cmd);
-}
+	}
 
 	// inkpaint
 	// https://dbanks.design/blog/vs-code-theme-with-style-dictionary/
@@ -417,24 +414,24 @@ class PyUtils {
 	// One per Workspace
 
 	public get terminal(): vscode.Terminal {
-	var terminal = null;
-	for (var it = 0; it < vscode.window.terminals.length; it++) {
-		if (vscode.window.terminals[it].name === vscode.workspace.name) {
-			terminal = vscode.window.terminals[it];
-			break;
+		var terminal = null;
+		for (var it = 0; it < vscode.window.terminals.length; it++) {
+			if (vscode.window.terminals[it].name === vscode.workspace.name) {
+				terminal = vscode.window.terminals[it];
+				break;
+			}
 		}
-	}
 
-	var options = {
-		shellpath: "$workspaceFolder",
-		name: vscode.workspace.name,
-		location: vscode.TerminalLocation.Panel,
-	}
+		var options = {
+			shellpath: "$workspaceFolder",
+			name: vscode.workspace.name,
+			location: vscode.TerminalLocation.Panel,
+		}
 
-	terminal = terminal || vscode.window.createTerminal(options);
-	terminal.show();
-	return terminal;
-}
+		terminal = terminal || vscode.window.createTerminal(options);
+		terminal.show();
+		return terminal;
+	}
 }
 
 module.exports = PyUtils.ins
