@@ -3,4 +3,4 @@ class Printer
 declare var printer: Printer = Printer();
 
 
-module.exports = Printer
+module.exports = printer

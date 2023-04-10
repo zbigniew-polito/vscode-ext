@@ -6,20 +6,6 @@ import * as path from 'path';
 import { SidebarProvider } from './views/SidebarProvider';
 import { KeyObject } from 'crypto';
 
-/*
-export module String {
-	static exec(s: String): void {
-		PyUtils.ins.terminal.sendText((s as string));
-	}
-}
-
-let t: String = "test";
-let w: string = "test";
-
-w.exec();
-t.exec();
-*/
-
 
 
 // Object.assign(global, nvk);
@@ -415,4 +401,4 @@ class PyUtils {
 	}
 }
 
-declare var printer: Printer; = PyUtils.ins
+module.exports = PyUtils.ins
