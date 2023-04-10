@@ -260,19 +260,15 @@ class PyUtils {
 	}
 
 	public build() {
-		if (fs.existsSync(PyUtils.ins._config.build)) {
-			PyUtils.ins.terminal.sendText(PyUtils.ins.projectRoot + "/" + PyUtils.ins._config.build)
-		} else {
-			error(PyUtils.ins.projectRoot + "/" + PyUtils.ins._config.build)
-		}
+		PyUtils.ins.exists(PyUtils.ins._config.build)
+			&& PyUtils.ins.terminal.sendText(PyUtils.ins.projectRoot + "/" + PyUtils.ins._config.build)
+
 	}
 
 	public debug() {
-		if (fs.existsSync(PyUtils.ins._config.debug)) {
-			PyUtils.ins.terminal.sendText(PyUtils.ins.projectRoot + "/" + PyUtils.ins._config.debug)
-		} else {
-			error(PyUtils.ins.projectRoot + "/" + PyUtils.ins._config.debug)
-		}
+		PyUtils.ins.exists(PyUtils.ins._config.debug)
+			&& PyUtils.ins.terminal.sendText(PyUtils.ins.projectRoot + "/" + PyUtils.ins._config.debug)
+
 	}
 
 	public workspace_onDidChangeWorkspaceFolders(event: vscode.WorkspaceFoldersChangeEvent) {
