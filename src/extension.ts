@@ -116,17 +116,21 @@ class PyUtils {
 		//vscode.workspace.getWorkspaceFolder()
 		//vscode.workspace.workspaceFolders
 		//vscode.workspace.workspaceFolders && (vscode.workspace.workspaceFolders.length > 0)) ?vscode.workspace.workspaceFolders[0].uri.fsPath
-		(vscode.workspace.workspaceFolders ?? [
-			{
-				uri: vscode.Uri.file(process.cwd()),
-				name: path.basename(process.cwd()),
-				index: 0,
-			}
-		]).sort(
-			(a: vscode.WorkspaceFolder, b: vscode.WorkspaceFolder): number => {
-				return a.uri.fsPath.length >= b.uri.fsPath.length ? 1 : -1;
-			}
-		)
+		(vscode.workspace.workspaceFolders?.filter((value) => {
+
+		}) ?? [
+				{
+					uri: vscode.Uri.file(process.cwd()),
+					name: path.basename(process.cwd()),
+					index: 0,
+				}
+			])
+
+			//.sort(
+			//	(a: vscode.WorkspaceFolder, b: vscode.WorkspaceFolder): number => {
+			//		return a.uri.fsPath.length >= b.uri.fsPath.length ? 1 : -1;
+			//	}
+			//)
 
 
 			.forEach((w, index,/*array*/) => {
