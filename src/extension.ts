@@ -255,18 +255,18 @@ class PyUtils {
 	}
 
 	public run() {
-		PyUtils.ins.exists(PyUtils.ins._config.run)
+		PyUtils.ins.existsInProject(PyUtils.ins._config.run)
 			&& PyUtils.ins.terminal.sendText(PyUtils.ins.projectRoot + "/" + PyUtils.ins._config.run)
 	}
 
 	public build() {
-		PyUtils.ins.exists(PyUtils.ins._config.build)
+		PyUtils.ins.existsInProject(PyUtils.ins._config.build)
 			&& PyUtils.ins.terminal.sendText(PyUtils.ins.projectRoot + "/" + PyUtils.ins._config.build)
 
 	}
 
 	public debug() {
-		PyUtils.ins.exists(PyUtils.ins._config.debug)
+		PyUtils.ins.existsInProject(PyUtils.ins._config.debug)
 			&& PyUtils.ins.terminal.sendText(PyUtils.ins.projectRoot + "/" + PyUtils.ins._config.debug)
 	}
 
@@ -274,7 +274,9 @@ class PyUtils {
 	}
 
 	public workspace_onDidSaveTextDocument(document: vscode.TextDocument) {
-		if (PyUtils.ins.exists(PyUtils.ins._config.callback + "/" + PyUtils.ins._config.callback)) {
+		PyUtils.ins.existsInProject(PyUtils.ins._config.callback)
+			&& PyUtils.ins.inTerm(PyUtils.ins.projectRoot + "/" + PyUtils.ins._config['callback'] + " " + document.uri.fsPath)
+		if (PyUtils.ins.existsInProject(PyUtils.ins._config.callback + "/" + PyUtils.ins._config.callback)) {
 			PyUtils.ins.inTerm("${workspaceFolder}/" + PyUtils.ins._config['callback'] + " " + document.uri.fsPath)
 		} else {
 			error("Cant find : ${workspaceFolder} " + PyUtils.ins._config.build)
