@@ -7,15 +7,15 @@ const pjson = require('../package.json');
 
 class Printer {
     public history: Map<string | undefined, (string | object)[]> = new Map<string, (string | object)[]>();
-    public channels: Map<string, OutputChannel> = new Map<string, OutputChannel>();
+    public channels: Map<string | undefined, OutputChannel> = new Map<string, OutputChannel>();
 
     constructor() {
 
     }
 
     public print(...args: any, channel: string | undefined) {
-        channel = channel ?? pjson['displayName']
-        let chan: OutputChannel = this.channels.get(channel ?? "default") ?? this.channels.set(channel ?? "default", window.createOutputChannel(channel ?? "default"));
+        channel = channel ?? pjson['displayName'];
+        let chan: OutputChannel = this.channels.get(channel) ?? this.channels.set(channel ?? "default", window.createOutputChannel(channel ?? "default"));
 
         this.history.get(channel) ??
             this.history.set(channel, window.createOutputChannel(channel, "js"))
