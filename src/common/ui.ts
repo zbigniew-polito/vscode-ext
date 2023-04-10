@@ -1,5 +1,5 @@
 import * as vscode from 'vscode';
-import * from "./printer"
+import * as printer from "./printer"
 
 function success(msg: any) {
     print(msg)
@@ -12,6 +12,3 @@ function error(msg: any) {
     vscode.window.showErrorMessage(msg);
     return false;
 }
-
-
-declare var printer: Printer;
