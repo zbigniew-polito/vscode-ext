@@ -10,7 +10,7 @@ import print, * as printer from "./common/printer";
 
 import { success, error } from "./common/ui";
 
-import {getProperty} from "./common/objects";
+import { getProperty } from "./common/objects";
 
 // Object.assign(global, nvk);
 const pjson = require("../package.json");
@@ -45,7 +45,7 @@ function getProperty<T, K extends keyof T>(obj: T, key: string): T[K] {
 	throw new Error(`Invalid object member "${key}"`);
 }
 
-*?
+*/
 class PyUtils {
 	private static _instance?: PyUtils;
 
