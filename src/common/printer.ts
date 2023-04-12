@@ -15,7 +15,10 @@ class Printer {
 		OutputChannel
 	>();
 
-	constructor() {}
+	constructor() {
+		print("Hello.");
+		__dirname;
+	}
 
 	public print(args: string | [any], channel?: string) {
 		let name: string = pjson["displayName"];
