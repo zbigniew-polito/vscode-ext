@@ -50,7 +50,7 @@ class Printer {
 							this.channels
 								.set(name, window.createOutputChannel(name))
 								.get(name);
-						chan?.appendLine(JSON.stringify(args));
+						chan?.appendLine(JSON.stringify(args, null, 2));
 					}
 				});
 			});
