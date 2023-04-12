@@ -13,7 +13,7 @@ function error(msg: any) {
 	return false;
 }
 
-
-module exports = {
-    success,error
-}
+module.exports = {
+	success,
+	error,
+};
