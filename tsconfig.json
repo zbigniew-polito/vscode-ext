@@ -7,21 +7,21 @@
 		"rootDir": "src",
 		"strict": true /* enable all strict type-checking options */,
 		/* Additional Checks */
-		 "noImplicitReturns": true, /* Report error when not all code paths in function return a value. */
-		 "noFallthroughCasesInSwitch": true, /* Report errors for fallthrough cases in switch statement. */
-		 "noUnusedParameters": true,  /* Report errors on unused parameters. */
+		"noImplicitReturns": true /* Report error when not all code paths in function return a value. */,
+		"noFallthroughCasesInSwitch": true /* Report errors for fallthrough cases in switch statement. */,
+		"noUnusedParameters": true /* Report errors on unused parameters. */,
 		"resolveJsonModule": true,
 		"esModuleInterop": true,
 		"extendedDiagnostics": true,
 		"declaration": true,
 		"declarationDir": "declarationMaps",
-		"declarationMap": true,
-
-		""
+		"declarationMap": true
 	},
 	"buildOptions": {},
 	"compileOnSave": true,
 	"exclude": [],
 	"files": [],
-	""
+	"ts-node": {},
+	"typeAcquisition": {},
+	"watchOptions": {}
 }
