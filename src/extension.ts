@@ -287,9 +287,11 @@ class PyUtils {
 			);
 	}
 
+	/*
 	public workspace_onDidChangeWorkspaceFolders(
 		event: vscode.WorkspaceFoldersChangeEvent
 	) {}
+	*/
 
 	public workspace_onDidSaveTextDocument(document: vscode.TextDocument) {
 		PyUtils.ins.existsInProject(PyUtils.ins._config.callback) &&
