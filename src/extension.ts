@@ -234,6 +234,7 @@ class PyUtils {
 		PyUtils.ins._context?.globalState.update("isEnabled", value);
 	}
 
+	/*
 	public printToOutputChannel(message: string) {
 		PyUtils.ins._outputChannel?.appendLine(
 			" ".repeat(PyUtils._line_counter.toString().length - 1) +
@@ -243,6 +244,7 @@ class PyUtils {
 		);
 		PyUtils._line_counter++;
 	}
+	*/
 
 	public showStatusMessage(message: string): vscode.Disposable {
 		print(message);
@@ -250,7 +252,7 @@ class PyUtils {
 	}
 
 	public workspace_onDidChangeConfiguration() {
-		PyUtils.ins.loadConfig();
+		//PyUtils.ins.loadConfig();
 	}
 
 	public existsInProject(path: string): boolean {
