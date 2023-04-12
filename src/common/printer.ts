@@ -17,7 +17,6 @@ class Printer {
 
 	constructor() {
 		print("*" + __filename + "/" + __dirname);
-		print(process);
 	}
 
 	public print(args: string | [any], channel?: string) {
