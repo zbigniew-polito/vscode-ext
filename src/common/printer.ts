@@ -36,7 +36,7 @@ class Printer {
 		
 			chan = chan?this.channels.get(name);
 
-		chan?.appendLine(JSON.stringify(args));
+		chan?.appendLine(JSON.stringify(args,null,2));
 
 		if (typeof args !== "string") {
 			let types: Set<any> = new Set();
