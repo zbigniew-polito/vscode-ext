@@ -217,12 +217,12 @@ class PyUtils {
 
 	public create(): void {
 		// make a skel boundled with package and copy it
-		if (!(PyUtils.ins._dir ? fs.existsSync(PyUtils.ins._dir) : false)) {
-			PyUtils.ins._dir
-				? fs.mkdir(PyUtils.ins._dir, { recursive: false }, (err) => {
+		if (!(PyUtils.ins.ext_dir ? fs.existsSync(PyUtils.ins.ext_dir) : false)) {
+			PyUtils.ins.ext_dir
+				? fs.mkdir(PyUtils.ins.ext_dir, { recursive: false }, (err) => {
 						error(err);
 				  })
-				: error("_dir creation error");
+				: error("ext_dir creation error");
 		}
 	}
 
