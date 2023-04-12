@@ -17,11 +17,8 @@
 		"declarationDir": "declarationMaps",
 		"declarationMap": true
 	},
-	"buildOptions": {},
+
 	"compileOnSave": true,
-	"exclude": [],
-	"ts-node": {},
-	"typeAcquisition": {},
 	"watchOptions": {
 		"watchFile": "useFsEvents",
 		"watchDirectory": "useFsEvents",
