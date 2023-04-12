@@ -10,12 +10,15 @@ import print, * as printer from "./common/printer";
 
 import { success, error } from "./common/ui";
 
+import {getProperty} from "./common/objects";
+
 // Object.assign(global, nvk);
 const pjson = require("../package.json");
 
 interface StringByString {
 	[key: string]: string;
 }
+
 /*
 function print(msg: string | any) {
 	if (typeof msg === "string") {
@@ -34,7 +37,7 @@ function print(msg: string | any) {
 	add git besides terminal and output
 
 */
-
+/*
 function getProperty<T, K extends keyof T>(obj: T, key: string): T[K] {
 	if (key in obj) {
 		return obj[key as K];
@@ -42,6 +45,7 @@ function getProperty<T, K extends keyof T>(obj: T, key: string): T[K] {
 	throw new Error(`Invalid object member "${key}"`);
 }
 
+*?
 class PyUtils {
 	private static _instance?: PyUtils;
 
