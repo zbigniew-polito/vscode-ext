@@ -29,6 +29,8 @@ function print(msg: string | any) {
 	Ekran z katalogiem builda
 	i roznicami z ostatnim buildem na podstawie gita
 
+	add git besides terminal and output
+
 */
 
 function getProperty<T, K extends keyof T>(obj: T, key: string): T[K] {
