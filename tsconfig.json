@@ -13,9 +13,9 @@
 		"resolveJsonModule": true,
 		"esModuleInterop": true,
 		"extendedDiagnostics": true,
-		"declaration": true,
-		"declarationDir": "declarationMaps",
-		"declarationMap": true
+		"declaration": true
+		// "declarationDir": "declarationMaps",
+		// "declarationMap": true
 	},
 
 	"compileOnSave": true,

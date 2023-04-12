@@ -59,11 +59,11 @@ export class SidebarProvider implements vscode.WebviewViewProvider {
 	}
 
 	public revive(panel: vscode.WebviewView) {
-		this._view = panel;
+		//this._view = panel;
 	}
 
-	private _getHtmlForWebview(webview: vscode.Webview) {
-		/*
+	//private _getHtmlForWebview(webview: vscode.Webview) {
+	/*
         const styleResetUri = webview.asWebviewUri(
             vscode.Uri.joinPath(this._extensionUri, "media", "reset.css")
         );
@@ -105,5 +105,5 @@ export class SidebarProvider implements vscode.WebviewViewProvider {
                     </body>
                     </html>`;
                     */
-	}
+	//}
 }
