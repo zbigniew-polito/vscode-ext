@@ -6,6 +6,8 @@ import * as path from "path";
 import { SidebarProvider } from "./views/SidebarProvider";
 import { KeyObject } from "crypto";
 
+import * as printer from "./common/printer";
+
 // Object.assign(global, nvk);
 const pjson = require("../package.json");
 
@@ -48,7 +50,7 @@ class PyUtils {
 
 	// const sidebarProvider = new SidebarProvider(context.extensionUri);
 
-	public _config: StringByString = {};
+	//public _config: StringByString = {};
 
 	private constructor() {
 		if (PyUtils._instance) {
