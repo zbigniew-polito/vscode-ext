@@ -189,8 +189,8 @@ class PyUtils {
 		success(PyUtils.ins.name + " deactivated succesfully. // TODO");
 	}
 
-	public get config(): StringByString {
-		vscode.workspace.getConfiguration()?.get("pyutils");
+	public get _config(): StringByString {
+		return vscode.workspace.getConfiguration()?.get("pyutils");
 	}
 	public loadConfig(): void {
 		var config: { [index: string]: any } | undefined = vscode.workspace
