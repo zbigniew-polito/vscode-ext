@@ -201,8 +201,10 @@ class PyUtils {
 	}
 
 	public get _config(): StringByString {
-		return vscode.workspace.getConfiguration()?.get("pyutils");
+		return vscode.workspace.getConfiguration()?.get("pyutils") ?? {};
 	}
+
+	/*
 	public loadConfig(): void {
 		var config: { [index: string]: any } | undefined = vscode.workspace
 			.getConfiguration()
@@ -211,6 +213,7 @@ class PyUtils {
 			PyUtils.ins._config[key] = config[key];
 		}
 	}
+	*/
 
 	public create(): void {
 		// make a skel boundled with package and copy it
