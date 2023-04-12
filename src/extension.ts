@@ -8,7 +8,7 @@ import { KeyObject } from "crypto";
 
 import print, * as printer from "./common/printer";
 
-import success,error* as ui from "./common/ui";
+import { success, error } from "./common/ui";
 
 // Object.assign(global, nvk);
 const pjson = require("../package.json");
