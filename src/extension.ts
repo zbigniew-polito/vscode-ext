@@ -6,7 +6,7 @@ import * as path from "path";
 import { SidebarProvider } from "./views/SidebarProvider";
 import { KeyObject } from "crypto";
 
-import * as printer from "./common/printer";
+import print, * as printer from "./common/printer";
 
 // Object.assign(global, nvk);
 const pjson = require("../package.json");
