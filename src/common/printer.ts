@@ -1,7 +1,6 @@
-import { TLSSocket } from "tls";
 import { OutputChannel, window } from "vscode";
 
-const pjson = require("../package.json");
+const pjson = require("../../package.json");
 
 //const dictionary: Record<string, string> = {};
 //const dictionary = new Map<string, string>();
