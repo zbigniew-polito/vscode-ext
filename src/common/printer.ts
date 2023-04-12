@@ -16,7 +16,12 @@ class Printer {
 	>();
 
 	constructor() {
-		print("*" + __filename + "/" + __dirname);
+		this.print("*" + __filename + "/" + __dirname);
+		/*
+            NodeRequire
+            NodeResolve
+
+        */
 	}
 
 	public print(args: string | [any], channel?: string) {
