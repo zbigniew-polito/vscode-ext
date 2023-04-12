@@ -63,7 +63,7 @@ class PyUtils {
 		);
 		*/
 
-		PyUtils.ins.loadConfig();
+		//PyUtils.ins.loadConfig();
 	}
 
 	static get ins() {
