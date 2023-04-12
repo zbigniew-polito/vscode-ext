@@ -17,10 +17,14 @@ class Printer {
 
 	constructor() {
 		this.print("*" + __filename + "/" + __dirname);
+		//process.
 		/*
             NodeRequire
             NodeResolve
+            NodeModule
 
+            process
+            console
         */
 	}
 
