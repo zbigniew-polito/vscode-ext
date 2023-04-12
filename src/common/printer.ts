@@ -10,7 +10,7 @@ class Printer {
 		string,
 		(string | object)[]
 	>();
-	public channels: Map<string | undefined, OutputChannel> = new Map<
+	public channels: Map<string, OutputChannel> = new Map<
 		string,
 		OutputChannel
 	>();
