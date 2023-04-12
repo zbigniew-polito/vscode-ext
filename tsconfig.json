@@ -24,8 +24,8 @@
 	"ts-node": {},
 	"typeAcquisition": {},
 	"watchOptions": {
-		//"watchFile": "useFsEvents",
-		"watchDirectory": "src",
+		"watchFile": "useFsEvents",
+		"watchDirectory": "useFsEvents",
 		// Poll files for updates more frequently
 		// when they're updated a lot.
 		"fallbackPolling": "dynamicPriority",
