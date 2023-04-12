@@ -56,10 +56,12 @@ class PyUtils {
 		}
 
 		PyUtils._instance = this;
+		/*
 		PyUtils.ins._outputChannel = vscode.window.createOutputChannel(
 			"PyUtils",
 			"js"
 		);
+		*/
 
 		PyUtils.ins.loadConfig();
 	}
