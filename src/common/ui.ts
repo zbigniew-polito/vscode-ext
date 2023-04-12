@@ -18,7 +18,8 @@ module.exports = {
 	error,
 };
 
-export default {
+
+exports default {
 	success,
 	error,
 };
