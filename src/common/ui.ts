@@ -12,14 +12,14 @@ function error(msg: any) {
 	vscode.window.showErrorMessage(msg);
 	return false;
 }
-
+/*
 module.exports = {
 	success,
 	error,
 };
+*?
 
-
-exports default {
+exports = {
 	success,
 	error,
 };
