@@ -123,8 +123,8 @@ class PyUtils {
 			ret = rootWorkspace;
 		}
 
-		print("Project Root " + ret);
-		return ret;
+		print("Project Root " + ret.uri.fsPath);
+		return ret.uri.fsPath;
 	}
 
 	get ext_dir() {
