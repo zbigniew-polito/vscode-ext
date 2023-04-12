@@ -33,10 +33,10 @@ class Printer {
 		let chan: OutputChannel | undefined =
 			this.channels.get(name) ??
 			this.channels.set(name, window.createOutputChannel(name));
-		
-			chan = chan?this.channels.get(name);
 
-		chan?.appendLine(JSON.stringify(args,null,2));
+		chan = chan ?? this.channels.get(name);
+
+		chan?.appendLine(JSON.stringify(args, null, 2));
 
 		if (typeof args !== "string") {
 			let types: Set<any> = new Set();
