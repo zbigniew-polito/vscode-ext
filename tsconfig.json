@@ -12,6 +12,11 @@
 		// "noUnusedParameters": true,  /* Report errors on unused parameters. */
 		"resolveJsonModule": true,
 		"esModuleInterop": true,
-		"stats.errorDetails:": true
+		"extendedDiagnostics": true,
+		"declaration": true,
+		"declarationDir": "declarationMaps",
+		"declarationMap": true,
+
+		""
 	}
 }
