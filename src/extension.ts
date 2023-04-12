@@ -1,38 +1,33 @@
-import * as vscode from 'vscode';
+import * as vscode from "vscode";
 import * as fs from "fs";
 //import * as fs from "fs-extra";
-import * as path from 'path';
+import * as path from "path";
 
-import { SidebarProvider } from './views/SidebarProvider';
-import { KeyObject } from 'crypto';
-
-
+import { SidebarProvider } from "./views/SidebarProvider";
+import { KeyObject } from "crypto";
 
 // Object.assign(global, nvk);
-const pjson = require('../package.json');
-
-
-
+const pjson = require("../package.json");
 
 interface StringByString {
 	[key: string]: string;
 }
-
-
+/*
 function print(msg: string | any) {
-	if (typeof msg === 'string') {
+	if (typeof msg === "string") {
 		PyUtils.ins.printToOutputChannel(msg);
-	}
-	else {
+	} else {
 		//if (PyUtils.ins._config["verbose"] == "true") {
 		//	PyUtils.ins.printToOutputChannel(JSON.stringify(msg, null, 2));
 		//}
 	}
-
 }
+*/
 
 function getProperty<T, K extends keyof T>(obj: T, key: string): T[K] {
-	if (key in obj) { return obj[key as K]; }
+	if (key in obj) {
+		return obj[key as K];
+	}
 	throw new Error(`Invalid object member "${key}"`);
 }
 
@@ -41,10 +36,8 @@ class PyUtils {
 
 	private _context?: vscode.ExtensionContext;
 
-
 	//https://github.com/microsoft/vscode-extension-samples/blob/main/webview-view-sample/src/extension.ts
 	//https://code.visualstudio.com/api/references/icons-in-labels
-
 
 	private diary?: SidebarProvider;
 	private wave?: SidebarProvider;
@@ -53,22 +46,22 @@ class PyUtils {
 	private localdoc?: SidebarProvider;
 	private unicode?: SidebarProvider;
 
-
 	// const sidebarProvider = new SidebarProvider(context.extensionUri);
-
 
 	public _config: StringByString = {};
 
 	private constructor() {
 		if (PyUtils._instance) {
 			throw new Error("Use Singleton.instance instead of new.");
-		};
+		}
 
 		PyUtils._instance = this;
-		PyUtils.ins._outputChannel = vscode.window.createOutputChannel("PyUtils", "js");
+		PyUtils.ins._outputChannel = vscode.window.createOutputChannel(
+			"PyUtils",
+			"js"
+		);
 
 		PyUtils.ins.loadConfig();
-
 	}
 
 	static get ins() {
@@ -76,8 +69,9 @@ class PyUtils {
 	}
 
 	get projectRoot() {
-		const workspaces: readonly vscode.WorkspaceFolder[] = vscode.workspace.workspaceFolders ?? [];
-		let ret: vscode.WorkspaceFolder | undefined = undefined
+		const workspaces: readonly vscode.WorkspaceFolder[] =
+			vscode.workspace.workspaceFolders ?? [];
+		let ret: vscode.WorkspaceFolder | undefined = undefined;
 
 		if (workspaces.length === 0) {
 			ret = {
@@ -100,7 +94,11 @@ class PyUtils {
 			}
 
 			for (const w of workspaces) {
-				if (root && root.length > w.uri.fsPath.length && (fs.existsSync(w.uri.fsPath))) {
+				if (
+					root &&
+					root.length > w.uri.fsPath.length &&
+					fs.existsSync(w.uri.fsPath)
+				) {
 					root = w.uri.fsPath;
 					rootWorkspace = w;
 				}
@@ -113,21 +111,20 @@ class PyUtils {
 	}
 
 	get ext_dir() {
-		return PyUtils.ins.projectRoot + "/." + PyUtils.ins.name.toLocaleLowerCase();
+		return (
+			PyUtils.ins.projectRoot + "/." + PyUtils.ins.name.toLocaleLowerCase()
+		);
 	}
 
 	get name() {
 		//resolveCliArgsFromVSCodeExecutablePath
-		return pjson['displayName'];
+		return pjson["displayName"];
 		// got obfuscated
 		// return PyUtils.ins.constructor.name
 	}
 
-
 	public activate(context: vscode.ExtensionContext) {
-
 		PyUtils.ins._context = context;
-
 
 		let methods = Reflect.ownKeys(PyUtils.prototype);
 
@@ -135,45 +132,55 @@ class PyUtils {
 			try {
 				terminal.dispose();
 			} catch (error: any) {
-				error("Terminal disposition error.")
+				error("Terminal disposition error.");
 			}
-		})
+		});
 
 		for (var method of methods) {
 			const __method = method;
 			if (method.toString().startsWith("workspace_")) {
 				let _workspace = getProperty(vscode, "workspace");
-				let _method = method.toString().split("_")[1]
-				const __target: Function = getProperty(PyUtils.ins, method.toString()) as any;
+				let _method = method.toString().split("_")[1];
+				const __target: Function = getProperty(
+					PyUtils.ins,
+					method.toString()
+				) as any;
 				let _call: Function = getProperty(_workspace, _method.toString());
 
-				context.subscriptions.push(_call((arg: any) => {
-					print(__method.toString());
-					print(arg);
-					__target(arg);
-				}));
+				context.subscriptions.push(
+					_call((arg: any) => {
+						print(__method.toString());
+						print(arg);
+						__target(arg);
+					})
+				);
 				print("Registered callback vscode." + method.toString());
-			}
-			else if (method.toString().startsWith("window_")) {
+			} else if (method.toString().startsWith("window_")) {
 				let _window = getProperty(vscode, "window");
-				let _method = method.toString().split("_")[1]
-				const __target: Function = getProperty(PyUtils.ins, method.toString()) as any;
+				let _method = method.toString().split("_")[1];
+				const __target: Function = getProperty(
+					PyUtils.ins,
+					method.toString()
+				) as any;
 				let _call: Function = getProperty(_window, _method.toString());
-				context.subscriptions.push(_call((arg: any) => {
-					print(__method.toString())
-					print(arg);
-					__target(arg);
-				}))
+				context.subscriptions.push(
+					_call((arg: any) => {
+						print(__method.toString());
+						print(arg);
+						__target(arg);
+					})
+				);
 				print("Registered callback vscode." + method.toString());
 			}
 		}
 
 		PyUtils.ins.isEnabled = true;
 
-		success(PyUtils.ins.name + " activated succesfully in " + PyUtils.ins.projectRoot);
+		success(
+			PyUtils.ins.name + " activated succesfully in " + PyUtils.ins.projectRoot
+		);
 
-		PyUtils.ins.create()
-
+		PyUtils.ins.create();
 	}
 
 	public deactivate() {
@@ -181,10 +188,12 @@ class PyUtils {
 	}
 
 	public get config(): StringByString {
-		vscode.workspace.getConfiguration()?.get(pjson.)
+		vscode.workspace.getConfiguration()?.get("pyutils");
 	}
 	public loadConfig(): void {
-		var config: { [index: string]: any } | undefined = vscode.workspace.getConfiguration()?.get('pyutils');
+		var config: { [index: string]: any } | undefined = vscode.workspace
+			.getConfiguration()
+			?.get("pyutils");
 		for (let key in config) {
 			PyUtils.ins._config[key] = config[key];
 		}
@@ -193,23 +202,29 @@ class PyUtils {
 	public create(): void {
 		// make a skel boundled with package and copy it
 		if (!(PyUtils.ins._dir ? fs.existsSync(PyUtils.ins._dir) : false)) {
-			PyUtils.ins._dir ? fs.mkdir(PyUtils.ins._dir, { recursive: false }, (err) => {
-				error(err);
-			}) : error("_dir creation error")
+			PyUtils.ins._dir
+				? fs.mkdir(PyUtils.ins._dir, { recursive: false }, (err) => {
+						error(err);
+				  })
+				: error("_dir creation error");
 		}
 	}
 
-
 	public get isEnabled(): boolean {
-		return !!PyUtils.ins._context?.globalState.get('isEnabled', true);
+		return !!PyUtils.ins._context?.globalState.get("isEnabled", true);
 	}
 
 	public set isEnabled(value: boolean) {
-		PyUtils.ins._context?.globalState.update('isEnabled', value);
+		PyUtils.ins._context?.globalState.update("isEnabled", value);
 	}
 
 	public printToOutputChannel(message: string) {
-		PyUtils.ins._outputChannel?.appendLine((" ".repeat(PyUtils._line_counter.toString().length - 1)) + PyUtils._line_counter.toString().length + " : " + message);
+		PyUtils.ins._outputChannel?.appendLine(
+			" ".repeat(PyUtils._line_counter.toString().length - 1) +
+				PyUtils._line_counter.toString().length +
+				" : " +
+				message
+		);
 		PyUtils._line_counter++;
 	}
 
@@ -219,35 +234,50 @@ class PyUtils {
 	}
 
 	public workspace_onDidChangeConfiguration() {
-		PyUtils.ins.loadConfig()
+		PyUtils.ins.loadConfig();
 	}
 
 	public existsInProject(path: string): boolean {
-		return fs.existsSync(PyUtils.ins.projectRoot + "/" + path) || error("Cant find : " + path);
+		return (
+			fs.existsSync(PyUtils.ins.projectRoot + "/" + path) ||
+			error("Cant find : " + path)
+		);
 	}
 
 	public run() {
-		PyUtils.ins.existsInProject(PyUtils.ins._config.run)
-			&& PyUtils.ins.terminal.sendText(PyUtils.ins.projectRoot + "/" + PyUtils.ins._config.run)
+		PyUtils.ins.existsInProject(PyUtils.ins._config.run) &&
+			PyUtils.ins.terminal.sendText(
+				PyUtils.ins.projectRoot + "/" + PyUtils.ins._config.run
+			);
 	}
 
 	public build() {
-		PyUtils.ins.existsInProject(PyUtils.ins._config.build)
-			&& PyUtils.ins.terminal.sendText(PyUtils.ins.projectRoot + "/" + PyUtils.ins._config.build)
-
+		PyUtils.ins.existsInProject(PyUtils.ins._config.build) &&
+			PyUtils.ins.terminal.sendText(
+				PyUtils.ins.projectRoot + "/" + PyUtils.ins._config.build
+			);
 	}
 
 	public debug() {
-		PyUtils.ins.existsInProject(PyUtils.ins._config.debug)
-			&& PyUtils.ins.terminal.sendText(PyUtils.ins.projectRoot + "/" + PyUtils.ins._config.debug)
+		PyUtils.ins.existsInProject(PyUtils.ins._config.debug) &&
+			PyUtils.ins.terminal.sendText(
+				PyUtils.ins.projectRoot + "/" + PyUtils.ins._config.debug
+			);
 	}
 
-	public workspace_onDidChangeWorkspaceFolders(event: vscode.WorkspaceFoldersChangeEvent) {
-	}
+	public workspace_onDidChangeWorkspaceFolders(
+		event: vscode.WorkspaceFoldersChangeEvent
+	) {}
 
 	public workspace_onDidSaveTextDocument(document: vscode.TextDocument) {
-		PyUtils.ins.existsInProject(PyUtils.ins._config.callback)
-			&& PyUtils.ins.inTerm(PyUtils.ins.projectRoot + "/" + PyUtils.ins._config['callback'] + " " + document.uri.fsPath)
+		PyUtils.ins.existsInProject(PyUtils.ins._config.callback) &&
+			PyUtils.ins.inTerm(
+				PyUtils.ins.projectRoot +
+					"/" +
+					PyUtils.ins._config["callback"] +
+					" " +
+					document.uri.fsPath
+			);
 	}
 
 	public window_onDidChangeActiveTextEditor(event: any) {
@@ -257,8 +287,7 @@ class PyUtils {
 	}
 
 	public workspace_onDidCloseTextDocument(event: any) {
-		print(event)
-
+		print(event);
 	}
 
 	public window_onDidChangeVisibleTextEditors(event: any) {
@@ -302,14 +331,7 @@ class PyUtils {
 	
 */
 
-
-
-
-
-
-
 	//}
-
 
 	/*
 
@@ -333,14 +355,10 @@ class PyUtils {
 
 	*/
 
-
 	// secondary sidebar
 	// classes and objects
 	// classes and objects
 	// graphs
-
-
-
 
 	public window_onDidOpenTerminal(terminal: vscode.Terminal) {
 		//PyUtils.ins.terminal.sendText("echo 'onDidOpenTerminal >"+terminal.name+"<'");
@@ -382,7 +400,7 @@ class PyUtils {
 			shellpath: "$workspaceFolder",
 			name: vscode.workspace.name,
 			location: vscode.TerminalLocation.Panel,
-		}
+		};
 
 		terminal = terminal || vscode.window.createTerminal(options);
 		terminal.show();
@@ -390,4 +408,4 @@ class PyUtils {
 	}
 }
 
-module.exports = PyUtils.ins
+module.exports = PyUtils.ins;
