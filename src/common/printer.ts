@@ -28,7 +28,10 @@ class Printer {
 
 	public getChannel(name: string) {
 		let c = this.channels.get(name);
-
+		if (c === undefined) {
+			c = window.createOutputChannel(name);
+			this.channels.set(name, c);
+		}
 		// if(this.channels.has(name)){
 		// 	return this.channels.
 		//}
