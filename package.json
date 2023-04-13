@@ -35,6 +35,61 @@
 				}
 			]
 		},
+		"customEditors": [
+			{
+			  "viewType": "pyutils.polyglot",
+			  "displayName": "polyglot",
+			  "selector": [
+				{
+				  "filenamePattern": "*.pg"
+				}
+			  ],
+			  "priority": "default"
+			},
+			{
+				"viewType": "pyutils.polyglot",
+				"displayName": "polyglot",
+				"selector": [
+				  {
+					"filenamePattern": "*.pg"
+				  }
+				],
+				"priority": "default"
+			},
+			{
+				"viewType": "pyutils.polyglot",
+				"displayName": "polyglot",
+				"selector": [
+				  {
+					"filenamePattern": "*.pg"
+				  }
+				],
+				"priority": "default"
+			},
+			{
+				"viewType": "pyutils.polyglot",
+				"displayName": "polyglot",
+				"selector": [
+				  {
+					"filenamePattern": "*.pg"
+				  }
+				],
+				"priority": "default"
+			  },
+			  {
+				"viewType": "pyutils.polyglot",
+				"displayName": "polyglot",
+				"selector": [
+				  {
+					"filenamePattern": "*.pg"
+				  }
+				],
+				"priority": "default"
+			  }.
+			  ,
+
+
+		],
 		"views": {
 			"beamy-container": [
 				{
