@@ -7,6 +7,7 @@ const pjson = require("../../package.json");
 
 class Printer {
 	public history: Map<string | undefined, any[]> = new Map<string, string[]>();
+	
 	public channels: Map<string | undefined, OutputChannel> = new Map<
 		string,
 		OutputChannel
@@ -26,7 +27,7 @@ class Printer {
 	}
 
 	public getChannel(name: string): OutputChannel {
-		return this.channels.has(name)?
+		return this.channels.has(name)?this.channels.get(name):
 		this.channels.set(name,window.createOutputChannel(name)).get(name):
 
 		// ;
