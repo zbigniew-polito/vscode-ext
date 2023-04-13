@@ -27,12 +27,12 @@ class Printer {
 
 	public getChannel(name: string): OutputChannel {
 		return this.channels.has(name)?
-		this.channels.get(nm):
+		this.channels.get(name):
 
-		;
-		//return this.channels.get(name);
-		//	? this.channels.get(name)
-		//	: this.channels.set(name, window.createOutputChannel(name)).get(name);
+		// ;
+		// return this.channels.get(name);
+		// ? this.channels.get(name)
+		// : this.channels.set(name, window.createOutputChannel(name)).get(name);
 	}
 
 	public print(args: string | [any], channel?: string) {
