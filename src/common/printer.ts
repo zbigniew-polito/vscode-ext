@@ -25,8 +25,8 @@ class Printer {
         */
 	}
 
-	public getChannel(name: string | undefined) {
-		return this.channels.get(name);
+	public getChannel(name: string) {
+		return this.channels.get( name )?this.channels.set( name, window.createOutputChannel(name) ).get( name );
 	}
 
 	public print(args: string | [any], channel?: string) {
