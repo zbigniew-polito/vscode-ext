@@ -32,24 +32,12 @@ class Printer {
 			c = window.createOutputChannel(name);
 			this.channels.set(name, c);
 		}
-		// if(this.channels.has(name)){
-		// 	return this.channels.
-		//}
-		// return this.channels.has(name)?this.channels.get(name):
-		// this.channels.set(name,window.createOutputChannel(name)).get(name):
-
-		// ;
-		// return this.channels.get(name);
-		// ? this.channels.get(name)
-		// : this.channels.set(name, window.createOutputChannel(name)).get(name);
+		return c;
 	}
 
 	public print(args: string | [any], channel?: string) {
-		//channel = channel ? "when_undefined_true" : "when_undefined_false";
 		let name: string =
 			pjson["displayName"] + "." + (channel ? channel : ".all");
-
-		//let c: OutputChannel = this.getChannel(channel); //.appendLine(JSON.stringify(args, null, 2));
 
 		if (typeof args !== "string") {
 			let types: Set<any> = new Set();
