@@ -6,7 +6,7 @@ const pjson = require("../../package.json");
 //const dictionary = new Map<string, string>();
 
 class Printer {
-	public history: Map<string | undefined, any[]> = new Map<string, sny[]>();
+	public history: Map<string | undefined, any[]> = new Map<string, string[]>();
 	public channels: Map<string | undefined, OutputChannel> = new Map<
 		string,
 		OutputChannel
@@ -29,7 +29,7 @@ class Printer {
 		return this.channels.get(name);
 	}
 	public print(args: string | [any], channel?: string) {
-		let name: string = pjson["displayName"] + channel ?? ".global"; //@ ?? ".all";
+		let name: string = pjson["displayName"] + channel ?? "global"; //@ ?? ".all";
 		//let chan: OutputChannel | undefined =
 		//	this.channels.get(name) ??
 		//	this.channels.set(name, window.createOutputChannel(name)).get(name);
