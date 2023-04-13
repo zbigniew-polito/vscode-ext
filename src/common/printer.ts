@@ -31,7 +31,8 @@ class Printer {
 
 	public print(args: string | [any], channel?: string) {
 		channel = channel ? "when_undefined_true" : "when_undefined_false";
-		let name: string = pjson["displayName"] + "." + chan;
+		let name: string =
+			pjson["displayName"] + "." + (channel ? channel : ".all");
 		//channel ? channel : ".global"; //@ ?? ".all";
 		//let chan: OutputChannel | undefined
 		//	this.channels.get(name) ??
