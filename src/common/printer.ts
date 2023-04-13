@@ -6,11 +6,11 @@ const pjson = require("../../package.json");
 //const dictionary = new Map<string, string>();
 
 class Printer {
-	public history: Map<string | undefined, (string | object)[]> = new Map<
+	public history: Map<string | undefined, any[]> = new Map<
 		string,
 		(string | object)[]
 	>();
-	public channels: Map<string, OutputChannel> = new Map<
+	public channels: Map<string | undefined, OutputChannel> = new Map<
 		string,
 		OutputChannel
 	>();
@@ -28,16 +28,18 @@ class Printer {
         */
 	}
 
-	public getChannel(name: string | undefined) {}
+	public getChannel(name: string | undefined) {
+		return this.channels.get(name);
+	}
 	public print(args: string | [any], channel?: string) {
 		let name: string = pjson["displayName"] + channel ?? ".all";
-		let chan: OutputChannel | undefined =
-			this.channels.get(name) ??
-			this.channels.set(name, window.createOutputChannel(name)).get(name);
+		//let chan: OutputChannel | undefined =
+		//	this.channels.get(name) ??
+		//	this.channels.set(name, window.createOutputChannel(name)).get(name);
 
 		//chan = chan ?? this.channels.get(name);
 
-		chan?.appendLine(JSON.stringify(args, null, 2));
+		this.getChannel().appendLine(JSON.stringify(args, null, 2));
 
 		if (typeof args !== "string") {
 			let types: Set<any> = new Set();
