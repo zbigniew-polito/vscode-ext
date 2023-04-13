@@ -49,13 +49,6 @@ class Printer {
 					if (typeof a == t) {
 						name = pjson["displayName"] + "." + t;
 
-						chan = ;
-						/*
-						this.channels.get(name) ??
-							this.channels
-								.set(name, window.createOutputChannel(name))
-								.get(name);
-						*/
 						this.getChannel(name).appendLine(JSON.stringify(args, null, 2));
 					}
 				});
