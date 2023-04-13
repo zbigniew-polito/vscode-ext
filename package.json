@@ -57,38 +57,35 @@
 				"priority": "default"
 			},
 			{
-				"viewType": "pyutils.polyglot",
-				"displayName": "polyglot",
+				"viewType": "pyutils.notes",
+				"displayName": "Notes",
 				"selector": [
 				  {
-					"filenamePattern":  "*.pg"
+					"filenamePattern":  "*.md"
 				  }
 				],
 				"priority": "default"
 			},
 			{
-				"viewType": "pyutils.polyglot",
-				"displayName": "polyglot",
+				"viewType": "pyutils.clipboard",
+				"displayName": "Clipboard",
 				"selector": [
 				  {
-					"filenamePattern": "*.pg"
+					"filenamePattern": "*.cb"
 				  }
 				],
 				"priority": "default"
 			  },
 			  {
-				"viewType": "pyutils.polyglot",
-				"displayName": "polyglot",
+				"viewType": "pyutils.scratchpad",
+				"displayName": "Scrachpad",
 				"selector": [
 				  {
 					"filenamePattern": "*.pg"
 				  }
 				],
 				"priority": "default"
-			  }.
-			  ,
-
-
+			  }
 		],
 		"views": {
 			"beamy-container": [
