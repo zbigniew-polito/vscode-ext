@@ -25,18 +25,18 @@ class Printer {
         */
 	}
 
-	public getChannel(name: string) {
-		return this.channels.get(name)
+	public getChannel(name: string): OutputChannel {
+		return this.channels.get(name);
 			? this.channels.get(name)
 			: this.channels.set(name, window.createOutputChannel(name)).get(name);
 	}
 
 	public print(args: string | [any], channel?: string) {
-		channel = channel ? "when_undefined_true" : "when_undefined_false";
+		//channel = channel ? "when_undefined_true" : "when_undefined_false";
 		let name: string =
 			pjson["displayName"] + "." + (channel ? channel : ".all");
 
-		let c: OutputChannel = this.getChannel(channel); //.appendLine(JSON.stringify(args, null, 2));
+		//let c: OutputChannel = this.getChannel(channel); //.appendLine(JSON.stringify(args, null, 2));
 
 		if (typeof args !== "string") {
 			let types: Set<any> = new Set();
