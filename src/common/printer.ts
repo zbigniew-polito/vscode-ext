@@ -6,10 +6,7 @@ const pjson = require("../../package.json");
 //const dictionary = new Map<string, string>();
 
 class Printer {
-	public history: Map<string | undefined, any[]> = new Map<
-		string,
-		(string | object)[]
-	>();
+	public history: Map<string | undefined, any[]> = new Map<string, sny[]>();
 	public channels: Map<string | undefined, OutputChannel> = new Map<
 		string,
 		OutputChannel
