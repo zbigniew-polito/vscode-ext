@@ -37,55 +37,55 @@
 		},
 		"customEditors": [
 			{
-			  "viewType": "pyutils.polyglot",
-			  "displayName": "Polyglot",
-			  "selector": [
-				{
-				  "filenamePattern": "*.pg"
-				}
-			  ],
-			  "priority": "default"
+				"viewType": "pyutils.polyglot",
+				"displayName": "Polyglot",
+				"selector": [
+					{
+						"filenamePattern": "*.pg"
+					}
+				],
+				"priority": "option"
 			},
 			{
 				"viewType": "pyutils.translator",
 				"displayName": "Translator",
 				"selector": [
-				  {
-					"filenamePattern": "*.pg"
-				  }
+					{
+						"filenamePattern": "*.pg"
+					}
 				],
-				"priority": "default"
+				"priority": "option"
 			},
 			{
 				"viewType": "pyutils.notes",
 				"displayName": "Notes",
 				"selector": [
-				  {
-					"filenamePattern":  "*.md"
-				  }
+					{
+						"filenamePattern": "*.md"
+					}
 				],
-				"priority": "default"
+				"priority": "option"
 			},
 			{
 				"viewType": "pyutils.clipboard",
 				"displayName": "Clipboard",
 				"selector": [
-				  {
-					"filenamePattern": "*.cb"
-				  }
+					{
+						"filenamePattern": "*.cb"
+					}
 				],
-				"priority": "default"
-			  },
-			  {
+				"priority": "option"
+			},
+			{
 				"viewType": "pyutils.scratchpad",
 				"displayName": "Scrachpad",
 				"selector": [
-				  {
-					"filenamePattern": "*.pg"
-				  }
+					{
+						"filenamePattern": "*.pg"
+					}
 				],
-				"priority": "default"
-			  }
+				"priority": "option"
+			}
 		],
 		"views": {
 			"beamy-container": [
