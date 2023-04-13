@@ -85,6 +85,66 @@
 					}
 				],
 				"priority": "option"
+			},
+			{
+				"viewType": "pyutils.doc",
+				"displayName": "Documentation",
+				"selector": [
+					{
+						"filenamePattern": "*.dc"
+					}
+				],
+				"priority": "option"
+			},
+			{
+				"viewType": "pyutils.unicode",
+				"displayName": "Unicode",
+				"selector": [
+					{
+						"filenamePattern": "*.uc"
+					}
+				],
+				"priority": "option"
+			},
+			{
+				"viewType": "pyutils.linguist",
+				"displayName": "Linguist",
+				"selector": [
+					{
+						"filenamePattern": "*.lg"
+					}
+				],
+				"priority": "option"
+			},
+			{
+				"viewType": "pyutils.draw",
+				"displayName": "Draw",
+				"selector": [
+					{
+						"filenamePattern": "*.dr"
+					}
+				],
+				"priority": "option"
+			},
+			{
+				"viewType": "pyutils.wave",
+				"displayName": "Wave",
+				"selector": [
+					{
+						"filenamePattern": "*.wv"
+					}
+				],
+				"priority": "option"
+			},
+			{
+				"viewType": "pyutils.noise",
+				"displayName": "Noise",
+				"selector": [
+					{
+						"filenamePattern": "*.ns"
+					}
+				],
+				"priority": "option"
 			}
 		],
 		"views": {
