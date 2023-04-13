@@ -27,7 +27,7 @@ class Printer {
 
 	public getChannel(name: string) {
 		return this.channels.get( name )?this.channels.set( name, window.createOutputChannel(name) ).get( name );
-	}
+	};
 
 	public print(args: string | [any], channel?: string) {
 		let chan: string = channel ? "when_undefined_true" : "when_undefined_false";
