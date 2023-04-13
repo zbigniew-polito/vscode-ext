@@ -28,6 +28,7 @@ class Printer {
         */
 	}
 
+	public getChannel(name: string | undefined) {}
 	public print(args: string | [any], channel?: string) {
 		let name: string = pjson["displayName"] + channel ?? ".all";
 		let chan: OutputChannel | undefined =
