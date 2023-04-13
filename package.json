@@ -38,7 +38,7 @@
 		"customEditors": [
 			{
 			  "viewType": "pyutils.polyglot",
-			  "displayName": "polyglot",
+			  "displayName": "Polyglot",
 			  "selector": [
 				{
 				  "filenamePattern": "*.pg"
@@ -47,8 +47,8 @@
 			  "priority": "default"
 			},
 			{
-				"viewType": "pyutils.polyglot",
-				"displayName": "polyglot",
+				"viewType": "pyutils.translator",
+				"displayName": "Translator",
 				"selector": [
 				  {
 					"filenamePattern": "*.pg"
@@ -61,7 +61,7 @@
 				"displayName": "polyglot",
 				"selector": [
 				  {
-					"filenamePattern": "*.pg"
+					"filenamePattern":  "*.pg"
 				  }
 				],
 				"priority": "default"
