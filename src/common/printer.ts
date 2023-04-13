@@ -26,7 +26,10 @@ class Printer {
 	}
 
 	public getChannel(name: string): OutputChannel {
-		return this.channels.emplace;
+		return this.channels.has(name)?
+		this.channels.get(nm):
+
+		;
 		//return this.channels.get(name);
 		//	? this.channels.get(name)
 		//	: this.channels.set(name, window.createOutputChannel(name)).get(name);
