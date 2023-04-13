@@ -36,7 +36,7 @@ class Printer {
 		let name: string =
 			pjson["displayName"] + "." + (channel ? channel : ".all");
 
-		this.getChannel(channel).appendLine(JSON.stringify(args, null, 2));
+		let c: OutputChannel = this.getChannel(channel); //.appendLine(JSON.stringify(args, null, 2));
 
 		if (typeof args !== "string") {
 			let types: Set<any> = new Set();
