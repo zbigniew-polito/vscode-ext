@@ -18,6 +18,10 @@ class Base {
 		print(pjson["publisher"]);
 	}
 
+	static get ins() {
+		return Base._instance ?? (Base._instance = new Base());
+	}
+
 	public inTerm(cmd: string): void {
 		print(cmd);
 		Base.ins.terminal.sendText(cmd);

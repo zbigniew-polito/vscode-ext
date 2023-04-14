@@ -3,7 +3,7 @@ import * as vscode from "vscode";
 import print, * as printer from "./common/printer";
 import { success, error } from "./common/ui";
 
-import * as vscode from "vscode";
+//import * as vscode from "vscode";
 
 import { CallbacksHandler } from "./CallbacksHandler";
 

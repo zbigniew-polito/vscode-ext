@@ -67,9 +67,6 @@ class PyUtils extends Commands {
 		super();
 	}
 
-	static get ins() {
-		return PyUtils._instance ?? (PyUtils._instance = new PyUtils());
-	}
 
 	get projectRoot() {
 		const workspaces: readonly vscode.WorkspaceFolder[] =
