@@ -3,7 +3,7 @@ import { success, error } from "./common/ui";
 
 import * as vscode from "vscode";
 
-import {  }
+import { Base } from "./Base";
 
 class Commands extends Base {
 	constructor() {}
