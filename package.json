@@ -255,11 +255,11 @@
 				"title": "Check"
 			},
 			{
-				"command": "beamy.pyutils.enable",
+				"command": "pyutils.enable",
 				"title": "beamy.pyutils.enable"
 			},
 			{
-				"command": "beamy.pyutils.disable",
+				"command": "pyutils.disable",
 				"title": "beamy.pyutils.disable"
 			},
 			{
