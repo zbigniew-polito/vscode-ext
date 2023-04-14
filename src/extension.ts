@@ -128,8 +128,9 @@ class PyUtils {
 	}
 
 	get ext_dir() {
+		//PyUtils.ins.context?.
 		return (
-			PyUtils.ins.projectRoot + "/." + PyUtils.ins.name.toLocaleLowerCase()
+			PyUtils.ins.projectRoot + "/." + PyUtils.ins.name?.toLocaleLowerCase()
 		);
 	}
 
@@ -196,7 +197,7 @@ class PyUtils {
 
 		PyUtils.ins.isEnabled = true;
 
-		vscode.workspace.success(
+		success(
 			PyUtils.ins.name + " activated succesfully in " + PyUtils.ins.projectRoot
 		);
 
