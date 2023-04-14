@@ -16,7 +16,7 @@
 	"activationEvents": [
 		"workspaceContains:**/.pyutils/deactivate-me",
 		"workspaceContains:.pyutils/deactivate-me",
-		"onCommand:pyutils.activate_me"
+		"onCommand:pyutils.activateMe"
 	],
 	"main": "./dist/extension.js",
 	"contributes": {
