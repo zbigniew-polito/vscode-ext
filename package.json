@@ -263,7 +263,7 @@
 				"title": "beamy.pyutils.disable"
 			},
 			{
-				"command": "pyutils.run",
+				"command": "run",
 				"title": "Run",
 				"icon": "$(play)"
 			},
