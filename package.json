@@ -253,7 +253,7 @@
 			{
 				"command": "pyutils.activateMe",
 				"title": "Check",
-				"categor": "ext"
+				"category": ""
 			},
 			{
 				"command": "pyutils.enable",
