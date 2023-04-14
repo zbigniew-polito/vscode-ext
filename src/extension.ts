@@ -261,10 +261,6 @@ class PyUtils {
 		return vscode.window.setStatusBarMessage(message);
 	}
 
-	public workspace_onDidChangeConfiguration() {
-		//PyUtils.ins.loadConfig();
-	}
-
 	public existsInProject(path: string): boolean {
 		return (
 			fs.existsSync(PyUtils.ins.projectRoot + "/" + path) ||
@@ -299,6 +295,12 @@ class PyUtils {
 	) {}
 	*/
 
+	public window_onDidChangeActiveTextEditor(event: any) {
+		if (event.document.uri.scheme == "file") {
+			PyUtils.ins.terminal.show();
+		}
+	}
+
 	public workspace_onDidSaveTextDocument(document: vscode.TextDocument) {
 		PyUtils.ins.existsInProject(PyUtils.ins._config.callback) &&
 			PyUtils.ins.inTerm(
@@ -310,14 +312,12 @@ class PyUtils {
 			);
 	}
 
-	public window_onDidChangeActiveTextEditor(event: any) {
-		if (event.document.uri.scheme == "file") {
-			PyUtils.ins.terminal.show();
-		}
-	}
-
 	public workspace_onDidCloseTextDocument(event: any) {
 		print(event);
+	}
+
+	public workspace_onDidChangeConfiguration() {
+		//PyUtils.ins.loadConfig();
 	}
 
 	public window_onDidChangeVisibleTextEditors(event: any) {
