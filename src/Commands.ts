@@ -19,7 +19,7 @@ class Commands extends CallbacksHandler {
 	}
 
 	public deactivate() {
-		success(PyUtils.ins.name + " deactivated succesfully. // TODO");
+		//success(PyUtils.ins.name + " deactivated succesfully. // TODO");
 	}
 }
 
