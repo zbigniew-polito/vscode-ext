@@ -193,7 +193,7 @@ class PyUtils {
 
 		PyUtils.ins.isEnabled = true;
 
-		vscode.window.success(
+		success(
 			PyUtils.ins.name + " activated succesfully in " + PyUtils.ins.projectRoot
 		);
 
