@@ -22,3 +22,5 @@ class Commands extends Base {
 		success(PyUtils.ins.name + " deactivated succesfully. // TODO");
 	}
 }
+
+module.exports = Commands;
