@@ -138,7 +138,7 @@ class PyUtils {
 		// return pjson["displayName"];
 		// got obfuscated
 		// return PyUtils.ins.constructor.name
-		return PyUtils.ins.context.extension.id;
+		return PyUtils.ins.context?.extension.id;
 	}
 
 	public activate(context: vscode.ExtensionContext) {
@@ -234,11 +234,11 @@ class PyUtils {
 	}
 
 	public get isEnabled(): boolean {
-		return !!PyUtils.ins._context?.globalState.get("isEnabled", true);
+		return !!PyUtils.ins.context?.globalState.get("isEnabled", true);
 	}
 
 	public set isEnabled(value: boolean) {
-		PyUtils.ins._context?.globalState.update("isEnabled", value);
+		PyUtils.ins.context?.globalState.update("isEnabled", value);
 	}
 
 	/*
