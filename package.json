@@ -210,8 +210,8 @@
 					"contextualTitle": "noisesynth"
 				},
 				{
-					"id": "drawit",
-					"name": "drawing app",
+					"id": "draw",
+					"name": "Draw",
 					"icon": "$(paintcan)",
 					"contextualTitle": "svgdraw"
 				},
