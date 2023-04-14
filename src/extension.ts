@@ -79,7 +79,9 @@ class PyUtils {
 		*/
 
 		//PyUtils.ins.loadConfig();
-		print(pjson[""]);
+
+		print(pjson["name"]);
+		print(pjson["publisher"]);
 	}
 
 	static get ins() {
