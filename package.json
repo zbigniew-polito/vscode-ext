@@ -1,5 +1,5 @@
 {
-	"name": "beamy-vs-ext-pyutils",
+	"name": "pyutils",
 	"displayName": "PyUtils",
 	"description": "PyUtils",
 	"publisher": "beamy",
@@ -15,7 +15,8 @@
 	],
 	"activationEvents": [
 		"workspaceContains:**/.pyutils/deactivate-me",
-		"workspaceContains:.pyutils/deactivate-me"
+		"workspaceContains:.pyutils/deactivate-me",
+		"onCommand:pyutils.activate_me"
 	],
 	"main": "./dist/extension.js",
 	"contributes": {
