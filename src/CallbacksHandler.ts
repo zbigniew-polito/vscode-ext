@@ -6,4 +6,5 @@ class CallbacksHandler extends Base {
 	}
 }
 
-module.exports = CallbacksHandler;
+//module.exports = CallbacksHandler;
+export default CallbacksHandler;

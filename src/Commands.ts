@@ -23,4 +23,5 @@ class Commands extends CallbacksHandler {
 	}
 }
 
-module.exports = Commands;
+//module.exports = Commands;
+export default Commands;

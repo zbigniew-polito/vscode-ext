@@ -2,4 +2,5 @@ class Base {
 	constructor() {}
 }
 
-module.exports = Base;
+//module.exports = Base;
+export default Base;
