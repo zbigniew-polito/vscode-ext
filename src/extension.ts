@@ -27,9 +27,11 @@ function print(msg: string | any) {
 		//if (PyUtils.ins._config["verbose"] == "true") {
 		//	PyUtils.ins.printToOutputChannel(JSON.stringify(msg, null, 2));
 		//}
-			error("Cant find : " + path)
-		);
 	}
+}
+
+
+	Ekran z katalogiem builda
 	i roznicami z ostatnim buildem na podstawie gita
 
 	add git besides terminal and output
@@ -71,8 +73,17 @@ class PyUtils {
 		}
 
 		PyUtils._instance = this;
+		/*
+		PyUtils.ins._outputChannel = vscode.window.createOutputChannel(
+			"PyUtils",
+			"js"
+		);
+		*/
 
-		print(pjson["publisher"] + "." + pjson["name"]);
+		//PyUtils.ins.loadConfig();
+
+		print(pjson["name"]);
+		print(pjson["publisher"]);
 	}
 
 	static get ins() {
@@ -244,9 +255,9 @@ class PyUtils {
 				message
 		);
 		PyUtils._line_counter++;
-			error("Cant find : " + path)
-		);
 	}
+	*/
+
 	public showStatusMessage(message: string): vscode.Disposable {
 		print(message);
 		return vscode.window.setStatusBarMessage(message);
