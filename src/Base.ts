@@ -1,3 +1,5 @@
+import * as vscode from "vscode";
+
 import print, * as printer from "./common/printer";
 const pjson = require("../package.json"); //  int context
 
