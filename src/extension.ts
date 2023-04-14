@@ -222,14 +222,6 @@ class PyUtils {
 		}
 	}
 
-	public get isEnabled(): boolean {
-		return !!PyUtils.ins.context?.globalState.get("isEnabled", true);
-	}
-
-	public set isEnabled(value: boolean) {
-		PyUtils.ins.context?.globalState.update("isEnabled", value);
-	}
-
 	/*
 	public printToOutputChannel(message: string) {
 		PyUtils.ins._outputChannel?.appendLine(
