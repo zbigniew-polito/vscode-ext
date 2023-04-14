@@ -256,35 +256,29 @@
 			},
 			{
 				"command": "beamy.pyutils.enable",
-				"title": "Enable VsCodeUtil",
-				"category": "ext"
+				"title": "Enable VsCodeUtil"
 			},
 			{
 				"command": "beamy.pyutils.disable",
-				"title": "Disable VsCodeUtil",
-				"category": "ext"
+				"title": "Disable VsCodeUtil"
 			},
 			{
 				"command": "pyutils.run",
 				"title": "Run",
-				"category": "ext",
 				"icon": "$(play)"
 			},
 			{
 				"command": "beamy.pyutils.first_in_context_menu_editor_title_in_tab",
-				"title": "Some Context Menu Option",
-				"category": "ext"
+				"title": "Some Context Menu Option"
 			},
 			{
 				"command": "beamy.pyutils.debug",
 				"title": "Debug",
-				"category": "ext",
 				"icon": "$(debug)"
 			},
 			{
 				"command": "beamy.pyutils.build",
 				"title": "Build",
-				"category": "ext",
 				"icon": "$(build)"
 			}
 		],
