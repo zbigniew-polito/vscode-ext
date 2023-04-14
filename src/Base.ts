@@ -2,6 +2,9 @@ import print, * as printer from "./common/printer";
 const pjson = require("../package.json"); //  int context
 
 class Base {
+	private static _instance?: Base;
+	private context?: vscode.ExtensionContext;
+
 	constructor() {
 		if (Base._instance) {
 			throw new Error("Use Singleton.instance instead of new.");
