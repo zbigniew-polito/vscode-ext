@@ -72,8 +72,7 @@ class PyUtils {
 
 		PyUtils._instance = this;
 		
-		print(pjson["publisher"]+"."+pjson["name"]);
-		
+		print(pjson["publisher"]+"."+pjson["name"]);	
 	}
 
 	static get ins() {
