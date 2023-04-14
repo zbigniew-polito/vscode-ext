@@ -36,8 +36,7 @@ class Printer {
 	}
 
 	public print(args: string | [any], channel?: string) {
-		let name: string =
-			pjson["displayName"] + "." + (channel ? channel : ".all");
+		let name: string = pjson["displayName"] + "." + (channel ? channel : "all");
 
 		if (typeof args !== "string") {
 			let types: Set<any> = new Set();

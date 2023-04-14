@@ -252,8 +252,7 @@
 		"commands": [
 			{
 				"command": "pyutils.activateMe",
-				"title": "Check",
-				"category": ""
+				"title": "Check"
 			},
 			{
 				"command": "pyutils.enable",
