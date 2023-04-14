@@ -145,6 +145,7 @@ class PyUtils {
 
 		let methods = Reflect.ownKeys(PyUtils.prototype);
 
+		/*
 		vscode.window.terminals.forEach((terminal: vscode.Terminal) => {
 			try {
 				terminal.dispose();
@@ -152,6 +153,7 @@ class PyUtils {
 				error("Terminal disposition error.");
 			}
 		});
+		*/
 
 		for (var method of methods) {
 			const __method = method;
