@@ -37,6 +37,7 @@ function print(msg: string | any) {
 	add git besides terminal and output
 
 */
+
 /*
 function getProperty<T, K extends keyof T>(obj: T, key: string): T[K] {
 	if (key in obj) {
@@ -46,6 +47,7 @@ function getProperty<T, K extends keyof T>(obj: T, key: string): T[K] {
 }
 
 */
+
 class PyUtils {
 	private static _instance?: PyUtils;
 
