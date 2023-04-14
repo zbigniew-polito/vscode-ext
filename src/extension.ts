@@ -79,6 +79,7 @@ class PyUtils {
 		*/
 
 		//PyUtils.ins.loadConfig();
+		print(pjson[""]);
 	}
 
 	static get ins() {
