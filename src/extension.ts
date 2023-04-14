@@ -12,7 +12,8 @@ import { success, error } from "./common/ui";
 
 import { getProperty } from "./common/objects";
 
-import { commands } from "./commands"
+import { commands } from "./Commands";
+
 
 // Object.assign(global, nvk);
 const pjson = require("../package.json");
