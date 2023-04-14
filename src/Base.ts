@@ -18,6 +18,10 @@ class Base {
 		Base.ins.terminal.sendText(cmd);
 	}
 
+	get name() {
+		return Base.ins.context?.extension.id;
+	}
+
 	public get terminal(): vscode.Terminal {
 		var terminal = null;
 		for (var it = 0; it < vscode.window.terminals.length; it++) {

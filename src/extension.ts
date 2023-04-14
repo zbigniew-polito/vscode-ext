@@ -120,10 +120,7 @@ class PyUtils extends Commands {
 		);
 	}
 
-	get name() {
-		return PyUtils.ins.context?.extension.id;
-	}
-
+	
 	
 
 	public get _config(): StringByString {
