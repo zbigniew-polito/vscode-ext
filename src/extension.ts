@@ -49,7 +49,7 @@ function getProperty<T, K extends keyof T>(obj: T, key: string): T[K] {
 class PyUtils {
 	private static _instance?: PyUtils;
 
-	private _context?: vscode.ExtensionContext;
+	private context?: vscode.ExtensionContext;
 
 	//https://github.com/microsoft/vscode-extension-samples/blob/main/webview-view-sample/src/extension.ts
 	//https://code.visualstudio.com/api/references/icons-in-labels
@@ -134,14 +134,15 @@ class PyUtils {
 	}
 
 	get name() {
-		//resolveCliArgsFromVSCodeExecutablePath
-		return pjson["displayName"];
+		// resolveCliArgsFromVSCodeExecutablePath
+		// return pjson["displayName"];
 		// got obfuscated
 		// return PyUtils.ins.constructor.name
+		return PyUtils.ins.context.extension.id;
 	}
 
 	public activate(context: vscode.ExtensionContext) {
-		PyUtils.ins._context = context;
+		PyUtils.ins.context = context;
 
 		let methods = Reflect.ownKeys(PyUtils.prototype);
 
