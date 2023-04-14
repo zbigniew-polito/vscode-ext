@@ -71,8 +71,8 @@ class PyUtils {
 		}
 
 		PyUtils._instance = this;
-		
-		print(pjson["publisher"]+"."+pjson["name"]);	
+
+		print(pjson["publisher"] + "." + pjson["name"]);
 	}
 
 	static get ins() {
@@ -127,9 +127,6 @@ class PyUtils {
 		);
 	}
 
-	error("Cant find : " + path)
-	);
-}
 	get name() {
 		return PyUtils.ins.context?.extension.id;
 	}
