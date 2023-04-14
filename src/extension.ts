@@ -139,7 +139,6 @@ class PyUtils {
 	}
 
 	public activate(context: vscode.ExtensionContext) {
-		0;
 		PyUtils.ins.context = context;
 
 		let methods = Reflect.ownKeys(PyUtils.prototype);
@@ -196,6 +195,10 @@ class PyUtils {
 
 		success(
 			PyUtils.ins.name + " activated succesfully in " + PyUtils.ins.projectRoot
+		);
+
+		context.subscriptions.push(
+			vscode.commands.registerCommand("pyutils.", commandHandler)
 		);
 
 		PyUtils.ins.create();
