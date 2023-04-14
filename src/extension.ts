@@ -14,7 +14,6 @@ import { getProperty } from "./common/objects";
 
 import { Commands } from "./Commands";
 
-
 // Object.assign(global, nvk);
 const pjson = require("../package.json");
 
@@ -51,7 +50,7 @@ function getProperty<T, K extends keyof T>(obj: T, key: string): T[K] {
 
 */
 
-class PyUtils extends Commands, Callbacks{
+class PyUtils extends Commands {
 	private static _instance?: PyUtils;
 
 	private context?: vscode.ExtensionContext;
