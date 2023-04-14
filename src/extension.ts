@@ -130,14 +130,6 @@ class PyUtils {
 		return PyUtils.ins.context?.extension.id;
 	}
 
-	public activateMe(context?: vscode.ExtensionContext) {
-		print("activateMe");
-	}
-
-	public activateMeM() {
-		print("activateMe");
-	}
-
 	public activate(context: vscode.ExtensionContext) {
 		PyUtils.ins.context = context;
 
@@ -202,10 +194,6 @@ class PyUtils {
 		);
 
 		PyUtils.ins.create();
-	}
-
-	public deactivate() {
-		success(PyUtils.ins.name + " deactivated succesfully. // TODO");
 	}
 
 	public get _config(): StringByString {
