@@ -1,4 +1,5 @@
 import print, * as printer from "./common/printer";
+const pjson = require("../package.json"); //  int context
 
 class Base {
 	constructor() {
@@ -14,7 +15,7 @@ class Base {
 
 	public inTerm(cmd: string): void {
 		print(cmd);
-		PyUtils.ins.terminal.sendText(cmd);
+		Base.ins.terminal.sendText(cmd);
 	}
 
 	public get terminal(): vscode.Terminal {

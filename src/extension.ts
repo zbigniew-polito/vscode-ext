@@ -16,7 +16,6 @@ import { getProperty } from "./common/objects";
 import { Commands } from "./Commands";
 
 // Object.assign(global, nvk);
-const pjson = require("../package.json");
 
 interface StringByString {
 	[key: string]: string;
