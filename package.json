@@ -256,11 +256,11 @@
 			},
 			{
 				"command": "enable",
-				"title": "enable"
+				"title": "PyUtils enable"
 			},
 			{
 				"command": "disable",
-				"title": "disable"
+				"title": "PyUtils disable"
 			},
 			{
 				"command": "run",
