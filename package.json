@@ -251,6 +251,11 @@
 		],
 		"commands": [
 			{
+				"command": "pyutils.activateMe",
+				"title": "Check",
+				"categor": "ext"
+			},
+			{
 				"command": "pyutils.enable",
 				"title": "Enable VsCodeUtil",
 				"category": "ext"
