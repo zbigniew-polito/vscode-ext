@@ -259,8 +259,8 @@
 				"title": "pyutils.enable"
 			},
 			{
-				"command": "pyutils.disable",
-				"title": "pyutils.disable"
+				"command": "PyUtils.disable",
+				"title": "PyUtils.disable"
 			},
 			{
 				"command": "run",
