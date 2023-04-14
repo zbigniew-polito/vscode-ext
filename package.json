@@ -256,11 +256,11 @@
 			},
 			{
 				"command": "pyutils.enable",
-				"title": "beamy.pyutils.enable"
+				"title": "pyutils.enable"
 			},
 			{
 				"command": "pyutils.disable",
-				"title": "beamy.pyutils.disable"
+				"title": "pyutils.disable"
 			},
 			{
 				"command": "run",
@@ -272,12 +272,12 @@
 				"title": "Some Context Menu Option"
 			},
 			{
-				"command": "beamy.pyutils.debug",
+				"command": "pyutils.debug",
 				"title": "Debug",
 				"icon": "$(debug)"
 			},
 			{
-				"command": "beamy.pyutils.build",
+				"command": "pyutils.build",
 				"title": "Build",
 				"icon": "$(build)"
 			}
