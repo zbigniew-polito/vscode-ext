@@ -251,38 +251,38 @@
 		],
 		"commands": [
 			{
-				"command": "pyutils.activateMe",
+				"command": "beamy.pyutils.activateMe",
 				"title": "Check"
 			},
 			{
-				"command": "pyutils.enable",
+				"command": "beamy.pyutils.enable",
 				"title": "Enable VsCodeUtil",
 				"category": "ext"
 			},
 			{
-				"command": "pyutils.disable",
+				"command": "beamy.pyutils.disable",
 				"title": "Disable VsCodeUtil",
 				"category": "ext"
 			},
 			{
-				"command": "pyutils.run",
+				"command": "beamy.pyutils.run",
 				"title": "Run",
 				"category": "ext",
 				"icon": "$(play)"
 			},
 			{
-				"command": "pyutils.first_in_context_menu_editor_title_in_tab",
+				"command": "beamy.pyutils.first_in_context_menu_editor_title_in_tab",
 				"title": "Some Context Menu Option",
 				"category": "ext"
 			},
 			{
-				"command": "pyutils.debug",
+				"command": "beamy.pyutils.debug",
 				"title": "Debug",
 				"category": "ext",
 				"icon": "$(debug)"
 			},
 			{
-				"command": "pyutils.build",
+				"command": "beamy.pyutils.build",
 				"title": "Build",
 				"category": "ext",
 				"icon": "$(build)"
@@ -291,19 +291,19 @@
 		"menus": {
 			"editor/title/run": [
 				{
-					"command": "pyutils.run",
+					"command": "beamy.pyutils.run",
 					"group": "navigation"
 				}
 			],
 			"editor/title/context": [
 				{
-					"command": "pyutils.first_in_context_menu_editor_title_in_tab",
+					"command": "beamy.pyutils.first_in_context_menu_editor_title_in_tab",
 					"group": "navigation"
 				}
 			],
 			"editor/title": [
 				{
-					"command": "pyutils.debug",
+					"command": "beamy.pyutils.debug",
 					"group": "navigation"
 				}
 			]
