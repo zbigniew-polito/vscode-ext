@@ -256,11 +256,11 @@
 			},
 			{
 				"command": "beamy.pyutils.enable",
-				"title": "Enable VsCodeUtil"
+				"title": "beamy.pyutils.enable"
 			},
 			{
 				"command": "beamy.pyutils.disable",
-				"title": "Disable VsCodeUtil"
+				"title": "beamy.pyutils.disable"
 			},
 			{
 				"command": "pyutils.run",
