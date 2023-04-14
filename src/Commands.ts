@@ -21,6 +21,27 @@ class Commands extends CallbacksHandler {
 	public deactivate() {
 		//success(PyUtils.ins.name + " deactivated succesfully. // TODO");
 	}
+
+	public run() {
+		PyUtils.ins.existsInProject(PyUtils.ins._config.run) &&
+			PyUtils.ins.terminal.sendText(
+				PyUtils.ins.projectRoot + "/" + PyUtils.ins._config.run
+			);
+	}
+
+	public build() {
+		Commands.ins.existsInProject(PyUtils.ins._config.build) &&
+			PyUtils.ins.terminal.sendText(
+				PyUtils.ins.projectRoot + "/" + PyUtils.ins._config.build
+			);
+	}
+
+	public debug() {
+		PyUtils.ins.existsInProject(PyUtils.ins._config.debug) &&
+			PyUtils.ins.terminal.sendText(
+				PyUtils.ins.projectRoot + "/" + PyUtils.ins._config.debug
+			);
+	}
 }
 
 //module.exports = Commands;
