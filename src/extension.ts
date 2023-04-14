@@ -131,17 +131,12 @@ class PyUtils {
 	}
 
 	get ext_dir() {
-		//PyUtils.ins.context?.
 		return (
 			PyUtils.ins.projectRoot + "/." + PyUtils.ins.name?.toLocaleLowerCase()
 		);
 	}
 
 	get name() {
-		// resolveCliArgsFromVSCodeExecutablePath
-		// return pjson["displayName"];
-		// got obfuscated
-		// return PyUtils.ins.constructor.name
 		return PyUtils.ins.context?.extension.id;
 	}
 
