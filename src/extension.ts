@@ -12,7 +12,7 @@ import { success, error } from "./common/ui";
 
 import { getProperty } from "./common/objects";
 
-import { commands } from "./Commands";
+import { Commands } from "./Commands";
 
 
 // Object.assign(global, nvk);
