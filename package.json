@@ -193,7 +193,7 @@
 				},
 				{
 					"id": "system",
-					"name": "system",
+					"name": "System",
 					"icon": "$(paintcan)",
 					"contextualTitle": "systemd"
 				},
@@ -205,7 +205,7 @@
 				},
 				{
 					"id": "noise",
-					"name": "noise",
+					"name": "Noise",
 					"icon": "$(notebook-render-output)",
 					"contextualTitle": "noisesynth"
 				},
