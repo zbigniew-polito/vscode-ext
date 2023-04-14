@@ -275,6 +275,12 @@
 				"title": "Debug",
 				"category": "ext",
 				"icon": "$(debug)"
+			},
+			{
+				"command": "pyutils.build",
+				"title": "Build",
+				"category": "ext",
+				"icon": "$(build)"
 			}
 		],
 		"menus": {
