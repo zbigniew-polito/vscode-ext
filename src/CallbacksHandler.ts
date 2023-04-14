@@ -1,4 +1,4 @@
-import { SignatureHelpTriggerKind } from "vscode";
+import * as vscode from "vscode";
 
 class CallbacksHandler extends Base {
 	constructor() {
