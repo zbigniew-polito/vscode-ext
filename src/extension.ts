@@ -134,6 +134,10 @@ class PyUtils {
 		print("activateMe");
 	}
 
+	public activateMeM() {
+		print("activateMe");
+	}
+
 	public activate(context: vscode.ExtensionContext) {
 		PyUtils.ins.context = context;
 

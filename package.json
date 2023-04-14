@@ -255,6 +255,10 @@
 				"title": "Check"
 			},
 			{
+				"command": "activateMeM",
+				"title": "Check"
+			},
+			{
 				"command": "enable",
 				"title": "PyUtils enable"
 			},
