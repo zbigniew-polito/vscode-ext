@@ -3,7 +3,7 @@ import { success, error } from "./common/ui";
 
 import * as vscode from "vscode";
 
-import { Base } from "./Base";
+import { CallbacksHandler } from "./CallbacksHandler";
 
 class Commands extends CallbacksHandler {
 	constructor() {
