@@ -251,7 +251,7 @@
 		],
 		"commands": [
 			{
-				"command": "beamy.pyutils.activateMe",
+				"command": "activateMe",
 				"title": "Check"
 			},
 			{
@@ -265,7 +265,7 @@
 				"category": "ext"
 			},
 			{
-				"command": "beamy.pyutils.run",
+				"command": "pyutils.run",
 				"title": "Run",
 				"category": "ext",
 				"icon": "$(play)"
