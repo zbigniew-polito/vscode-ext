@@ -5,7 +5,7 @@ import * as vscode from "vscode";
 
 import { Base } from "./Base";
 
-class Commands extends Base {
+class Commands extends CallbacksHandler {
 	constructor() {
 		super();
 	}
