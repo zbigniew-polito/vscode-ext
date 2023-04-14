@@ -1,7 +1,7 @@
 import print, * as printer from "./common/printer";
 import { success, error } from "./common/ui";
 
-import {vscode}
+import * as vscode from "vscode";
 
 class Commands {
 	constructor() {}
