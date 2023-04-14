@@ -387,11 +387,6 @@ class PyUtils extends Commands {
 		//PyUtils.ins.terminal.sendText("echo 'onDidCloseTerminal >"+terminal.name+"<'");
 	}
 
-	public inTerm(cmd: string): void {
-		print(cmd);
-		PyUtils.ins.terminal.sendText(cmd);
-	}
-
 	// inkpaint
 	// https://dbanks.design/blog/vs-code-theme-with-style-dictionary/
 

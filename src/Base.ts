@@ -1,6 +1,11 @@
 class Base {
 	constructor() {}
 
+	public inTerm(cmd: string): void {
+		print(cmd);
+		PyUtils.ins.terminal.sendText(cmd);
+	}
+
 	public get terminal(): vscode.Terminal {
 		var terminal = null;
 		for (var it = 0; it < vscode.window.terminals.length; it++) {
