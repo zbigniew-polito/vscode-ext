@@ -1,5 +1,16 @@
+import print, * as printer from "./common/printer";
+
 class Base {
-	constructor() {}
+	constructor() {
+		if (Base._instance) {
+			throw new Error("Use Singleton.instance instead of new.");
+		}
+
+		Base._instance = this;
+
+		print(pjson["name"]);
+		print(pjson["publisher"]);
+	}
 
 	public inTerm(cmd: string): void {
 		print(cmd);

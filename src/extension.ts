@@ -1,12 +1,13 @@
 import * as vscode from "vscode";
 import * as fs from "fs";
+
 //import * as fs from "fs-extra";
+
 import * as path from "path";
 
 import { SidebarProvider } from "./views/SidebarProvider";
 import { KeyObject } from "crypto";
 
-import print, * as printer from "./common/printer";
 
 import { success, error } from "./common/ui";
 
@@ -67,14 +68,6 @@ class PyUtils extends Commands {
 
 	private constructor() {
 		super();
-		if (PyUtils._instance) {
-			throw new Error("Use Singleton.instance instead of new.");
-		}
-
-		PyUtils._instance = this;
-
-		print(pjson["name"]);
-		print(pjson["publisher"]);
 	}
 
 	static get ins() {
@@ -85,12 +78,11 @@ class PyUtils extends Commands {
 		const workspaces: readonly vscode.WorkspaceFolder[] =
 			vscode.workspace.workspaceFolders ?? [];
 		let ret: vscode.WorkspaceFolder | undefined = undefined;
-
-		if (workspaces.length === 0) {
-			ret = {
-				uri: vscode.Uri.file(process.cwd()),
-				name: path.basename(process.cwd()),
-				index: 0,
+		public inTerm(cmd: string): void {
+			print(cmd);
+			PyUtils.ins.terminal.sendText(cmd);
+		}
+	
 			};
 		} else if (workspaces.length === 1) {
 			ret = workspaces[0];
