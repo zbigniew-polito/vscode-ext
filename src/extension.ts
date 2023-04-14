@@ -142,6 +142,10 @@ class PyUtils {
 		return PyUtils.ins.context?.extension.id;
 	}
 
+	public activate_me(context?: vscode.ExtensionContext) {
+		print("activate_me");
+	}
+
 	public activate(context: vscode.ExtensionContext) {
 		PyUtils.ins.context = context;
 
