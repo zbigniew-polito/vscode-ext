@@ -63,24 +63,12 @@ class PyUtils {
 	private localdoc?: SidebarProvider;
 	private unicode?: SidebarProvider;
 
-	// const sidebarProvider = new SidebarProvider(context.extensionUri);
-
-	//public _config: StringByString = {};
-
 	private constructor() {
 		if (PyUtils._instance) {
 			throw new Error("Use Singleton.instance instead of new.");
 		}
 
 		PyUtils._instance = this;
-		/*
-		PyUtils.ins._outputChannel = vscode.window.createOutputChannel(
-			"PyUtils",
-			"js"
-		);
-		*/
-
-		//PyUtils.ins.loadConfig();
 
 		print(pjson["name"]);
 		print(pjson["publisher"]);

@@ -255,12 +255,12 @@
 				"title": "Check"
 			},
 			{
-				"command": "PyUtils.enable",
-				"title": "PyUtils.enable"
+				"command": "enable",
+				"title": "enable"
 			},
 			{
-				"command": "PyUtils.disable",
-				"title": "PyUtils.disable"
+				"command": "disable",
+				"title": "disable"
 			},
 			{
 				"command": "run",
