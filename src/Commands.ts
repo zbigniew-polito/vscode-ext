@@ -1,3 +1,6 @@
+import print, * as printer from "./common/printer";
+import { success, error } from "./common/ui";
+
 class Commands {
 	constructor() {}
 
@@ -7,5 +10,9 @@ class Commands {
 
 	public activateMeM() {
 		print("activateMe");
+	}
+
+	public deactivate() {
+		success(PyUtils.ins.name + " deactivated succesfully. // TODO");
 	}
 }
