@@ -1,1 +1,3 @@
-class Base {}
+class Base {
+	constructor() {}
+}

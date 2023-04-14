@@ -6,7 +6,9 @@ import * as vscode from "vscode";
 import { Base } from "./Base";
 
 class Commands extends Base {
-	constructor() {}
+	constructor() {
+		super();
+	}
 
 	public activateMe(context?: vscode.ExtensionContext) {
 		print("activateMe");

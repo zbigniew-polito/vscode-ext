@@ -67,6 +67,7 @@ class PyUtils extends Commands, Callbacks{
 	private unicode?: SidebarProvider;
 
 	private constructor() {
+		super();
 		if (PyUtils._instance) {
 			throw new Error("Use Singleton.instance instead of new.");
 		}
