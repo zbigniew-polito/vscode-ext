@@ -3,7 +3,7 @@ import { success, error } from "./common/ui";
 
 import * as vscode from "vscode";
 
-class Commands {
+class Commands extends Base {
 	constructor() {}
 
 	public activateMe(context?: vscode.ExtensionContext) {
