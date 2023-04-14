@@ -53,6 +53,8 @@ class Printer {
 					}
 				});
 			});
+		} else {
+			this.getChannel(name).appendLine(JSON.stringify(args, null, 2));
 		}
 	}
 
