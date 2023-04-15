@@ -3,6 +3,10 @@ import print, * as printer from "./common/printer";
 import * as fs from "fs";
 import * as path from "path";
 
+import { getProperty } from "./common/objects";
+
+import { success, error } from "./common/ui";
+
 class VsCode implements Provider {
 	private context?: vscode.ExtensionContext;
 
