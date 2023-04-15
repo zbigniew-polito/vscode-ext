@@ -10,7 +10,10 @@ import { success, error } from "./common/ui";
 class VsCode implements Provider {
 	private context?: vscode.ExtensionContext;
 
+	private isEnabled: boolean;
+
 	constructor() {
+		this.isEnabled = false;
 		//print(pjson["name"]);
 		//print(pjson["publisher"]);
 		print(this.name);
@@ -101,10 +104,7 @@ class VsCode implements Provider {
 			if (method.toString().startsWith("workspace_")) {
 				let _workspace = getProperty(vscode, "workspace");
 				let _method = method.toString().split("_")[1];
-				const __target: Function = getProperty(
-					PyUtils.ins,
-					method.toString()
-				) as any;
+				const __target: Function = getProperty(this, method.toString()) as any;
 				let _call: Function = getProperty(_workspace, _method.toString());
 
 				context.subscriptions.push(
@@ -118,10 +118,7 @@ class VsCode implements Provider {
 			} else if (method.toString().startsWith("window_")) {
 				let _window = getProperty(vscode, "window");
 				let _method = method.toString().split("_")[1];
-				const __target: Function = getProperty(
-					PyUtils.ins,
-					method.toString()
-				) as any;
+				const __target: Function = getProperty(this, method.toString()) as any;
 				let _call: Function = getProperty(_window, _method.toString());
 				context.subscriptions.push(
 					_call((arg: any) => {
@@ -136,7 +133,7 @@ class VsCode implements Provider {
 
 		this.isEnabled = true;
 
-		success(this.name + " activated succesfully in " + PyUtils.ins.projectRoot);
+		success(this.name + " activated succesfully in " + this.projectRoot);
 
 		/*
 		context.subscriptions.push(
