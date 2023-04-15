@@ -117,18 +117,14 @@ class PyUtils extends Commands {
 		PyUtils._line_counter++;
 	}
 	*/
-
-	public showStatusMessage(message: string): vscode.Disposable {
-		print(message);
-		return vscode.window.setStatusBarMessage(message);
-	}
-
+	/*
 	public existsInProject(path: string): boolean {
 		return (
 			fs.existsSync(PyUtils.ins.projectRoot + "/" + path) ||
 			error("Cant find : " + path)
 		);
 	}
+	*/
 
 	public run() {
 		PyUtils.ins.existsInProject(PyUtils.ins._config.run) &&

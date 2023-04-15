@@ -143,6 +143,18 @@ class VsCode implements Provider {
 
 		this.create();
 	}
+
+	public showStatusMessage(message: string): vscode.Disposable {
+		print(message);
+		return vscode.window.setStatusBarMessage(message);
+	}
+
+	public existsInProject(path: string): boolean {
+		return (
+			fs.existsSync(this.projectRoot + "/" + path) ||
+			error("Cant find : " + path)
+		);
+	}
 }
 
 export default VsCode;

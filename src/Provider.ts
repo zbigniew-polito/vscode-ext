@@ -5,5 +5,5 @@ interface StringByString {
 interface Provider {
 	get name(): String;
 	get config(): StringByString;
-	showStatusMessage(msg: String);
+	showStatusMessage(msg: String): any;
 }
