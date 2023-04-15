@@ -70,7 +70,7 @@ class VsCode implements Provider {
 		// make a skel boundled with package and copy it
 		if (!(this.ext_dir ? fs.existsSync(this.extensionDir) : false)) {
 			this.extensionDir
-				? fs.mkdir(PyUtils.ins.ext_dir, { recursive: false }, (err) => {
+				? fs.mkdir(extensionDir, { recursive: false }, (err) => {
 						error(err);
 				  })
 				: error("ext_dir creation error");
