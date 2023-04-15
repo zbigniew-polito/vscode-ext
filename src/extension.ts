@@ -81,12 +81,6 @@ class PyUtils extends Commands {
 		return PyUtils._instance ?? (PyUtils._instance = new PyUtils());
 	}
 
-	get ext_dir() {
-		return (
-			PyUtils.ins.projectRoot + "/." + PyUtils.ins.name?.toLocaleLowerCase()
-		);
-	}
-
 	get name() {
 		return PyUtils.ins.context?.extension.id;
 	}

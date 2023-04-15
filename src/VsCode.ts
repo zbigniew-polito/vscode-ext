@@ -47,6 +47,10 @@ class VsCode implements Provider {
 		print("Project Root " + ret.uri.fsPath);
 		return ret.uri.fsPath;
 	}
+
+	get extensionDir() {
+		return this.projectRoot + "/." + this.name?.toLocaleLowerCase();
+	}
 }
 
 export default VsCode;
