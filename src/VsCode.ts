@@ -68,9 +68,9 @@ class VsCode implements Provider {
 
 	public create(): void {
 		// make a skel boundled with package and copy it
-		if (!(this.ext_dir ? fs.existsSync(this.extensionDir) : false)) {
+		if (!(this.extensionDir ? fs.existsSync(this.extensionDir) : false)) {
 			this.extensionDir
-				? fs.mkdir(extensionDir, { recursive: false }, (err) => {
+				? fs.mkdir(this.extensionDir, { recursive: false }, (err) => {
 						error(err);
 				  })
 				: error("ext_dir creation error");
