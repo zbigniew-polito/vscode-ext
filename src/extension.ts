@@ -1,7 +1,5 @@
 import * as vscode from "vscode";
-import * as fs from "fs";
 //import * as fs from "fs-extra";
-import * as path from "path";
 
 import { SidebarProvider } from "./views/SidebarProvider";
 import { KeyObject } from "crypto";
@@ -77,72 +75,6 @@ class PyUtils extends Commands {
 
 	static get ins() {
 		return PyUtils._instance ?? (PyUtils._instance = new PyUtils());
-	}
-
-	public activate(context: vscode.ExtensionContext) {
-		PyUtils.ins.context = context;
-
-		let methods = Reflect.ownKeys(PyUtils.prototype);
-
-		/*
-		vscode.window.terminals.forEach((terminal: vscode.Terminal) => {
-			try {
-				terminal.dispose();
-			} catch (error: any) {
-				error("Terminal disposition error.");
-			}
-		});
-		*/
-
-		for (var method of methods) {
-			const __method = method;
-			if (method.toString().startsWith("workspace_")) {
-				let _workspace = getProperty(vscode, "workspace");
-				let _method = method.toString().split("_")[1];
-				const __target: Function = getProperty(
-					PyUtils.ins,
-					method.toString()
-				) as any;
-				let _call: Function = getProperty(_workspace, _method.toString());
-
-				context.subscriptions.push(
-					_call((arg: any) => {
-						print(__method.toString());
-						print(arg);
-						__target(arg);
-					})
-				);
-				print("Registered callback vscode." + method.toString());
-			} else if (method.toString().startsWith("window_")) {
-				let _window = getProperty(vscode, "window");
-				let _method = method.toString().split("_")[1];
-				const __target: Function = getProperty(
-					PyUtils.ins,
-					method.toString()
-				) as any;
-				let _call: Function = getProperty(_window, _method.toString());
-				context.subscriptions.push(
-					_call((arg: any) => {
-						print(__method.toString());
-						print(arg);
-						__target(arg);
-					})
-				);
-				print("Registered callback vscode." + method.toString());
-			}
-		}
-
-		PyUtils.ins.isEnabled = true;
-
-		success(
-			PyUtils.ins.name + " activated succesfully in " + PyUtils.ins.projectRoot
-		);
-
-		context.subscriptions.push(
-			vscode.commands.registerCommand("pyutils.", commandHandler)
-		);
-
-		PyUtils.ins.create();
 	}
 
 	public get _config(): StringByString {

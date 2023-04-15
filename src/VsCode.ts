@@ -1,5 +1,7 @@
 import * as vscode from "vscode";
 import print, * as printer from "./common/printer";
+import * as fs from "fs";
+import * as path from "path";
 
 class VsCode implements Provider {
 	private context?: vscode.ExtensionContext;
