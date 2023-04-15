@@ -6,7 +6,11 @@ import * as path from "path";
 class VsCode implements Provider {
 	private context?: vscode.ExtensionContext;
 
-	constructor() {}
+	constructor() {
+		//print(pjson["name"]);
+		//print(pjson["publisher"]);
+		print(this.name);
+	}
 
 	public get config(): StringByString {
 		return vscode.workspace.getConfiguration()?.get("pyutils") ?? {};
