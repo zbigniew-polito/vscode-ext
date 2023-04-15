@@ -66,10 +66,21 @@ class VsCode implements Provider {
 		return this.context?.extension.id ?? "Unknown";
 	}
 
+	public create(): void {
+		// make a skel boundled with package and copy it
+		if (!(this.ext_dir ? fs.existsSync(this.extensionDir) : false)) {
+			this.extensionDir
+				? fs.mkdir(PyUtils.ins.ext_dir, { recursive: false }, (err) => {
+						error(err);
+				  })
+				: error("ext_dir creation error");
+		}
+	}
+
 	public activate(context: vscode.ExtensionContext) {
 		this.context = context;
 
-		let methods = Reflect.ownKeys(this.prototype);
+		let methods = Reflect.ownKeys(VsCode.prototype);
 
 		/*
 		vscode.window.terminals.forEach((terminal: vscode.Terminal) => {
