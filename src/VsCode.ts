@@ -6,6 +6,8 @@ import * as path from "path";
 class VsCode implements Provider {
 	private context?: vscode.ExtensionContext;
 
+	constructor() {}
+
 	public get config(): StringByString {
 		return vscode.workspace.getConfiguration()?.get("pyutils") ?? {};
 	}
@@ -61,9 +63,9 @@ class VsCode implements Provider {
 	}
 
 	public activate(context: vscode.ExtensionContext) {
-		PyUtils.ins.context = context;
+		this.context = context;
 
-		let methods = Reflect.ownKeys(PyUtils.prototype);
+		let methods = Reflect.ownKeys(this.prototype);
 
 		/*
 		vscode.window.terminals.forEach((terminal: vscode.Terminal) => {
