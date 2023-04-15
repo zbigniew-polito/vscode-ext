@@ -134,17 +134,17 @@ class VsCode implements Provider {
 			}
 		}
 
-		PyUtils.ins.isEnabled = true;
+		this.isEnabled = true;
 
-		success(
-			PyUtils.ins.name + " activated succesfully in " + PyUtils.ins.projectRoot
-		);
+		success(this.name + " activated succesfully in " + PyUtils.ins.projectRoot);
 
+		/*
 		context.subscriptions.push(
 			vscode.commands.registerCommand("pyutils.", commandHandler)
 		);
+        */
 
-		PyUtils.ins.create();
+		this.create();
 	}
 }
 
