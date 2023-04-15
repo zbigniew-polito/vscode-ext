@@ -2,6 +2,8 @@ import * as vscode from "vscode";
 import print, * as printer from "./common/printer";
 
 class VsCode implements Provider {
+	private context?: vscode.ExtensionContext;
+
 	public get config(): StringByString {
 		return vscode.workspace.getConfiguration()?.get("pyutils") ?? {};
 	}
@@ -50,6 +52,10 @@ class VsCode implements Provider {
 
 	get extensionDir() {
 		return this.projectRoot + "/." + this.name?.toLocaleLowerCase();
+	}
+
+	get name() {
+		return this.context?.extension.id;
 	}
 }
 

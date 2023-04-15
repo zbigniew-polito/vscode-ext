@@ -3,5 +3,6 @@ interface StringByString {
 }
 
 interface Provider {
+	name: String;
 	get config(): StringByString;
 }

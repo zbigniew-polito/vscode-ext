@@ -81,10 +81,6 @@ class PyUtils extends Commands {
 		return PyUtils._instance ?? (PyUtils._instance = new PyUtils());
 	}
 
-	get name() {
-		return PyUtils.ins.context?.extension.id;
-	}
-
 	public activate(context: vscode.ExtensionContext) {
 		PyUtils.ins.context = context;
 
