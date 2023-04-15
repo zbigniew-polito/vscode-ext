@@ -77,9 +77,11 @@ class PyUtils extends Commands {
 		return PyUtils._instance ?? (PyUtils._instance = new PyUtils());
 	}
 
+	/*
 	public get _config(): StringByString {
 		return vscode.workspace.getConfiguration()?.get("pyutils") ?? {};
 	}
+	*/
 
 	/*
 	public loadConfig(): void {
@@ -91,7 +93,7 @@ class PyUtils extends Commands {
 		}
 	}
 	*/
-
+	/*
 	public create(): void {
 		// make a skel boundled with package and copy it
 		if (!(PyUtils.ins.ext_dir ? fs.existsSync(PyUtils.ins.ext_dir) : false)) {
@@ -102,6 +104,7 @@ class PyUtils extends Commands {
 				: error("ext_dir creation error");
 		}
 	}
+	*/
 
 	/*
 	public printToOutputChannel(message: string) {
