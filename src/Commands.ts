@@ -12,17 +12,6 @@ class Commands extends CallbacksHandler {
 		super();
 	}
 
-	public activateMe(context?: vscode.ExtensionContext) {
-		print("activateMe");
-	}
-	public activateMeM() {
-		print("activateMe");
-	}
-
-	public deactivate() {
-		//success(PyUtils.ins.name + " deactivated succesfully. // TODO");
-	}
-
 	public activate(context: vscode.ExtensionContext) {
 		Commands.ins.context = context;
 
