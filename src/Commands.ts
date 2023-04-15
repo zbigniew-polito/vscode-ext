@@ -15,7 +15,6 @@ class Commands extends CallbacksHandler {
 	public activateMe(context?: vscode.ExtensionContext) {
 		print("activateMe");
 	}
-
 	public activateMeM() {
 		print("activateMe");
 	}
