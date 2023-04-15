@@ -3,5 +3,5 @@ interface StringByString {
 }
 
 interface Provider {
-	config: StringByString;
+	get config(): StringByString;
 }
