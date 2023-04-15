@@ -1,13 +1,12 @@
 import * as vscode from "vscode";
 import * as fs from "fs";
-
 //import * as fs from "fs-extra";
-
 import * as path from "path";
 
 import { SidebarProvider } from "./views/SidebarProvider";
 import { KeyObject } from "crypto";
 
+import print, * as printer from "./common/printer";
 
 import { success, error } from "./common/ui";
 
@@ -16,6 +15,7 @@ import { getProperty } from "./common/objects";
 import { Commands } from "./Commands";
 
 // Object.assign(global, nvk);
+const pjson = require("../package.json");
 
 interface StringByString {
 	[key: string]: string;
@@ -51,8 +51,10 @@ function getProperty<T, K extends keyof T>(obj: T, key: string): T[K] {
 */
 
 class PyUtils extends Commands {
+	private static _instance?: PyUtils;
 
-	
+	private context?: vscode.ExtensionContext;
+
 	//https://github.com/microsoft/vscode-extension-samples/blob/main/webview-view-sample/src/extension.ts
 	//https://code.visualstudio.com/api/references/icons-in-labels
 
@@ -65,48 +67,18 @@ class PyUtils extends Commands {
 
 	private constructor() {
 		super();
+		if (PyUtils._instance) {
+			throw new Error("Use Singleton.instance instead of new.");
+		}
+
+		PyUtils._instance = this;
+
+		print(pjson["name"]);
+		print(pjson["publisher"]);
 	}
 
-
-	get projectRoot() {
-		const workspaces: readonly vscode.WorkspaceFolder[] =
-			vscode.workspace.workspaceFolders ?? [];
-		let ret: vscode.WorkspaceFolder | undefined = undefined;
-		public inTerm(cmd: string): void {
-			print(cmd);
-			PyUtils.ins.terminal.sendText(cmd);
-		}
-	
-			};
-		} else if (workspaces.length === 1) {
-			ret = workspaces[0];
-			//return workspaces[0];
-		} else {
-			let rootWorkspace = workspaces[0];
-			let root = undefined;
-			for (const w of workspaces) {
-				if (fs.existsSync(w.uri.fsPath)) {
-					root = w.uri.fsPath;
-					rootWorkspace = w;
-					break;
-				}
-			}
-
-			for (const w of workspaces) {
-				if (
-					root &&
-					root.length > w.uri.fsPath.length &&
-					fs.existsSync(w.uri.fsPath)
-				) {
-					root = w.uri.fsPath;
-					rootWorkspace = w;
-				}
-			}
-			ret = rootWorkspace;
-		}
-
-		print("Project Root " + ret.uri.fsPath);
-		return ret.uri.fsPath;
+	static get ins() {
+		return PyUtils._instance ?? (PyUtils._instance = new PyUtils());
 	}
 
 	get ext_dir() {
@@ -115,8 +87,75 @@ class PyUtils extends Commands {
 		);
 	}
 
-	
-	
+	get name() {
+		return PyUtils.ins.context?.extension.id;
+	}
+
+	public activate(context: vscode.ExtensionContext) {
+		PyUtils.ins.context = context;
+
+		let methods = Reflect.ownKeys(PyUtils.prototype);
+
+		/*
+		vscode.window.terminals.forEach((terminal: vscode.Terminal) => {
+			try {
+				terminal.dispose();
+			} catch (error: any) {
+				error("Terminal disposition error.");
+			}
+		});
+		*/
+
+		for (var method of methods) {
+			const __method = method;
+			if (method.toString().startsWith("workspace_")) {
+				let _workspace = getProperty(vscode, "workspace");
+				let _method = method.toString().split("_")[1];
+				const __target: Function = getProperty(
+					PyUtils.ins,
+					method.toString()
+				) as any;
+				let _call: Function = getProperty(_workspace, _method.toString());
+
+				context.subscriptions.push(
+					_call((arg: any) => {
+						print(__method.toString());
+						print(arg);
+						__target(arg);
+					})
+				);
+				print("Registered callback vscode." + method.toString());
+			} else if (method.toString().startsWith("window_")) {
+				let _window = getProperty(vscode, "window");
+				let _method = method.toString().split("_")[1];
+				const __target: Function = getProperty(
+					PyUtils.ins,
+					method.toString()
+				) as any;
+				let _call: Function = getProperty(_window, _method.toString());
+				context.subscriptions.push(
+					_call((arg: any) => {
+						print(__method.toString());
+						print(arg);
+						__target(arg);
+					})
+				);
+				print("Registered callback vscode." + method.toString());
+			}
+		}
+
+		PyUtils.ins.isEnabled = true;
+
+		success(
+			PyUtils.ins.name + " activated succesfully in " + PyUtils.ins.projectRoot
+		);
+
+		context.subscriptions.push(
+			vscode.commands.registerCommand("pyutils.", commandHandler)
+		);
+
+		PyUtils.ins.create();
+	}
 
 	public get _config(): StringByString {
 		return vscode.workspace.getConfiguration()?.get("pyutils") ?? {};
@@ -168,7 +207,26 @@ class PyUtils extends Commands {
 		);
 	}
 
-	
+	public run() {
+		PyUtils.ins.existsInProject(PyUtils.ins._config.run) &&
+			PyUtils.ins.terminal.sendText(
+				PyUtils.ins.projectRoot + "/" + PyUtils.ins._config.run
+			);
+	}
+
+	public build() {
+		PyUtils.ins.existsInProject(PyUtils.ins._config.build) &&
+			PyUtils.ins.terminal.sendText(
+				PyUtils.ins.projectRoot + "/" + PyUtils.ins._config.build
+			);
+	}
+
+	public debug() {
+		PyUtils.ins.existsInProject(PyUtils.ins._config.debug) &&
+			PyUtils.ins.terminal.sendText(
+				PyUtils.ins.projectRoot + "/" + PyUtils.ins._config.debug
+			);
+	}
 
 	/*
 	public workspace_onDidChangeWorkspaceFolders(
