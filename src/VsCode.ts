@@ -9,7 +9,7 @@ import { getProperty } from "./common/objects";
 
 import TerminalProvider, { VsTerminalProvider } from "./TerminalProvider";
 
-class VsCode extends VsTerminalProvider implements Provider {
+class VsCode implements Provider {
 	public context?: vscode.ExtensionContext;
 	public isEnabled: boolean;
 

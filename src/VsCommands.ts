@@ -8,11 +8,14 @@ import { getProperty } from "./common/objects";
 
 import * as path from "path";
 import * as vscode from "vscode";
+import { VsTerminalProvider } from "./TerminalProvider";
 
 class VsCommands extends VsCode {
 	constructor() {
-		print("");
+		super();
+		print("VsCommands");
 	}
+
 	public run() {
 		this.existsInProject(this.config.run) &&
 			this.terminal.sendText(this.projectRoot + "/" + this.config.run);
