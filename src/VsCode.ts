@@ -146,6 +146,7 @@ class VsCode extends VsTerminalProvider implements Provider {
 		this.create();
 	}
 
+	/*
 	public showStatusMessage(message: string): vscode.Disposable {
 		print(message);
 		return vscode.window.setStatusBarMessage(message);
@@ -157,6 +158,7 @@ class VsCode extends VsTerminalProvider implements Provider {
 			error("Cant find : " + path)
 		);
 	}
+    */
 }
 
 export default VsCode;
