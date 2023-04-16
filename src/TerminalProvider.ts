@@ -50,6 +50,7 @@ class VsTerminalProvider implements TerminalProvider {
 
 	public inTerm(cmd: string): void {
 		print(cmd);
+
 		this.terminal.sendText(cmd);
 	}
 }
