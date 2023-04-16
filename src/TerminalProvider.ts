@@ -13,6 +13,9 @@ interface TerminalProvider {
 }
 
 class VsTerminalProvider implements TerminalProvider {
+	constructor() {
+		print("VsTerminalProvider");
+	}
 	public get terminal(): vscode.Terminal {
 		var terminal = null;
 		for (var it = 0; it < vscode.window.terminals.length; it++) {

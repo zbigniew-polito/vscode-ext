@@ -21,6 +21,7 @@ class VsCode extends VsTerminalProvider implements Provider {
 
 	constructor() {
 		super();
+		print("VsCode Constructor");
 		this.isEnabled = false;
 	}
 
