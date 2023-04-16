@@ -2,8 +2,9 @@ import * as vscode from "vscode";
 
 interface TerminalProvider {
 	terminal: any;
-	window_onDidOpenTerminal(any): any;
-	window_onDidChangeTerminalState: any;
+	window_onDidOpenTerminal(terminal: any): any;
+	window_onDidChangeTerminalState(event: any): any;
+	window_onDidChangeActiveTerminal(terminal: any): any;
 }
 
 class VsTerminalProvider implements TerminalProvider {
