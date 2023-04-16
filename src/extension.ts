@@ -378,25 +378,7 @@ class PyUtils extends Commands, Callbacks{
 	// One per Editor
 	// One per Workspace
 
-	public get terminal(): vscode.Terminal {
-		var terminal = null;
-		for (var it = 0; it < vscode.window.terminals.length; it++) {
-			if (vscode.window.terminals[it].name === vscode.workspace.name) {
-				terminal = vscode.window.terminals[it];
-				break;
-			}
-		}
 
-		var options = {
-			shellpath: "$workspaceFolder",
-			name: vscode.workspace.name,
-			location: vscode.TerminalLocation.Panel,
-		};
-
-		terminal = terminal || vscode.window.createTerminal(options);
-		terminal.show();
-		return terminal;
-	}
 }
 
 module.exports = PyUtils.ins;
