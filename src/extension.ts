@@ -1,6 +1,5 @@
 import * as vscode from "vscode";
 import * as fs from "fs";
-//import * as fs from "fs-extra";
 import * as path from "path";
 
 import { SidebarProvider } from "./views/SidebarProvider";
@@ -12,9 +11,12 @@ import { success, error } from "./common/ui";
 
 import { getProperty } from "./common/objects";
 
-//import { commands } from "./Commands.t";
+// import { commands } from "./Commands.t";
 
 // Object.assign(global, nvk);
+
+// import * as fs from "fs-extra";
+
 const pjson = require("../package.json");
 
 interface StringByString {
@@ -55,8 +57,8 @@ class PyUtils extends VsCode {
 
 	private context?: vscode.ExtensionContext;
 
-	//https://github.com/microsoft/vscode-extension-samples/blob/main/webview-view-sample/src/extension.ts
-	//https://code.visualstudio.com/api/references/icons-in-labels
+	// https://github.com/microsoft/vscode-extension-samples/blob/main/webview-view-sample/src/extension.ts
+	// https://code.visualstudio.com/api/references/icons-in-labels
 
 	private diary?: SidebarProvider;
 	private wave?: SidebarProvider;
