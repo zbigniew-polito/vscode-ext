@@ -5,6 +5,6 @@ interface StringByString {
 interface Provider {
 	get name(): String;
 	get config(): StringByString;
-	showStatusMessage(msg: String): any;
 	get terminal(): any;
+	showStatusMessage(msg: String): any;
 }
