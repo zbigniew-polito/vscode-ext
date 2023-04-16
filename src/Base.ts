@@ -24,7 +24,6 @@ class Base {
 
 	public inTerm(cmd: string): void {
 		print(cmd);
-
 		Base.ins.terminal.sendText(cmd);
 	}
 
