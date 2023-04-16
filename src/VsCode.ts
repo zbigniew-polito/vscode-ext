@@ -23,16 +23,16 @@ class VsCode extends VsTerminalProvider implements Provider {
 		this.isEnabled = false;
 	}
 
+	get name() {
+		return this.context?.extension.id ?? "Unknown";
+	}
+
 	public get config(): StringByString {
 		return vscode.workspace.getConfiguration()?.get("pyutils") ?? {};
 	}
 
 	get extensionDir() {
 		return this.projectRoot + "/." + this.name?.toLocaleLowerCase();
-	}
-
-	get name() {
-		return this.context?.extension.id ?? "Unknown";
 	}
 
 	get projectRoot() {
