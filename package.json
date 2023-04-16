@@ -15,8 +15,7 @@
 	],
 	"activationEvents": [
 		"workspaceContains:**/.pyutils/deactivate-me",
-		"workspaceContains:.pyutils/deactivate-me",
-		"onCommand:beamy.pyutils.activateMe"
+		"workspaceContains:.pyutils/deactivate-me"
 	],
 	"main": "./dist/extension.js",
 	"contributes": {
