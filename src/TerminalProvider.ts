@@ -1,8 +1,9 @@
-import * as vscode from "vscode";
 import print from "./common/printer";
+import * as vscode from "vscode";
 
 interface TerminalProvider {
 	terminal: any;
+
 	inTerm(cmd: string): void;
 
 	window_onDidOpenTerminal(terminal: any): void;
