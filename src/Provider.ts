@@ -5,6 +5,6 @@ interface StringByString {
 interface Provider {
 	get name(): String;
 	get config(): StringByString;
-	get ins(): Provider;
+	static get ins(): Provider;
 	showStatusMessage(msg: String): any;
 }
