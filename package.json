@@ -275,14 +275,18 @@
 				"title": "Some Context Menu Option"
 			},
 			{
-				"command": "pyutils.debug",
+				"command": "beamy.pyutils.debug",
 				"title": "Debug",
 				"icon": "$(debug)"
 			},
 			{
-				"command": "pyutils.build",
+				"command": "beamy.pyutils.build",
 				"title": "Build",
 				"icon": "$(build)"
+			},
+			{
+				"command": "beamy.pyutils.activate",
+				"title": "Activate"
 			}
 		],
 		"menus": {
