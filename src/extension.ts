@@ -6,6 +6,8 @@ import print, * as printer from "./common/printer";
 
 import { success, error } from "./common/ui";
 import { getProperty } from "./common/objects";
+impory { VsCode } from "./VsCode";
+
 
 const pjson = require("../package.json");
 
