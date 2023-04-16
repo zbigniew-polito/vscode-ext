@@ -2,6 +2,8 @@ import VsCode from "./VsCode";
 
 import print, * as printer from "./common/printer";
 
+import print, * as printer from "./common/printer";
+
 class VsCommands extends VsCode {
 	public run() {
 		this.existsInProject(this.config.run) &&
