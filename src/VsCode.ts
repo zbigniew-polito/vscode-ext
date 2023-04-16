@@ -160,3 +160,4 @@ class VsCode extends VsTerminalProvider implements Provider {
 }
 
 export default VsCode;
+export { VsCode };
