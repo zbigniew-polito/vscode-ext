@@ -117,17 +117,6 @@ class VsCode extends VsTerminalProvider implements Provider {
 		// PyUtils.ins.loadConfig();
 	}
 
-	public window_onDidChangeVisibleTextEditors(event: any) {
-		// print(event)
-		// close terminal when one terminal per editor
-	}
-
-	public window_onDidChangeActiveTextEditor(event: any) {
-		if (event.document.uri.scheme == "file") {
-			this.terminal.show();
-		}
-	}
-
 	public workspace_onDidSaveTextDocument(document: vscode.TextDocument) {
 		this.existsInProject(this.config.callback) &&
 			this.inTerm(
@@ -137,6 +126,17 @@ class VsCode extends VsTerminalProvider implements Provider {
 					" " +
 					document.uri.fsPath
 			);
+	}
+
+	public window_onDidChangeVisibleTextEditors(event: any) {
+		// print(event)
+		// close terminal when one terminal per editor
+	}
+
+	public window_onDidChangeActiveTextEditor(event: any) {
+		if (event.document.uri.scheme == "file") {
+			this.terminal.show();
+		}
 	}
 }
 
