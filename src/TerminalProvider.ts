@@ -54,5 +54,5 @@ class VsTerminalProvider implements TerminalProvider {
 	}
 }
 
-export default TerminalProvider;
 export { VsTerminalProvider, TerminalProvider };
+export default TerminalProvider;
