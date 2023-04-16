@@ -7,12 +7,13 @@ import { getProperty } from "./common/objects";
 
 import { success, error } from "./common/ui";
 
-class VsCode implements Provider {
+class VsCode extends TerminalProvider implements Provider {
 	private context?: vscode.ExtensionContext;
 
 	private isEnabled: boolean;
 
 	constructor() {
+		super();
 		this.isEnabled = false;
 		//print(pjson["name"]);
 		//print(pjson["publisher"]);
