@@ -227,18 +227,6 @@ class PyUtils extends VsCode {
 	}
 	*/
 
-	public showStatusMessage(message: string): vscode.Disposable {
-		print(message);
-		return vscode.window.setStatusBarMessage(message);
-	}
-
-	public existsInProject(path: string): boolean {
-		return (
-			fs.existsSync(PyUtils.ins.projectRoot + "/" + path) ||
-			error("Cant find : " + path)
-		);
-	}
-
 	/*
 	public workspace_onDidChangeWorkspaceFolders(
 		event: vscode.WorkspaceFoldersChangeEvent

@@ -174,6 +174,30 @@ class VsCode extends VsTerminalProvider implements Provider {
 		// print(event)
 		// close terminal when one terminal per editor
 	}
+
+	public window_onDidChangeActiveTextEditor(event: any) {
+		if (event.document.uri.scheme == "file") {
+			this.terminal.show();
+		}
+	}
+
+	public existsInProject(path: string): boolean {
+		return (
+			fs.existsSync(this.projectRoot + "/" + path) ||
+			error("Cant find : " + path)
+		);
+	}
+
+	public workspace_onDidSaveTextDocument(document: vscode.TextDocument) {
+		this.existsInProject(this.config.callback) &&
+			this.inTerm(
+				this.projectRoot +
+					"/" +
+					this.config["callback"] +
+					" " +
+					document.uri.fsPath
+			);
+	}
 }
 
 export default VsCode;
