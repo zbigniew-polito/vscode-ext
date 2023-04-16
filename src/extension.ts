@@ -302,7 +302,7 @@ class PyUtils extends Commands, Callbacks{
 	}
 
 	public window_onDidChangeVisibleTextEditors(event: any) {
-		//print(event)
+		// print(event)
 		// close terminal when one terminal per editor
 	}
 
