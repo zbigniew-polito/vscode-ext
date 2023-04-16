@@ -12,8 +12,8 @@ import { VsTerminalProvider } from "./TerminalProvider";
 
 class VsCommands extends VsCode {
 	constructor() {
-		super();
 		print("VsCommands");
+		super();
 	}
 
 	public run() {
