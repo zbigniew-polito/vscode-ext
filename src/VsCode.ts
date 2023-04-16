@@ -15,14 +15,14 @@ class VsCode extends VsTerminalProvider implements Provider {
 
 	public static instance: VsCode;
 
-	static get ins() {
-		return VsCode.instance ?? (VsCode.instance = new VsCode());
+	constructor() {
+		print("VsCode Constructor");
+		super();
+		this.isEnabled = false;
 	}
 
-	constructor() {
-		super();
-		print("VsCode Constructor");
-		this.isEnabled = false;
+	static get ins() {
+		return VsCode.instance ?? (VsCode.instance = new VsCode());
 	}
 
 	get name() {
