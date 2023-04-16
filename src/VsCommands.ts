@@ -2,6 +2,8 @@ import VsCode from "./VsCode";
 
 import print, * as printer from "./common/printer";
 import { success, error } from "./common/ui";
+import * as path from "path";
+import * as vscode from "vscode";
 
 class VsCommands extends VsCode {
 	public run() {
