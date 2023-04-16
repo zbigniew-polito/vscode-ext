@@ -1,8 +1,7 @@
 import VsCode from "./VsCode";
 
 import print, * as printer from "./common/printer";
-
-import print, * as printer from "./common/printer";
+import { success, error } from "./common/ui";
 
 class VsCommands extends VsCode {
 	public run() {
