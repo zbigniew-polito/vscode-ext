@@ -116,6 +116,7 @@ class VsCode extends VsTerminalProvider implements Provider {
 						__target(arg);
 					})
 				);
+
 				print("Registered callback vscode." + method.toString());
 			} else if (method.toString().startsWith("window_")) {
 				let _window = getProperty(vscode, "window");
@@ -129,6 +130,7 @@ class VsCode extends VsTerminalProvider implements Provider {
 						__target(arg);
 					})
 				);
+
 				print("Registered callback vscode." + method.toString());
 			}
 		}

@@ -62,9 +62,9 @@ class PyUtils extends VsCode {
 		// print(pjson["publisher"]);
 	}
 
-	static get ins() {
-		return PyUtils._instance ?? (PyUtils._instance = new PyUtils());
-	}
+	// static get ins() {
+	//	return PyUtils._instance ?? (PyUtils._instance = new PyUtils());
+	// }
 
 	get projectRoot() {
 		const workspaces: readonly vscode.WorkspaceFolder[] =
