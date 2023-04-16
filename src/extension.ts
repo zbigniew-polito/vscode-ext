@@ -371,27 +371,7 @@ class PyUtils extends Commands, Callbacks{
 	// classes and objects
 	// graphs
 
-	public window_onDidOpenTerminal(terminal: vscode.Terminal) {
-		//PyUtils.ins.terminal.sendText("echo 'onDidOpenTerminal >"+terminal.name+"<'");
-	}
-
-	public window_onDidChangeTerminalState(event: any) {
-		//PyUtils.ins.terminal.sendText("echo 'onDidChangeTerminalState >"+(event?event.name:'undefined')+"<'");
-	}
-
-	public window_onDidChangeActiveTerminal(terminal: vscode.Terminal) {
-		//PyUtils.ins.terminal.sendText("echo 'onDidChangeActiveTerminal >"+terminal.name+"<'");
-	}
-
-	public window_onDidCloseTerminal(terminal: vscode.Terminal) {
-		//PyUtils.ins.terminal.sendText("echo 'onDidCloseTerminal >"+terminal.name+"<'");
-	}
-
-	public inTerm(cmd: string): void {
-		print(cmd);
-		PyUtils.ins.terminal.sendText(cmd);
-	}
-
+	
 	// inkpaint
 	// https://dbanks.design/blog/vs-code-theme-with-style-dictionary/
 

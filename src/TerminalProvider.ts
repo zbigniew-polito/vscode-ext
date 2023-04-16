@@ -2,6 +2,7 @@ import * as vscode from "vscode";
 
 interface TermianlProvider {
 	terminal: any;
+	window_onDidCloseTerminal;
 }
 
 class TerminalProvider {
@@ -23,6 +24,27 @@ class TerminalProvider {
 		terminal = terminal || vscode.window.createTerminal(options);
 		terminal.show();
 		return terminal;
+	}
+
+	public window_onDidOpenTerminal(terminal: vscode.Terminal) {
+		//PyUtils.ins.terminal.sendText("echo 'onDidOpenTerminal >"+terminal.name+"<'");
+	}
+
+	public window_onDidChangeTerminalState(event: any) {
+		//PyUtils.ins.terminal.sendText("echo 'onDidChangeTerminalState >"+(event?event.name:'undefined')+"<'");
+	}
+
+	public window_onDidChangeActiveTerminal(terminal: vscode.Terminal) {
+		//PyUtils.ins.terminal.sendText("echo 'onDidChangeActiveTerminal >"+terminal.name+"<'");
+	}
+
+	public window_onDidCloseTerminal(terminal: vscode.Terminal) {
+		//PyUtils.ins.terminal.sendText("echo 'onDidCloseTerminal >"+terminal.name+"<'");
+	}
+
+	public inTerm(cmd: string): void {
+		print(cmd);
+		this.terminal.sendText(cmd);
 	}
 }
 
