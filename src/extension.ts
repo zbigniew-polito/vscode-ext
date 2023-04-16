@@ -5,7 +5,7 @@ import * as path from "path";
 import print, * as printer from "./common/printer";
 
 import { success, error } from "./common/ui";
-import { getProperty } from "./common/objects";
+//import { getProperty } from "./common/objects";
 
 import VsCode from "./VsCode";
 

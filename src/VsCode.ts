@@ -11,7 +11,7 @@ import TerminalProvider, { VsTerminalProvider } from "./TerminalProvider";
 
 class VsCode extends VsTerminalProvider implements Provider {
 	public context?: vscode.ExtensionContext;
-	private isEnabled: boolean;
+	public isEnabled: boolean;
 
 	constructor() {
 		super();
