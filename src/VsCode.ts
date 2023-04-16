@@ -111,7 +111,7 @@ class VsCode extends VsTerminalProvider implements Provider {
     */
 
 	public workspace_onDidCloseTextDocument(event: any) {
-		print(event);
+		//print(event);
 	}
 
 	public workspace_onDidChangeConfiguration() {
@@ -135,7 +135,7 @@ class VsCode extends VsTerminalProvider implements Provider {
 	}
 
 	public window_onDidChangeActiveTextEditor(event: any) {
-		if (event.document.uri.scheme == "file") {
+		if (event.document.uri.scheme === "file") {
 			this.terminal.show();
 		}
 	}
