@@ -3,22 +3,18 @@ import VsCode from "./VsCode";
 class VsCommands extends VsCode {
 	public run() {
 		this.existsInProject(this.config.run) &&
-			this.terminal.sendText(thid.projectRoot + "/" + PyUtils.ins._config.run);
+			this.terminal.sendText(this.projectRoot + "/" + this.config.run);
 	}
 
 	public build() {
-		PyUtils.ins.existsInProject(PyUtils.ins._config.build) &&
-			PyUtils.ins.terminal.sendText(
-				PyUtils.ins.projectRoot + "/" + PyUtils.ins._config.build
-			);
+		this.existsInProject(this.config.build) &&
+			this.terminal.sendText(this.projectRoot + "/" + this.config.build);
 	}
 
 	public debug() {
-		PyUtils.ins.existsInProject(PyUtils.ins._config.debug) &&
-			PyUtils.ins.terminal.sendText(
-				PyUtils.ins.projectRoot + "/" + PyUtils.ins._config.debug
-			);
+		this.existsInProject(this.config.debug) &&
+			this.terminal.sendText(this.projectRoot + "/" + this.config.debug);
 	}
 }
 
-export default VsCommand;
+export default VsCommands;
