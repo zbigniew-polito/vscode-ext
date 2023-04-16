@@ -3,9 +3,7 @@ import VsCode from "./VsCode";
 class VsCommands extends VsCode {
 	public run() {
 		this.existsInProject(this.config.run) &&
-			this.terminal.sendText(
-				PyUtils.ins.projectRoot + "/" + PyUtils.ins._config.run
-			);
+			this.terminal.sendText(thid.projectRoot + "/" + PyUtils.ins._config.run);
 	}
 
 	public build() {
