@@ -271,7 +271,7 @@
 				"icon": "$(play)"
 			},
 			{
-				"command": "beamy.pyutils.first_in_context_menu_editor_title_in_tab",
+				"command": "beamy.pyutils.title_command",
 				"title": "Some Context Menu Option"
 			},
 			{
