@@ -67,6 +67,7 @@ class PyUtils extends VsCode {
 	//	return PyUtils._instance ?? (PyUtils._instance = new PyUtils());
 	// }
 
+	/*
 	get projectRoot() {
 		const workspaces: readonly vscode.WorkspaceFolder[] =
 			vscode.workspace.workspaceFolders ?? [];
@@ -108,6 +109,7 @@ class PyUtils extends VsCode {
 		print("Project Root " + ret.uri.fsPath);
 		return ret.uri.fsPath;
 	}
+	*/
 
 	// get ext_dir() {
 	//	return (
