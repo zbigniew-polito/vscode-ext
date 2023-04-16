@@ -17,9 +17,8 @@ class VsCode extends TerminalProvider implements Provider {
 	constructor() {
 		super();
 		this.isEnabled = false;
-		//print(pjson["name"]);
-		//print(pjson["publisher"]);
-		print(this.name);
+
+		//print(this.name);
 	}
 
 	public get config(): StringByString {
