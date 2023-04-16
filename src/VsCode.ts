@@ -10,7 +10,7 @@ import { success, error } from "./common/ui";
 import TerminalProvider, { VsTerminalProvider } from "./TerminalProvider";
 
 class VsCode extends VsTerminalProvider implements Provider {
-	private context?: vscode.ExtensionContext;
+	public context?: vscode.ExtensionContext;
 	private isEnabled: boolean;
 
 	constructor() {
