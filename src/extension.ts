@@ -204,17 +204,6 @@ class PyUtils extends VsCode {
 	}
 	*/
 
-	public create(): void {
-		// make a skel boundled with package and copy it
-		if (!(PyUtils.ins.ext_dir ? fs.existsSync(PyUtils.ins.ext_dir) : false)) {
-			PyUtils.ins.ext_dir
-				? fs.mkdir(PyUtils.ins.ext_dir, { recursive: false }, (err) => {
-						error(err);
-				  })
-				: error("ext_dir creation error");
-		}
-	}
-
 	/*
 	public printToOutputChannel(message: string) {
 		PyUtils.ins._outputChannel?.appendLine(
