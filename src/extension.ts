@@ -31,6 +31,7 @@ add git besides terminal and output
 */
 
 /*
+
 function getProperty<T, K extends keyof T>(obj: T, key: string): T[K] {
 	if (key in obj) {
 		return obj[key as K];
@@ -108,30 +109,31 @@ class PyUtils extends VsCode {
 		return ret.uri.fsPath;
 	}
 
-	get ext_dir() {
-		return (
-			PyUtils.ins.projectRoot + "/." + PyUtils.ins.name?.toLocaleLowerCase()
-		);
-	}
+	// get ext_dir() {
+	//	return (
+	//		PyUtils.ins.projectRoot + "/." + PyUtils.ins.name?.toLocaleLowerCase()
+	//	);
+	// }
 
-	get name() {
-		return PyUtils.ins.context?.extension.id;
-	}
+	// get name() {
+	//	return PyUtils.ins.context?.extension.id;
+	//}
 
+	/*
 	public activate(context: vscode.ExtensionContext) {
 		PyUtils.ins.context = context;
 
 		let methods = Reflect.ownKeys(PyUtils.prototype);
 
-		/*
-		vscode.window.terminals.forEach((terminal: vscode.Terminal) => {
-			try {
-				terminal.dispose();
-			} catch (error: any) {
-				error("Terminal disposition error.");
-			}
-		});
-		*/
+		
+		// vscode.window.terminals.forEach((terminal: vscode.Terminal) => {
+		//	try {
+		//		terminal.dispose();
+		//	} catch (error: any) {
+		//		error("Terminal disposition error.");
+		//	}
+		// });
+		
 
 		for (var method of methods) {
 			const __method = method;
@@ -177,11 +179,12 @@ class PyUtils extends VsCode {
 			PyUtils.ins.name + " activated succesfully in " + PyUtils.ins.projectRoot
 		);
 
-		context.subscriptions.push(
-			vscode.commands.registerCommand("pyutils.", commandHandler)
-		);
+		// context.subscriptions.push(
+		//	vscode.commands.registerCommand("pyutils.", commandHandler)
+		//);
 
-		PyUtils.ins.create();
+		//PyUtils.ins.create();
+		this.create();
 	}
 
 	public get _config(): StringByString {
