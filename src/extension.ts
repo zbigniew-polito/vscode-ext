@@ -2,20 +2,10 @@ import * as vscode from "vscode";
 import * as fs from "fs";
 import * as path from "path";
 
-import { SidebarProvider } from "./views/SidebarProvider";
-import { KeyObject } from "crypto";
-
 import print, * as printer from "./common/printer";
 
 import { success, error } from "./common/ui";
-
 import { getProperty } from "./common/objects";
-
-// import { commands } from "./Commands.t";
-
-// Object.assign(global, nvk);
-
-// import * as fs from "fs-extra";
 
 const pjson = require("../package.json");
 
@@ -34,12 +24,9 @@ function print(msg: string | any) {
 	}
 }
 
-
-	Ekran z katalogiem builda
-	i roznicami z ostatnim buildem na podstawie gita
-
-	add git besides terminal and output
-
+Ekran z katalogiem builda
+i roznicami z ostatnim buildem na podstawie gita
+add git besides terminal and output
 */
 
 /*
@@ -60,12 +47,14 @@ class PyUtils extends VsCode {
 	// https://github.com/microsoft/vscode-extension-samples/blob/main/webview-view-sample/src/extension.ts
 	// https://code.visualstudio.com/api/references/icons-in-labels
 
+	/*
 	private diary?: SidebarProvider;
 	private wave?: SidebarProvider;
 	private noise?: SidebarProvider;
 	private svgdraw?: SidebarProvider;
 	private localdoc?: SidebarProvider;
 	private unicode?: SidebarProvider;
+	*/
 
 	private constructor() {
 		if (PyUtils._instance) {
