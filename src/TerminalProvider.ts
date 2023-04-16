@@ -1,3 +1,5 @@
+import * as vscode from "vscode";
+
 class TerminalProvider {
 	public get terminal(): vscode.Terminal {
 		var terminal = null;
