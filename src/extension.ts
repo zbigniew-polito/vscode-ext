@@ -43,6 +43,7 @@ function getProperty<T, K extends keyof T>(obj: T, key: string): T[K] {
 */
 
 class PyUtils extends VsCode {
+	//
 	// private static _instance?: PyUtils;
 
 	// private context?: vscode.ExtensionContext;
@@ -258,7 +259,7 @@ class PyUtils extends VsCode {
 	vscode.window.showNotebookDocument
 
 	
-*/
+	*/
 
 	//}
 
