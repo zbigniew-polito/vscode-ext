@@ -1,28 +1,33 @@
 import * as vscode from "vscode";
-import print, * as printer from "./common/printer";
 import * as fs from "fs";
 import * as path from "path";
 
-import { getProperty } from "./common/objects";
+import print, * as printer from "./common/printer";
 
+import { getProperty } from "./common/objects";
 import { success, error } from "./common/ui";
 
 import TerminalProvider, { VsTerminalProvider } from "./TerminalProvider";
 
 class VsCode extends VsTerminalProvider implements Provider {
 	private context?: vscode.ExtensionContext;
-
 	private isEnabled: boolean;
 
 	constructor() {
 		super();
 		this.isEnabled = false;
-
-		//print(this.name);
 	}
 
 	public get config(): StringByString {
 		return vscode.workspace.getConfiguration()?.get("pyutils") ?? {};
+	}
+
+	get extensionDir() {
+		return this.projectRoot + "/." + this.name?.toLocaleLowerCase();
+	}
+
+	get name() {
+		return this.context?.extension.id ?? "Unknown";
 	}
 
 	get projectRoot() {
@@ -38,7 +43,6 @@ class VsCode extends VsTerminalProvider implements Provider {
 			};
 		} else if (workspaces.length === 1) {
 			ret = workspaces[0];
-			//return workspaces[0];
 		} else {
 			let rootWorkspace = workspaces[0];
 			let root = undefined;
@@ -64,15 +68,8 @@ class VsCode extends VsTerminalProvider implements Provider {
 		}
 
 		print("Project Root " + ret.uri.fsPath);
+
 		return ret.uri.fsPath;
-	}
-
-	get extensionDir() {
-		return this.projectRoot + "/." + this.name?.toLocaleLowerCase();
-	}
-
-	get name() {
-		return this.context?.extension.id ?? "Unknown";
 	}
 
 	public create(): void {
@@ -86,66 +83,11 @@ class VsCode extends VsTerminalProvider implements Provider {
 		}
 	}
 
-	public activate(context: vscode.ExtensionContext) {
-		this.context = context;
-
-		let methods = Reflect.ownKeys(VsCode.prototype);
-
-		/*
-		vscode.window.terminals.forEach((terminal: vscode.Terminal) => {
-			try {
-				terminal.dispose();
-			} catch (error: any) {
-				error("Terminal disposition error.");
-			}
-		});
-		*/
-
-		for (var method of methods) {
-			const __method = method;
-			if (method.toString().startsWith("workspace_")) {
-				let _workspace = getProperty(vscode, "workspace");
-				let _method = method.toString().split("_")[1];
-				const __target: Function = getProperty(this, method.toString()) as any;
-				let _call: Function = getProperty(_workspace, _method.toString());
-
-				context.subscriptions.push(
-					_call((arg: any) => {
-						print(__method.toString());
-						print(arg);
-						__target(arg);
-					})
-				);
-
-				print("Registered callback vscode." + method.toString());
-			} else if (method.toString().startsWith("window_")) {
-				let _window = getProperty(vscode, "window");
-				let _method = method.toString().split("_")[1];
-				const __target: Function = getProperty(this, method.toString()) as any;
-				let _call: Function = getProperty(_window, _method.toString());
-				context.subscriptions.push(
-					_call((arg: any) => {
-						print(__method.toString());
-						print(arg);
-						__target(arg);
-					})
-				);
-
-				print("Registered callback vscode." + method.toString());
-			}
-		}
-
-		this.isEnabled = true;
-
-		success(this.name + " activated succesfully in " + this.projectRoot);
-
-		/*
-		context.subscriptions.push(
-			vscode.commands.registerCommand("pyutils.", commandHandler)
+	public existsInProject(path: string): boolean {
+		return (
+			fs.existsSync(this.projectRoot + "/" + path) ||
+			error("Cant find : " + path)
 		);
-        */
-
-		this.create();
 	}
 
 	/*
@@ -190,13 +132,6 @@ class VsCode extends VsTerminalProvider implements Provider {
 					" " +
 					document.uri.fsPath
 			);
-	}
-
-	public existsInProject(path: string): boolean {
-		return (
-			fs.existsSync(this.projectRoot + "/" + path) ||
-			error("Cant find : " + path)
-		);
 	}
 }
 
