@@ -245,36 +245,6 @@ class PyUtils extends VsCode {
 	) {}
 	*/
 
-	public window_onDidChangeActiveTextEditor(event: any) {
-		if (event.document.uri.scheme == "file") {
-			PyUtils.ins.terminal.show();
-		}
-	}
-
-	public workspace_onDidSaveTextDocument(document: vscode.TextDocument) {
-		PyUtils.ins.existsInProject(PyUtils.ins._config.callback) &&
-			PyUtils.ins.inTerm(
-				PyUtils.ins.projectRoot +
-					"/" +
-					PyUtils.ins._config["callback"] +
-					" " +
-					document.uri.fsPath
-			);
-	}
-
-	public workspace_onDidCloseTextDocument(event: any) {
-		print(event);
-	}
-
-	public workspace_onDidChangeConfiguration() {
-		// PyUtils.ins.loadConfig();
-	}
-
-	public window_onDidChangeVisibleTextEditors(event: any) {
-		// print(event)
-		// close terminal when one terminal per editor
-	}
-
 	//public _window_registerSidebarProvider(event: any) {
 	// const sidebarProvider = new SidebarProvider(context.extensionUri);
 

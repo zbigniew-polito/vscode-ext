@@ -161,6 +161,19 @@ class VsCode extends VsTerminalProvider implements Provider {
 		);
 	}
     */
+
+	public workspace_onDidCloseTextDocument(event: any) {
+		print(event);
+	}
+
+	public workspace_onDidChangeConfiguration() {
+		// PyUtils.ins.loadConfig();
+	}
+
+	public window_onDidChangeVisibleTextEditors(event: any) {
+		// print(event)
+		// close terminal when one terminal per editor
+	}
 }
 
 export default VsCode;
