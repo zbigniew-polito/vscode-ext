@@ -1,4 +1,5 @@
 import * as vscode from "vscode";
+import print from "./common/printer";
 
 interface TerminalProvider {
 	terminal: any;
@@ -54,3 +55,4 @@ class VsTerminalProvider implements TerminalProvider {
 }
 
 export default TerminalProvider;
+export { VsTerminalProvider, TerminalProvider };
