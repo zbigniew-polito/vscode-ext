@@ -1,10 +1,10 @@
-import * as vscode from "vscode";
+// import * as vscode from "vscode";
 
-class CallbacksHandler extends Base {
-	constructor() {
-		super();
-	}
-}
+// class CallbacksHandler extends Base {
+//	constructor() {
+//		super();
+//	}
+//}
 
 //module.exports = CallbacksHandler;
-export default CallbacksHandler;
+//export default CallbacksHandler;
