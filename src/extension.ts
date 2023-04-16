@@ -42,7 +42,6 @@ function getProperty<T, K extends keyof T>(obj: T, key: string): T[K] {
 
 class PyUtils extends VsCode {
 	private static _instance?: PyUtils;
-
 	private context?: vscode.ExtensionContext;
 
 	// https://github.com/microsoft/vscode-extension-samples/blob/main/webview-view-sample/src/extension.ts
@@ -58,14 +57,8 @@ class PyUtils extends VsCode {
 	*/
 
 	private constructor() {
-		if (PyUtils._instance) {
-			throw new Error("Use Singleton.instance instead of new.");
-		}
-
-		PyUtils._instance = this;
-
-		print(pjson["name"]);
-		print(pjson["publisher"]);
+		// print(pjson["name"]);
+		// print(pjson["publisher"]);
 	}
 
 	static get ins() {
