@@ -12,6 +12,11 @@ import TerminalProvider, { VsTerminalProvider } from "./TerminalProvider";
 class VsCode extends VsTerminalProvider implements Provider {
 	public context?: vscode.ExtensionContext;
 	public isEnabled: boolean;
+	public _instance: VsCode;
+
+	static get ins() {
+		return VsCode._instance ?? (VsCode._instance = new VsCode());
+	}
 
 	constructor() {
 		super();
