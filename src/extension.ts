@@ -62,6 +62,7 @@ class PyUtils extends VsCode {
 
 	private constructor() {
 		super();
+		print("PyUtils Constructor");
 		// print(pjson["name"]);
 		// print(pjson["publisher"]);
 	}
