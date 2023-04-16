@@ -21,3 +21,5 @@ class TerminalProvider {
 		return terminal;
 	}
 }
+
+export default TerminalProvider;
