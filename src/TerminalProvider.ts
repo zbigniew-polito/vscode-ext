@@ -1,5 +1,9 @@
 import * as vscode from "vscode";
 
+interface TermianlProvider {
+	terminal: any;
+}
+
 class TerminalProvider {
 	public get terminal(): vscode.Terminal {
 		var terminal = null;
