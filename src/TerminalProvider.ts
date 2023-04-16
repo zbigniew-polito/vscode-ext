@@ -1,11 +1,12 @@
 import * as vscode from "vscode";
 
-interface TermianlProvider {
+interface TerminalProvider {
 	terminal: any;
-	window_onDidCloseTerminal;
+	window_onDidOpenTerminal(any): any;
+	window_onDidChangeTerminalState: any;
 }
 
-class TerminalProvider {
+class VsTerminalProvider implements TerminalProvider {
 	public get terminal(): vscode.Terminal {
 		var terminal = null;
 		for (var it = 0; it < vscode.window.terminals.length; it++) {
