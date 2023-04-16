@@ -334,13 +334,13 @@
 					"type": "string",
 					"scope": "window",
 					"default": ".pyutils/build",
-					"description": "project build command"
+					"description": "project build"
 				},
 				"pyutils.debug": {
 					"type": "string",
 					"scope": "window",
 					"default": ".pyutils/debug",
-					"description": "project debug command"
+					"description": "project debug"
 				}
 			}
 		}
