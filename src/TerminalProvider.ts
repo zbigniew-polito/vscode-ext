@@ -4,10 +4,10 @@ interface TerminalProvider {
 	terminal: any;
 	inTerm(cmd: string): void;
 
-	window_onDidOpenTerminal(terminal: any);
-	window_onDidChangeTerminalState(event: any);
-	window_onDidChangeActiveTerminal(terminal: any);
-	window_onDidCloseTerminal(terminal: any);
+	window_onDidOpenTerminal(terminal: any): void;
+	window_onDidChangeTerminalState(event: any): void;
+	window_onDidChangeActiveTerminal(terminal: any): void;
+	window_onDidCloseTerminal(terminal: any): void;
 }
 
 class VsTerminalProvider implements TerminalProvider {
