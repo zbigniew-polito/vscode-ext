@@ -8,6 +8,7 @@ import { success, error } from "./common/ui";
 //import { getProperty } from "./common/objects";
 
 import VsCode from "./VsCode";
+import VsCommands from "./VsCommands";
 
 const pjson = require("../package.json");
 
@@ -42,7 +43,7 @@ function getProperty<T, K extends keyof T>(obj: T, key: string): T[K] {
 
 */
 
-class PyUtils extends VsCode {
+class PyUtils extends VsCommands {
 	//
 	// private static _instance?: PyUtils;
 

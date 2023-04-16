@@ -8,6 +8,7 @@ interface TerminalProvider {
     window_onDidCloseTerminal(terminal: any): void;
 }
 declare class VsTerminalProvider implements TerminalProvider {
+    constructor();
     get terminal(): vscode.Terminal;
     inTerm(cmd: string): void;
     showStatusMessage(message: string): vscode.Disposable;
