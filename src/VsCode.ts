@@ -7,9 +7,9 @@ import { getProperty } from "./common/objects";
 
 import { success, error } from "./common/ui";
 
-import TerminalProvider from "./TerminalProvider";
+import TerminalProvider, { VsTerminalProvider } from "./TerminalProvider";
 
-class VsCode extends TerminalProvider implements Provider {
+class VsCode extends VsTerminalProvider implements Provider {
 	private context?: vscode.ExtensionContext;
 
 	private isEnabled: boolean;

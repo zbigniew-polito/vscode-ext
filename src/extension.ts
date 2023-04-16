@@ -14,7 +14,6 @@ import { getProperty } from "./common/objects";
 
 //import { commands } from "./Commands.t";
 
-
 // Object.assign(global, nvk);
 const pjson = require("../package.json");
 
@@ -51,7 +50,7 @@ function getProperty<T, K extends keyof T>(obj: T, key: string): T[K] {
 
 */
 
-class PyUtils extends Commands, Callbacks{
+class PyUtils extends VsCode {
 	private static _instance?: PyUtils;
 
 	private context?: vscode.ExtensionContext;
@@ -371,14 +370,11 @@ class PyUtils extends Commands, Callbacks{
 	// classes and objects
 	// graphs
 
-	
 	// inkpaint
 	// https://dbanks.design/blog/vs-code-theme-with-style-dictionary/
 
 	// One per Editor
 	// One per Workspace
-
-
 }
 
 module.exports = PyUtils.ins;
