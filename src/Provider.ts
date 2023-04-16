@@ -6,4 +6,5 @@ interface Provider {
 	get name(): String;
 	get config(): StringByString;
 	showStatusMessage(msg: String): any;
+	get ins(): Provider;
 }

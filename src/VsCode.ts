@@ -4,8 +4,8 @@ import * as path from "path";
 
 import print, * as printer from "./common/printer";
 
-import { getProperty } from "./common/objects";
 import { success, error } from "./common/ui";
+import { getProperty } from "./common/objects";
 
 import TerminalProvider, { VsTerminalProvider } from "./TerminalProvider";
 
