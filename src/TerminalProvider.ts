@@ -32,6 +32,16 @@ class VsTerminalProvider implements TerminalProvider {
 		return terminal;
 	}
 
+	public inTerm(cmd: string): void {
+		print(cmd);
+		this.terminal.sendText(cmd);
+	}
+
+	public showStatusMessage(message: string): vscode.Disposable {
+		print(message);
+		return vscode.window.setStatusBarMessage(message);
+	}
+
 	public window_onDidOpenTerminal(terminal: vscode.Terminal) {
 		//PyUtils.ins.terminal.sendText("echo 'onDidOpenTerminal >"+terminal.name+"<'");
 	}
@@ -46,12 +56,6 @@ class VsTerminalProvider implements TerminalProvider {
 
 	public window_onDidCloseTerminal(terminal: vscode.Terminal) {
 		//PyUtils.ins.terminal.sendText("echo 'onDidCloseTerminal >"+terminal.name+"<'");
-	}
-
-	public inTerm(cmd: string): void {
-		print(cmd);
-
-		this.terminal.sendText(cmd);
 	}
 }
 
