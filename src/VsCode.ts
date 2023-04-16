@@ -181,13 +181,6 @@ class VsCode extends VsTerminalProvider implements Provider {
 		}
 	}
 
-	public existsInProject(path: string): boolean {
-		return (
-			fs.existsSync(this.projectRoot + "/" + path) ||
-			error("Cant find : " + path)
-		);
-	}
-
 	public workspace_onDidSaveTextDocument(document: vscode.TextDocument) {
 		this.existsInProject(this.config.callback) &&
 			this.inTerm(
@@ -197,6 +190,13 @@ class VsCode extends VsTerminalProvider implements Provider {
 					" " +
 					document.uri.fsPath
 			);
+	}
+
+	public existsInProject(path: string): boolean {
+		return (
+			fs.existsSync(this.projectRoot + "/" + path) ||
+			error("Cant find : " + path)
+		);
 	}
 }
 
