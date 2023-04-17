@@ -119,7 +119,7 @@
 				{
 					"id": "wave",
 					"name": "Wave",
-					"icon": "media/dep.svg",
+					"icon": "$(target)",
 					"contextualTitle": "Wave"
 				}
 			]
