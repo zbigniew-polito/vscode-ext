@@ -35,6 +35,89 @@
 				}
 			]
 		},
+		"views": {
+			"beamy-panel": [],
+			"beamy-container": [
+				{
+					"id": "polyglot",
+					"name": "Polyglot",
+					"icon": "media/dep.svg",
+					"contextualTitle": "Polyglot"
+				},
+				{
+					"id": "translator",
+					"name": "Translator",
+					"icon": "media/dep.svg",
+					"contextualTitle": "Translator"
+				},
+				{
+					"id": "notes",
+					"name": "Notes",
+					"icon": "$(pencil)",
+					"contextualTitle": "Notes"
+				},
+				{
+					"id": "clipboard",
+					"name": "Clipboard",
+					"icon": "$(scissors)",
+					"contextualTitle": "Clipboard"
+				},
+				{
+					"id": "scratchpad",
+					"name": "Scratchpad",
+					"icon": "$(pencil)",
+					"contextualTitle": "Notes"
+				},
+				{
+					"id": "locakdoc",
+					"name": "Local Documentation",
+					"icon": "media/dep.svg",
+					"contextualTitle": "Local Documentation"
+				},
+				{
+					"id": "unicode",
+					"name": "Unicode Browser",
+					"icon": "$(symbol-array)",
+					"contextualTitle": "unicode"
+				},
+				{
+					"id": "system",
+					"name": "System",
+					"icon": "$(paintcan)",
+					"contextualTitle": "systemd"
+				},
+				{
+					"id": "Utils",
+					"name": "Utils",
+					"icon": "$(vm)",
+					"contextualTitle": "Utils"
+				},
+				{
+					"id": "noise",
+					"name": "Noise",
+					"icon": "$(notebook-render-output)",
+					"contextualTitle": "noisesynth"
+				},
+				{
+					"id": "draw",
+					"name": "Draw",
+					"icon": "$(paintcan)",
+					"contextualTitle": "svgdraw"
+				},
+				{
+					"id": "linguist",
+					"name": "Linguist",
+					"icon": "media/dep.svg",
+					"contextualTitle": "Linguist"
+				},
+				{
+					"id": "wave",
+					"name": "Wave",
+					"icon": "media/dep.svg",
+					"contextualTitle": "Wave"
+				}
+			]
+		},
 		"customEditors": [
 			{
 				"viewType": "pyutils.polyglot",
@@ -147,88 +230,6 @@
 				"priority": "option"
 			}
 		],
-		"views": {
-			"beamy-container": [
-				{
-					"id": "polyglot",
-					"name": "Polyglot",
-					"icon": "media/dep.svg",
-					"contextualTitle": "Polyglot"
-				},
-				{
-					"id": "translator",
-					"name": "Translator",
-					"icon": "media/dep.svg",
-					"contextualTitle": "Translator"
-				},
-				{
-					"id": "notes",
-					"name": "Notes",
-					"icon": "$(pencil)",
-					"contextualTitle": "Notes"
-				},
-				{
-					"id": "clipboard",
-					"name": "Clipboard",
-					"icon": "$(scissors)",
-					"contextualTitle": "Clipboard"
-				},
-				{
-					"id": "scratchpad",
-					"name": "Scratchpad",
-					"icon": "$(pencil)",
-					"contextualTitle": "Notes"
-				},
-				{
-					"id": "locakdoc",
-					"name": "Local Documentation",
-					"icon": "media/dep.svg",
-					"contextualTitle": "Local Documentation"
-				},
-				{
-					"id": "unicode",
-					"name": "Unicode Browser",
-					"icon": "$(symbol-array)",
-					"contextualTitle": "unicode"
-				},
-				{
-					"id": "system",
-					"name": "System",
-					"icon": "$(paintcan)",
-					"contextualTitle": "systemd"
-				},
-				{
-					"id": "Utils",
-					"name": "Utils",
-					"icon": "$(vm)",
-					"contextualTitle": "Utils"
-				},
-				{
-					"id": "noise",
-					"name": "Noise",
-					"icon": "$(notebook-render-output)",
-					"contextualTitle": "noisesynth"
-				},
-				{
-					"id": "draw",
-					"name": "Draw",
-					"icon": "$(paintcan)",
-					"contextualTitle": "svgdraw"
-				},
-				{
-					"id": "linguist",
-					"name": "Linguist",
-					"icon": "media/dep.svg",
-					"contextualTitle": "Linguist"
-				},
-				{
-					"id": "wave",
-					"name": "Wave",
-					"icon": "media/dep.svg",
-					"contextualTitle": "Wave"
-				}
-			]
-		},
 		"themes": [
 			{
 				"label": "Viradora",
