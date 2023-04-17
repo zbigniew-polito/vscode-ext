@@ -289,6 +289,18 @@
 				"title": "Activate"
 			}
 		],
+		"keybindings": [
+            {
+                "command": "beamy.pyutils.run",
+                "key": "ctrl+alt+l",
+                "mac": "shift+cmd+f"
+            },
+            {
+                "command": "beamy.utils.build",
+                "key": "ctrl+alt+F",
+                "mac": "shift+cmd+l"
+            }
+        ]
 		"menus": {
 			"editor/title/run": [
 				{
