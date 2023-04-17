@@ -248,47 +248,6 @@
 				}
 			}
 		],
-		"commands": [
-			{
-				"command": "beamy.pyutils.activateMe",
-				"title": "Check"
-			},
-			{
-				"command": "beamy.pyutils.activateMeM",
-				"title": "Check"
-			},
-			{
-				"command": "beamy.pyutils.enable",
-				"title": "PyUtils enable"
-			},
-			{
-				"command": "beamy.pyutils.disable",
-				"title": "PyUtils disable"
-			},
-			{
-				"command": "beamy.pyutils.run",
-				"title": "Run",
-				"icon": "$(play)"
-			},
-			{
-				"command": "beamy.pyutils.title_command",
-				"title": "Some Context Menu Option"
-			},
-			{
-				"command": "beamy.pyutils.debug",
-				"title": "Debug",
-				"icon": "$(debug)"
-			},
-			{
-				"command": "beamy.pyutils.build",
-				"title": "Build",
-				"icon": "$(build)"
-			},
-			{
-				"command": "beamy.pyutils.activate",
-				"title": "Activate"
-			}
-		],
 		"keybindings": [
 			{
 				"command": "run",
