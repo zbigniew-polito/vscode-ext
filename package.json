@@ -53,7 +53,7 @@
 				{
 					"id": "translator",
 					"name": "Translator",
-					"icon": "media/dep.svg",
+					"icon": "$()",
 					"contextualTitle": "Translator"
 				},
 				{
