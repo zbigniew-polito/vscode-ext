@@ -291,7 +291,7 @@
 		],
 		"keybindings": [
 			{
-				"command": "pyutils.run",
+				"command": "run",
 				"key": "ctrl+alt+r"
 			},
 			{
