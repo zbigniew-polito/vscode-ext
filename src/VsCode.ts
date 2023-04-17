@@ -86,7 +86,7 @@ class VsCode extends VsTerminalProvider implements Provider {
 				? fs.mkdir(this.extensionDir, { recursive: false }, (err) => {
 						error(err);
 				  })
-				: error("ext_dir creation error");
+				: error("Extension dir creation error.");
 		}
 	}
 
