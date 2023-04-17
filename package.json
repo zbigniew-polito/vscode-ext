@@ -292,15 +292,13 @@
 		"keybindings": [
             {
                 "command": "beamy.pyutils.run",
-                "key": "ctrl+alt+l",
-                "mac": "shift+cmd+f"
+                "key": "ctrl+alt+r",
             },
             {
                 "command": "beamy.utils.build",
-                "key": "ctrl+alt+F",
-                "mac": "shift+cmd+l"
+                "key": "ctrl+b",
             }
-        ]
+        ],
 		"menus": {
 			"editor/title/run": [
 				{
