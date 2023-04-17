@@ -77,7 +77,7 @@
 				{
 					"id": "locakdoc",
 					"name": "Local Documentation",
-					"icon": "media/dep.svg",
+					"icon": "$(word-wrap)",
 					"contextualTitle": "Local Documentation"
 				},
 				{
@@ -113,7 +113,7 @@
 				{
 					"id": "linguist",
 					"name": "Linguist",
-					"icon": "media/dep.svg",
+					"icon": "$(whole-word)",
 					"contextualTitle": "Linguist"
 				},
 				{
