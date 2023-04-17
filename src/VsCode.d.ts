@@ -4,8 +4,8 @@ declare class VsCode extends VsTerminalProvider implements Provider {
     context?: vscode.ExtensionContext;
     isEnabled: boolean;
     static instance: VsCode;
-    static get ins(): VsCode;
     constructor();
+    static get ins(): VsCode;
     get name(): string;
     get config(): StringByString;
     get extensionDir(): string;

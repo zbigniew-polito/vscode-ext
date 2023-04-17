@@ -292,11 +292,11 @@
 		"keybindings": [
             {
                 "command": "beamy.pyutils.run",
-                "key": "ctrl+alt+r",
+                "key": "ctrl+alt+r"
             },
             {
                 "command": "beamy.utils.build",
-                "key": "ctrl+b",
+                "key": "ctrl+b"
             }
         ],
 		"menus": {
