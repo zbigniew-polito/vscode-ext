@@ -290,15 +290,15 @@
 			}
 		],
 		"keybindings": [
-            {
-                "command": "beamy.pyutils.run",
-                "key": "ctrl+alt+r"
-            },
-            {
-                "command": "beamy.utils.build",
-                "key": "ctrl+b"
-            }
-        ],
+			{
+				"command": "pyutils.run",
+				"key": "ctrl+alt+r"
+			},
+			{
+				"command": "pyutils.build",
+				"key": "ctrl+b"
+			}
+		],
 		"menus": {
 			"editor/title/run": [
 				{
