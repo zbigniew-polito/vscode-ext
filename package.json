@@ -47,7 +47,7 @@
 				{
 					"id": "polyglot",
 					"name": "Polyglot",
-					"icon": "media/dep.svg",
+					"icon": "$(library)",
 					"contextualTitle": "Polyglot"
 				},
 				{
