@@ -36,7 +36,13 @@
 			]
 		},
 		"views": {
-			"beamy-panel": [],
+			"beamy-panel": [
+				{
+					"status": "status",
+					"name": "Status",
+					"icon": ""
+				}
+			],
 			"beamy-container": [
 				{
 					"id": "polyglot",
