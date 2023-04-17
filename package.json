@@ -40,7 +40,7 @@
 				{
 					"status": "status",
 					"name": "Status",
-					"icon": ""
+					"icon": "$(debug-step-over)"
 				}
 			],
 			"beamy-container": [
