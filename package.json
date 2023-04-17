@@ -236,25 +236,6 @@
 				"priority": "option"
 			}
 		],
-		"themes": [
-			{
-				"label": "Viradora",
-				"uiTheme": "vs-dark",
-				"path": "./themes/viradora-color-theme.json"
-			}
-		],
-		"colors": [
-			{
-				"id": "superstatus.error",
-				"description": "Color for error message in the status bar.",
-				"defaults": {
-					"dark": "errorForeground",
-					"light": "errorForeground",
-					"highContrast": "#010203",
-					"highContrastLight": "#feedc3"
-				}
-			}
-		],
 		"keybindings": [
 			{
 				"command": "run",
@@ -285,6 +266,25 @@
 				}
 			]
 		},
+		"themes": [
+			{
+				"label": "Viradora",
+				"uiTheme": "vs-dark",
+				"path": "./themes/viradora-color-theme.json"
+			}
+		],
+		"colors": [
+			{
+				"id": "superstatus.error",
+				"description": "Color for error message in the status bar.",
+				"defaults": {
+					"dark": "errorForeground",
+					"light": "errorForeground",
+					"highContrast": "#010203",
+					"highContrastLight": "#feedc3"
+				}
+			}
+		],
 		"configuration": {
 			"title": "PyUtils",
 			"properties": {
