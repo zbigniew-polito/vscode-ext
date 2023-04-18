@@ -266,6 +266,39 @@
 				"key": "ctrl+b"
 			}
 		],
+		"commands": [
+			{
+				"command": "activate",
+				"title": "Activate"
+			},
+			{
+				"command": "run",
+				"title": "Run",
+				"icon": "$(play)"
+			},
+			{
+				"command": "build",
+				"title": "Build",
+				"icon": "$(build)"
+			},
+			{
+				"command": "debug",
+				"title": "Debug",
+				"icon": "$(debug)"
+			},
+			{
+				"command": "title_command",
+				"title": "Some Context Menu Option"
+			},
+			{
+				"command": "enable",
+				"title": "PyUtils enable"
+			},
+			{
+				"command": "disable",
+				"title": "PyUtils disable"
+			}
+		],
 		"themes": [
 			{
 				"label": "Viradora",
