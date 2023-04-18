@@ -239,19 +239,19 @@
 		"menus": {
 			"editor/title/run": [
 				{
-					"command": "beamy.pyutils.run",
-					"group": "navigation"
-				}
-			],
-			"editor/title/context": [
-				{
-					"command": "pyutils.title_command ",
+					"command": "run",
 					"group": "navigation"
 				}
 			],
 			"editor/title": [
 				{
-					"command": "beamy.pyutils.debug",
+					"command": "debug",
+					"group": "navigation"
+				}
+			],
+			"editor/title/context": [
+				{
+					"command": "editor_title_context_command",
 					"group": "navigation"
 				}
 			]
