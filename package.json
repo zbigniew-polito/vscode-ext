@@ -84,16 +84,16 @@
 					"id": "unicode",
 					"name": "Unicode Browser",
 					"icon": "$(symbol-array)",
-					"contextualTitle": "unicode"
+					"contextualTitle": "Unicode"
 				},
 				{
 					"id": "system",
 					"name": "System",
 					"icon": "$(paintcan)",
-					"contextualTitle": "systemd"
+					"contextualTitle": "System"
 				},
 				{
-					"id": "Utils",
+					"id": "utils",
 					"name": "Utils",
 					"icon": "$(vm)",
 					"contextualTitle": "Utils"
@@ -108,7 +108,7 @@
 					"id": "draw",
 					"name": "Draw",
 					"icon": "$(paintcan)",
-					"contextualTitle": "svgdraw"
+					"contextualTitle": "Draw"
 				},
 				{
 					"id": "linguist",
@@ -236,16 +236,6 @@
 				"priority": "option"
 			}
 		],
-		"keybindings": [
-			{
-				"command": "run",
-				"key": "ctrl+alt+r"
-			},
-			{
-				"command": "pyutils.build",
-				"key": "ctrl+b"
-			}
-		],
 		"menus": {
 			"editor/title/run": [
 				{
@@ -271,6 +261,16 @@
 				"label": "Viradora",
 				"uiTheme": "vs-dark",
 				"path": "./themes/viradora-color-theme.json"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "run",
+				"key": "ctrl+alt+r"
+			},
+			{
+				"command": "pyutils.build",
+				"key": "ctrl+b"
 			}
 		],
 		"colors": [
