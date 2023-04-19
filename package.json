@@ -262,7 +262,7 @@
 				"key": "ctrl+alt+r"
 			},
 			{
-				"command": "pyutils.build",
+				"command": "build",
 				"key": "ctrl+b"
 			}
 		],
