@@ -43,7 +43,7 @@ function getProperty<T, K extends keyof T>(obj: T, key: string): T[K] {
 
 */
 
-class utils extends VsCommands {
+class Utils extends VsCommands {
 	//
 	// private static _instance?: PyUtils;
 
