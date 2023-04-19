@@ -239,30 +239,30 @@
 		"menus": {
 			"editor/title/run": [
 				{
-					"command": "run",
+					"command": "utils.run",
 					"group": "navigation"
 				}
 			],
 			"editor/title": [
 				{
-					"command": "debug",
+					"command": "utils.debug",
 					"group": "navigation"
 				}
 			],
 			"editor/title/context": [
 				{
-					"command": "editor_title_context_command",
+					"command": "utils.editor_title_context_command",
 					"group": "navigation"
 				}
 			]
 		},
 		"keybindings": [
 			{
-				"command": "run",
+				"command": "utils.run",
 				"key": "ctrl+alt+r"
 			},
 			{
-				"command": "build",
+				"command": "utils.build",
 				"key": "ctrl+b"
 			}
 		],
