@@ -299,4 +299,4 @@ class Utils extends VsCommands {
 	// One per Workspace
 }
 
-module.exports = utils.ins;
+module.exports = Utils.ins;
