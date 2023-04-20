@@ -258,7 +258,7 @@
 		},
 		"keybindings": [
 			{
-				"command": "utils.run",
+				"command": "run",
 				"key": "ctrl+alt+r"
 			},
 			{
@@ -272,7 +272,7 @@
 				"title": "Activate"
 			},
 			{
-				"command": "utils.run",
+				"command": "run",
 				"title": "Run",
 				"icon": "$(play)"
 			},
