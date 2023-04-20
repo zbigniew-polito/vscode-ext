@@ -38,7 +38,7 @@
 		"views": {
 			"beamy-panel": [
 				{
-					"status": "status",
+					"id": "status",
 					"name": "Status",
 					"icon": "$(debug-step-over)"
 				}
