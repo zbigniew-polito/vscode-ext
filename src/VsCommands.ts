@@ -11,7 +11,7 @@ import * as vscode from "vscode";
 import { VsTerminalProvider } from "./TerminalProvider";
 
 //class VsCommands extends VsCode {
-class VsCommands {
+class VsCommands extends VsCode {
 	constructor() {
 		print("VsCommands");
 		super();
