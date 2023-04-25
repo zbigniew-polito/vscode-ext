@@ -14,6 +14,7 @@ class VsCommands extends VsCode {
 	constructor() {
 		print("VsCommands");
 		super();
+		print("VsCommands");
 	}
 
 	public run() {

@@ -62,7 +62,7 @@ class Utils extends VsCommands {
 	*/
 
 	private constructor() {
-		print("PyUtils Constructor");
+		print("Utils Constructor");
 		super();
 		// print(pjson["name"]);
 		// print(pjson["publisher"]);
