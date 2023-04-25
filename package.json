@@ -239,7 +239,7 @@
 		"menus": {
 			"editor/title/run": [
 				{
-					"command": "utils.run",
+					"command": "run",
 					"group": "navigation"
 				}
 			],
@@ -272,7 +272,7 @@
 				"title": "Activate"
 			},
 			{
-				"command": "utils.run",
+				"command": "run",
 				"title": "Run",
 				"icon": "$(play)"
 			},
