@@ -10,7 +10,8 @@ import * as path from "path";
 import * as vscode from "vscode";
 import { VsTerminalProvider } from "./TerminalProvider";
 
-class VsCommands extends VsCode {
+//class VsCommands extends VsCode {
+class VsCommands {
 	constructor() {
 		print("VsCommands");
 		super();
