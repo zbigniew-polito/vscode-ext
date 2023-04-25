@@ -61,7 +61,7 @@ class Utils extends VsCommands {
 	private unicode?: SidebarProvider;
 	*/
 
-	private constructor() {
+	constructor() {
 		print("Utils Constructor");
 		super();
 		// print(pjson["name"]);
