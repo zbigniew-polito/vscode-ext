@@ -272,7 +272,7 @@
 				"title": "Activate"
 			},
 			{
-				"command": "run",
+				"command": "utils.run",
 				"title": "Run",
 				"icon": "$(play)"
 			},
