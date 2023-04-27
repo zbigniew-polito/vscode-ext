@@ -14,7 +14,7 @@ class Printer {
 	>();
 
 	constructor() {
-		this.print("*" + __dirname + "/" + __filename);
+		this.print("Printer.constructor*" + __dirname + "/" + __filename);
 		//process.
 		/*
             NodeRequire
