@@ -6,6 +6,7 @@
         "contextualTitle": "noisesynth"
     }
 ],
+
 "unicode": [
     {
         "id": "unicode",
@@ -14,6 +15,7 @@
         "contextualTitle": "unicode"
     }
 ],
+
 "drawit": [
     {
         "id": "drawit",
@@ -26,24 +28,18 @@
 
 #00ab6b
 
-
-
 cascades -> call object without function name and parameters
-
 
 TypeScript
             - npm install -g typescript
             - tsc --version
-
 
             let message: string = 'Hello World';
             console.log(message);
 
             tsconfig.json
 
-
 source-map -> debugger
-
 
 <script>
   window.__INITIAL_DATA__ = {
@@ -57,7 +53,6 @@ type InitialData = {
   
 
 const initialData = (window as any).__INITIAL_DATA__;
-
 
 declare var __INITIAL_DATA__: InitialData;
 
