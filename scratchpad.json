@@ -463,6 +463,7 @@ chlorek potasu
 
 wodorowęglan sodu
 
+hesperyd
 
 if (window && window.process && process.versions['electron']) {
     const {BrowserWindow} = require('electron').remote
