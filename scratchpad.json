@@ -460,3 +460,11 @@ mleczan wapnia
 siarczan magnezu
 weglan sodu
 chlorek potasu
+
+wodorowęglan sodu
+
+
+if (window && window.process && process.versions['electron']) {
+    const {BrowserWindow} = require('electron').remote
+  }
+  
